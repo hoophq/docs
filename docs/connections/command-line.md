@@ -38,6 +38,6 @@ You are now connected to the agent. Type some bash commands
 ```shell
 root@f4584548f57c:/# ls -la
 ...
-root@f4584548f57c:/#  env
+root@f4584548f57c:/# env
 ...
 ```
