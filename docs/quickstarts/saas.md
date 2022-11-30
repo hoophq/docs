@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
-slug: /getting-started/saas
+slug: /quickstarts/saas
 ---
 
-# Saas
+# Hosted
 
 Run Hoop on the cloud

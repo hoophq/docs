@@ -34,10 +34,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
@@ -57,25 +53,32 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'hoop logo',
+          src: 'https://uploads-ssl.webflow.com/6381011b9a644125428eb040/63810228f0ef3494882cbd57_hoop-logo-black.svg',
+          href: "https://www.hoop.dev/",
+          target: '_self',
         },
         items: [
+          {to: 'https://www.hoop.dev/pricing', label: 'Pricing', position: 'right', target: '_self',},
+          {to: '/blog', label: 'Blog', position: 'right'},
           {
             type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
+            docId: 'quickstarts/index',
+            position: 'right',
+            label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://app.hoop.dev',
+            label: 'LOGIN',
             position: 'right',
           },
         ],
+      },
+      docs: {
+          sidebar: {
+              autoCollapseCategories: true,
+          },
       },
       footer: {
         style: 'dark',
@@ -84,8 +87,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Docs',
+                to: '/',
               },
             ],
           },

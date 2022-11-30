@@ -5,7 +5,7 @@ slug: /connections/command-line
 
 # Command-line
 
-Interact real-time with remote processes (bash, kubectl, etc)
+Interact in real-time with remote processes (bash, kubectl, etc)
 
 ## New Terminal (bash) connection
 
