@@ -56,7 +56,9 @@ const config = {
         },
         items: [
           {to: 'https://hoop.dev/pricing', label: 'Pricing', position: 'right', target: '_self',},
-          {to: 'https://hoop.dev/blog', label: 'Blog', position: 'right'},
+            {to: 'https://hoop.dev/blog', label: 'Blog', position: 'right',
+           target: '_self'
+          },
           {
             type: 'doc',
             docId: 'quickstarts/index',
