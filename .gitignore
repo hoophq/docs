@@ -22,3 +22,6 @@ docs/.obsidian/*
 docs/obsidian/*
 *~undo-tree~*
 *.swp
+
+# IDE
+.idea/
