@@ -35,6 +35,3 @@ docker stop hoopdemo
 
 Open http://127.0.0.1:8009 in your browser to begin.
 
-## That's it!
-
-You are ready to go to the next step! [Create new connection!](/docs/category/connections)

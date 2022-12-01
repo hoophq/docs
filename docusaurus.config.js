@@ -6,18 +6,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'hoop.dev',
+  tagline: 'Replace Jump Servers & VPNs with the dynamic SSH',
   url: 'https://hoop.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -56,12 +51,12 @@ const config = {
         logo: {
           alt: 'hoop logo',
           src: 'https://uploads-ssl.webflow.com/6381011b9a644125428eb040/63810228f0ef3494882cbd57_hoop-logo-black.svg',
-          href: "https://www.hoop.dev/",
+          href: "https://hoop.dev/",
           target: '_self',
         },
         items: [
-          {to: 'https://www.hoop.dev/pricing', label: 'Pricing', position: 'right', target: '_self',},
-          {to: '/blog', label: 'Blog', position: 'right'},
+          {to: 'https://hoop.dev/pricing', label: 'Pricing', position: 'right', target: '_self',},
+          {to: 'https://hoop.dev/blog', label: 'Blog', position: 'right'},
           {
             type: 'doc',
             docId: 'quickstarts/index',
