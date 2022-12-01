@@ -24,11 +24,8 @@ hoop version
 ```shell
 $ hoop start
 
--> hoop started!
-open http://127.0.0.1:8009 to begin
-
-stop the demo
-docker stop hoopdemo
+# -> hoop started!
+#open http://127.0.0.1:8009 to begin
 ```
 
 ## Access your browser
