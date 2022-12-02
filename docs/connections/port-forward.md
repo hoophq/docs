@@ -33,7 +33,7 @@ Open a new terminal and type
 ```shell
 $ hoop connect http
 
-connection: xtdb | session: 078123be-45b8-4f9d-b2b5-75b9b876cb85
+connection: http | session: 078123be-45b8-4f9d-b2b5-75b9b876cb85
 
 --------------------tcp-connection--------------------
                host=127.0.0.1 port=8999

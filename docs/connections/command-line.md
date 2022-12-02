@@ -13,7 +13,7 @@ Interact in real-time with remote processes (bash, kubectl, etc)
 
 ![alt text](https://hoopartifacts.s3.amazonaws.com/screenshots/hoop/browser-new-connection.png)
 
-#### Pick the type Command Line"
+#### Pick the type Command Line
 
 ![alt text](https://hoopartifacts.s3.amazonaws.com/screenshots/hoop/browser-new-connection-modal-cmd.png)
 

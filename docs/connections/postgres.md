@@ -13,7 +13,7 @@ Connect to a private postgres instance from your favorite IDE
 
 ![alt text](https://hoopartifacts.s3.amazonaws.com/screenshots/hoop/browser-new-connection.png)
 
-#### Pick the type Port-forward (tcp)
+#### Pick the type Postgres
 
 ![alt text](https://hoopartifacts.s3.amazonaws.com/screenshots/hoop/browser-new-connection-modal-pg.png)
 
