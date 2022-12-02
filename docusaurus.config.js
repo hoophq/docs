@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'docs/img/favicon.ico',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -81,46 +81,75 @@ const config = {
         style: 'light',
         links: [
           {
-            title: 'Docs',
+            title: 'Quickstarts',
             items: [
               {
-                label: 'Docs',
-                to: '/',
+                label: 'Kubernetes',
+                to: '/docs/getting-started/saas',
               },
+                {
+                    label: 'Docker',
+                    to: '/docs/quickstarts/docker',
+                },
+                {
+                    label: 'Unix',
+                    to: '/docs/quickstarts/docker',
+                },
             ],
           },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
+            {
+                title: 'Solutions',
+                items: [
+                    {
+                        label: 'SSH',
+                        to: '/docs/getting-started/saas',
+                    },
+                    {
+                        label: 'VPN',
+                        to: '/docs/quickstarts/docker',
+                    },
+                    {
+                        label: 'Jump Server',
+                        to: '/docs/quickstarts/docker',
+                    },
+                ],
+            },
+            {
+                title: 'Product',
+                items: [
+                    {
+                        label: 'SSH',
+                        to: '/docs/plugins/audit',
+                    },
+                    {
+                        label: 'Audit Trails',
+                        to: '/docs/plugins/audit',
+                    },
+                    {
+                        label: 'PII Redact',
+                        to: '/docs/plugins/dlp',
+                    },
+                ],
+            },
+            {
+                title: 'Industries',
+                items: [
+                    {
+                        label: 'Fintech',
+                        to: '/docs/plugins/audit',
+                    },
+                    {
+                        label: 'Healthtech',
+                        to: '/docs/plugins/audit',
+                    },
+                    {
+                        label: 'Highly Regulated',
+                        to: '/docs/plugins/dlp',
+                    },
+                ],
+            },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} hoop.dev.`,
       },
       prism: {
         theme: lightCodeTheme,
