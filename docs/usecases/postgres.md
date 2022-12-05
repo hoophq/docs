@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 slug: /usecases/postgres
 ---
 
-# Postgres Native
+# Postgres
 
 Forward a passwordless Postgres connection
 

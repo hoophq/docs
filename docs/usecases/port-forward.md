@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 slug: /usecases/port-forward
 ---
 
@@ -38,5 +38,3 @@ Use a compatible mysql client to connect in the instance
 ```shell
 mysql -h 127.0.0.1 --port 8999 -u myuser -D mydb -p
 ```
-
-## Postgres Server
