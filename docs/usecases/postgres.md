@@ -9,7 +9,6 @@ Forward a passwordless Postgres connection
 
 ## Requirements
 
-- Agent deployed in a private network
 - IP or DNS of the postgres instance
 - The port number of the postgres instance
 - A valid username and password (md5 or SAS authentication)

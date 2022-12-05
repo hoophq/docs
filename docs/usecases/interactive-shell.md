@@ -5,11 +5,7 @@ slug: /usecases/postgres
 
 # Interactive Shell
 
-Connect to interact shell in a private network
-
-## Requirements
-
-- Agent deployed in a private network
+Connect to an interact shell in a private network
 
 ## Kubernetes Pod Exec
 

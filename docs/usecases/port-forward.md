@@ -9,7 +9,6 @@ Port Forward local ports from your private network.
 
 ## Requirements
 
-- Agent deployed in a private network
 - IP or DNS of the service to forward
 - The port number of the service
 
