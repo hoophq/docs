@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-slug: /
----
-
 # Use Cases
 
 Examples about how to use hoop command line utility.
