@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-slug: /usecases/postgres
+sidebar_position: 4
+slug: /usecases/interactive-shell
 ---
 
 # Interactive Shell
