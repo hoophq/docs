@@ -1,28 +1,16 @@
 ---
 sidebar_position: 4
-slug: /usecases/kubernetes
+slug: /usecases/k8s-resources
 ---
 
-# Kubernetes
-
-Interact with one or multiple Kubernetes clusters
-
-## Resource Management
+# Kubernetes Resources
 
 Hoop could be configured to use the kubectl command line to manage resources or execute actions on workloads in Kubernetes.
 
-## Requirements
+## Connection Configuration
 
-Create a connection in the webapp named `k8s`:
-
-- **Configuration File | KUBECONFIG**
-
-A valid Kubeconfig file with permission to access resources on Kubernetes.
-
-> It's possible tp bootstrap the required credentials of the cluster issuing:
-> `hoop bootstrap k8s token-granter --clusterrole=view`
-
-- **The command that will run on your connection**
+- **KUBECONFIG** - A Kubeconfig file with permission to get pods, rollout and scale deployments.
+- **COMMAND**
 
 ```shell
 kubectl
@@ -41,7 +29,7 @@ hoop exec k8s -- scale --replicas=3 deployment/myapp
 
 It's possible to narrow down the commands in distinct connections, this gives a better user experience:
 
-- Create a new connection named `kubectl-rollout` with the command
+- Create a new connection called `kubectl-rollout` with the **command** bellow
 
 ```shell
 kubectl --namespace prod rollout restart
@@ -142,6 +130,7 @@ Then, it's possible to:
 hoop exec myapp-ruby <<EOF
 myvar='Hello'
 puts myvar
+EOF
 ```
 
 The connection now runs one-off process accepting ruby scripts from the standard input.
