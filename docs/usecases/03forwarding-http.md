@@ -9,19 +9,19 @@ Port Forward local ports from your private network | HTTP example.
 
 ## Connection Configuration
 
-- **HOST** - The IP or hostname of the MySQL Server instance
-- **PORT** - The number of MySQL port
+- **HOST** - The IP or hostname of the service
+- **PORT** - The port number of the service
 
 ## How to Use
 
 ```shell
-hoop connect http-port-forward
+hoop connect http-port-forward --port 8080
 ```
 
-Open the forwarded service in a web browser or via http request (default to port **8999**)
+Open the forwarded service in a web browser or via http request.
 
 ```shell
-curl http://127.0.0.1:8999
+curl http://127.0.0.1:8080
 # or
-open http://127.0.0.1:8999
+open http://127.0.0.1:8080
 ```

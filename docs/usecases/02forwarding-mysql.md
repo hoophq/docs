@@ -15,11 +15,11 @@ Port Forward local ports from your private network | MySQL example.
 ## How to Use
 
 ```shell
-hoop connect mysql-port-forward
+hoop connect mysql-port-forward --port 3306
 ```
 
-Use a compatible mysql client to connect in the instance (default to port **8999**)
+Use a compatible mysql client to connect in the instance.
 
 ```shell
-mysql -h 127.0.0.1 --port 8999 -u myuser -D mydb -p
+mysql -h 127.0.0.1 -u myuser -D mydb -p
 ```
