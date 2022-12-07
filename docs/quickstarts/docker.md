@@ -10,6 +10,7 @@ Run hoop on your machine using Docker, and test everything locally
 ## Install hoop
 
 ```shell
+brew tap hoophq/hoopcli https://github.com/hoophq/hoopcli
 brew install hoop
 ```
 
