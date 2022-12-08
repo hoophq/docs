@@ -7,7 +7,7 @@ slug: /usecases/ecs-exec-oneoff
 
 [The Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows executing one off tasks of any type directly in any ecs task/container.
 
-:::info important
+:::info note
 It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
 :::
 
@@ -27,7 +27,7 @@ It's important to configure the ECS tasks before trying this feature, please ref
 ecs-exec.sh --base64 --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 ```
 
-:::info important
+:::info note
 The `--base64` option is a helper that encodes the input and decode it on execution. It's to prevent content leaking from the shell, like single or double quotes. It helps to address a limitation of the `aws ecs execute-command`.
 :::
 
@@ -63,7 +63,7 @@ Calling scripts are easy too
 ```shell
 hoop exec ecs-exec -i '/path/to/my/script.sh'
 # override the ecs task-id
-hoop exec ecs-exec -i '/path/to/my/script.sh' --task mytaskid
+hoop exec ecs-exec -i '/path/to/my/script.sh' -- --task mytaskid
 # execute a rails script
 hoop exec ecs-exec -i 'rails runner /path/to/script.rb'
 ```

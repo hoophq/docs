@@ -7,7 +7,7 @@ slug: /usecases/ecs-exec
 
 [The AWS Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows connecting to tasks and starting interactive sessions. It's possible to map these commands to Hoop to obtain interactive sessions allocating a pseudo TTY.
 
-:::info important
+:::info note
 It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
 :::
 
@@ -24,7 +24,7 @@ It's important to configure the ECS tasks before trying this feature, please ref
 ### Connection Command
 
 ```shell
-ecs-exec.sh --cluster=$CLUSTER_NAME --service-name $SERVICE_NAME
+ecs-exec.sh --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 ```
 
 ## How to Use
