@@ -3,7 +3,7 @@ sidebar_position: 5
 slug: /usecases/k8s-oneoff
 ---
 
-# Kubernetes | Exec One-Off
+# Kubernetes | exec one-off
 
 Processes could be spawn in an ad-hoc manner with `kubectl exec`. In some cases an interactive shell could be too much permissive.
 

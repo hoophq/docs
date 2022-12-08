@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: /usecases/forwarding-mysql
 ---
 
-# Port Forward | MySQL
+# Port Forward | mysql
 
 Port Forward local ports from your private network | MySQL example.
 

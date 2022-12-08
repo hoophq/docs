@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: /usecases/k8s-exec
 ---
 
-# Kubernetes | Exec
+# Kubernetes | exec
 
 Since kubectl provides ways of creating interactive sessions with pods. It's possible to map these commands to Hoop to obtain interactive sessions allocating a pseudo TTY.
 

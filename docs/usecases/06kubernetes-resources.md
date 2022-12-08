@@ -3,7 +3,7 @@ sidebar_position: 6
 slug: /usecases/k8s-resources
 ---
 
-# Kubernetes | Resources
+# Kubernetes | resources
 
 Hoop could be configured to use the kubectl command line to manage resources or execute actions on workloads in Kubernetes.
 

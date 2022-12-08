@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: /usecases/forwarding-http
 ---
 
-# Port Forward | HTTP
+# Port Forward | http
 
 Port Forward local ports from your private network | HTTP example.
 

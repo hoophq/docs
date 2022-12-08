@@ -3,7 +3,7 @@ sidebar_position: 11
 slug: /usecases/ecs-exec-oneoff
 ---
 
-# ECS Exec One Off | aws ecs cli
+# AWS ECS | awscli one-off
 
 [The Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows executing one off tasks of any type directly in any ecs task/container.
 

@@ -3,9 +3,9 @@ sidebar_position: 12
 slug: /usecases/scripts
 ---
 
-# Git Scripts One Off
+# Scripts | one-off
 
-Allows executing one-off scripts from the runtimes of the agent Operating System.
+Allows executing one-off scripts using the underlying Operating System tools.
 
 ### Connection Command
 

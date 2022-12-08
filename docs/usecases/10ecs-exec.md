@@ -3,7 +3,7 @@ sidebar_position: 10
 slug: /usecases/ecs-exec
 ---
 
-# ECS Exec | aws ecs cli
+# AWS ECS | awscli
 
 [The AWS Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows connecting to tasks and starting interactive sessions. It's possible to map these commands to Hoop to obtain interactive sessions allocating a pseudo TTY.
 
