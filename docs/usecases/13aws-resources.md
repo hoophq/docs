@@ -44,7 +44,7 @@ hoop exec secretsmanager -- \
     --secret-string "{\"user\":\"diegor\",\"password\":\"EXAMPLE-PASSWORD\"}"
 ```
 
-Or listing ECS Services from `prod`
+Or listing ECS Services from cluster `prod`
 
 ```shell
 hoop exec list-services-prod

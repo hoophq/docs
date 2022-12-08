@@ -9,8 +9,10 @@ Port Forward local ports from your private network | HTTP example.
 
 ## Connection Configuration
 
-- **HOST** - The IP or hostname of the service
-- **PORT** - The port number of the service
+| Name   | Type    | Description                       |
+|------- | ------- | --------------------------------- |
+| `HOST` | env-var | The IP or hostname of the service |
+| `PORT` | env-var | The port of the service           |
 
 ## How to Use
 

@@ -9,8 +9,11 @@ Hoop could be configured to use the kubectl command line to manage resources or 
 
 ## Connection Configuration
 
-- **KUBECONFIG** - A Kubeconfig file with permission to get pods, rollout and scale deployments.
-- **COMMAND**
+| Name         | Type       | Description                                                            |
+|------------- | ---------- | ---------------------------------------------------------------------- |
+| `KUBECONFIG` | filesystem | A [kubeconfig file](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) with permission to exec into pods in a namespace   |
+
+### Connection Command
 
 ```shell
 kubectl
@@ -27,7 +30,7 @@ hoop exec k8s -- rollout restart deployment/myapp
 hoop exec k8s -- scale --replicas=3 deployment/myapp
 ```
 
-It's possible to narrow down the commands in distinct connections, this gives a better user experience:
+It's possible to narrow down the commands in distinct connections, this gives a better user experience
 
 - Update the connection with the **command** bellow
 
@@ -35,7 +38,7 @@ It's possible to narrow down the commands in distinct connections, this gives a 
 kubectl --namespace prod rollout
 ```
 
-Then it's possible to:
+Then it's possible
 
 ```shell
 hoop exec k8s -- restart deployment/myapp

@@ -5,16 +5,22 @@ slug: /usecases/postgres
 
 # Postgres
 
-Postgres connection it's a native type where queries can be audited and the output redacted. It forwards a passwordless TCP connection locally.
+Postgres connection is a native type where queries can be audited and the output redacted.
+It forwards a passwordless TCP connection locally.
 
 ## Connection Configuration
 
-- **HOST** - The IP or hostname of the Postgres server instance
-- **PORT** - The port number of Postgres server
-- **USER** - The username to connect in the Postgres instance
-- **PASS** - The password to connect in the Postgres instance
+| Name   | Type    | Description                                    |
+|------- | ------- | ---------------------------------------------- |
+| `HOST` | env-var | The IP or Host of the Postgres server          |
+| `PORT` | env-var | The port of the Postgres server                |
+| `USER` | env-var | The user to connect in the Postgres server     |
+| `PASS` | env-var | The password to connect in the Postgres server |
 
-> This type of connection accepts `MD5` or `scram-sha-256`  [authentication methods](https://www.postgresql.org/docs/14/auth-password.html).
+
+:::info INFO
+This type of connection accepts only `MD5` or `scram-sha-256`  [authentication methods](https://www.postgresql.org/docs/14/auth-password.html).
+:::
 
 ## Postgres Server
 

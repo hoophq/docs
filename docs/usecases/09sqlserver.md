@@ -9,11 +9,14 @@ An optional way to connect into SQL Server is using the [sqlcmd client](https://
 
 ## Connection Configuration
 
-- **SERVER_ADDRESS** - The Server Address of the SQL Server to connect into
-- **USER** - The username to connect in the SQL Server instance
-- **PASS** - The password to connect in the SQL Server instance
-- **DB** - The name of the database to connect into
-- **COMMAND**
+| Name             | Type    | Description                                          |
+|----------------- | ------- | ---------------------------------------------------- |
+| `SERVER_ADDRESS` | env-var | The Server Address of the SQL Server to connect into |
+| `USER`           | env-var | The user to connect in the SQL server                |
+| `PASS`           | env-var | The password to connect in the SQL server            |
+| `DB`             | env-var | The name of the database to connect into             |
+
+### Connection Command
 
 ```shell
 sqlcmd -b -r -S$SERVER_ADDRESS -U$USER -P$PASS -d$DB

@@ -9,8 +9,10 @@ Port Forward local ports from your private network | MySQL example.
 
 ## Connection Configuration
 
-- **HOST** - The IP or hostname of the MySQL Server instance
-- **PORT** - The number of MySQL port
+| Name   | Type    | Description                                    |
+|------- | ------- | ---------------------------------------------- |
+| `HOST` | env-var | The IP or hostname of the MySQL Server         |
+| `PORT` | env-var | The port of the MySQL server                   |
 
 ## How to Use
 

@@ -9,8 +9,11 @@ Processes could be spawn in an ad-hoc manner with `kubectl exec`. In some cases 
 
 ## Connection Configuration
 
-- **KUBECONFIG** - A Kubeconfig file with permission to exec into pods of a namespace
-- **COMMAND**
+| Name         | Type       | Description                                                            |
+|------------- | ---------- | ---------------------------------------------------------------------- |
+| `KUBECONFIG` | filesystem | A [kubeconfig file](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) with permission to exec into pods in a namespace   |
+
+### Connection Command
 
 ```shell
 kubectl exec --stdin deployment/myapp --
@@ -32,7 +35,7 @@ Narrowing down the exec arguments, allow passing the stdin and executing ruby sc
 kubectl exec --stdin deployment/myapp -- rails runner -
 ```
 
-Then, it's possible to:
+Then, it's possible
 
 ```shell
 hoop exec myapp-oneoff <<EOF

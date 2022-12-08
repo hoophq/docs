@@ -1,11 +1,11 @@
 ---
 sidebar_position: 11
-slug: /usecases/ecs-exec-oneoff
+slug: /usecases/ecs-exec
 ---
 
-# AWS ECS | awscli one-off
+# AWS ECS | awscli
 
-[The Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows executing one off tasks of any type directly in any ecs task/container.
+[The AWS Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows connecting to tasks and starting interactive sessions. It's possible to map these commands to Hoop to obtain interactive sessions allocating a pseudo TTY.
 
 :::info note
 It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
@@ -24,46 +24,27 @@ It's important to configure the ECS tasks before trying this feature, please ref
 ### Connection Command
 
 ```shell
-ecs-exec.sh --base64 --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
+ecs-exec.sh --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 ```
-
-:::info note
-The `--base64` option is a helper that encodes the input and decode it on execution. It's to prevent content leaking from the shell, like single or double quotes. It helps to address a limitation of the `aws ecs execute-command`.
-:::
 
 ## How to Use
 
-Now it's possible to execute ruby script straight from Hoop
+Start an interactive session 
 
 ```shell
-hoop exec ecs-exec -- --shell "rails runner -" <<EOF
-myvar='Hello from Rails'
-puts myvar
-EOF
-hoop exec ecs-exec -i 'puts Rails.env' -- --shell 'rails runner -'
+hoop connect ecs-exec -- --interactive --shell /bin/bash
+hoop connect ecs-exec -- --interactive --shell rails console
+hoop connect ecs-exec -- --interactive --shell clojure
 ```
 
-It's possible to use any command as shell
+In the same connection, one-off process can be run as well
 
 ```shell
-hoop exec ecs-exec -i '(println "Clojure REPL")' -- --shell 'clojure'
-hoop exec ecs-exec -- --shell 'python3' <<EOF
-import os
-print(os.environ.get("CLUSTER_NAME"))
-EOF
-# defaults to /bin/bash
-hoop exec ecs-exec -i 'echo "hello world from bash"'
+hoop exec ecs-exec -i 'ls -l'
 ```
 
-> The `--shell` commands need to have the capability of accepting input from stdin.
-> e.g.: `echo 'ls -l' | /bin/sh`
-
-Calling scripts are easy too
-
 ```shell
-hoop exec ecs-exec -i '/path/to/my/script.sh'
-# override the ecs task-id
-hoop exec ecs-exec -i '/path/to/my/script.sh' -- --task mytaskid
-# execute a rails script
-hoop exec ecs-exec -i 'rails runner /path/to/script.rb'
+hoop exec ecs-exec -i 'ps aux'
+# check how to interact with this connection script
+hoop exec ecs-exec -- --help
 ```

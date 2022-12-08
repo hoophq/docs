@@ -9,18 +9,23 @@ An optional way to connect into MySQL is using the `mysql` client. It's possible
 
 ## Connection Configuration
 
-- **HOST** - The IP or hostname of the MySQL server instance
-- **PORT** - The port number of MySQL server
-- **USER** - The username to connect in the MySQL instance
-- **MYSQL_PWD** - The password to connect in the MySQL instance
-- **DB** - The name of the database to connect into
-- **COMMAND**
+| Name         | Type    | Description                                    |
+|------------- | ------- | ---------------------------------------------- |
+| `HOST`       | env-var | The IP or Host of the MySQL server             |
+| `PORT`       | env-var | The port of the MySQL server                   |
+| `USER`       | env-var | The user to connect in the MySQL server        |
+| `MYSQL_PWD`  | env-var | The password to connect in the MySQL server    |
+| `DB`         | env-var | The name of the database to connect into       |
+
+### Connection Command
 
 ```shell
 mysql -h$HOST -u$USER --port=$PORT -D$DB
 ```
 
-> The `MYSQL_PWD` is mapped as an environment variable, thus there's no need to pass it in the command.
+:::info NOTE
+The `MYSQL_PWD` is mapped as an environment variable, thus there's no need to use it in the command.
+:::
 
 ## How to Use
 
