@@ -24,7 +24,7 @@ It's important to configure the ECS tasks before trying this feature, please ref
 ### Connection Command
 
 ```shell
-ecs-exec.sh --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
+ecs-exec.sh --interactive --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 ```
 
 ## How to Use
@@ -32,19 +32,8 @@ ecs-exec.sh --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 Start an interactive session 
 
 ```shell
-hoop connect ecs-exec -- --interactive --pipe /bin/bash
-hoop connect ecs-exec -- --interactive --pipe 'rails console'
-hoop connect ecs-exec -- --interactive --pipe clojure
+hoop connect ecs-exec -- --pipe /bin/bash
+hoop connect ecs-exec -- --pipe 'rails console'
+hoop connect ecs-exec -- --pipe clojure
 ```
 
-In the same connection, one-off process can be run as well
-
-```shell
-hoop exec ecs-exec -i 'ls -l'
-```
-
-```shell
-hoop exec ecs-exec -i 'ps aux'
-# check how to interact with this connection script
-hoop exec ecs-exec -- --help
-```

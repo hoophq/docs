@@ -24,12 +24,8 @@ It's important to configure the ECS tasks before trying this feature, please ref
 ### Connection Command
 
 ```shell
-ecs-exec.sh --base64 --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
+ecs-exec.sh --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 ```
-
-:::info note
-The `--base64` option is a helper that encodes the input and decode it on execution. It's to prevent content leaking from the shell, like single or double quotes. It helps to address a limitation of the `aws ecs execute-command`.
-:::
 
 ## How to Use
 
@@ -42,6 +38,10 @@ puts myvar
 EOF
 hoop exec ecs-exec -i 'puts Rails.env' -- --pipe 'rails runner -'
 ```
+
+:::info note
+The `--pipe` option requires that the `base64` command is available in the image. It will be used to decode the content of the input to prevent content leaking from the shell, like single or double quotes. It helps to address a limitation of the `aws ecs execute-command`.
+:::
 
 It's possible to pipe any command
 
