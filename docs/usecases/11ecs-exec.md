@@ -7,25 +7,28 @@ slug: /usecases/ecs-exec-oneoff
 
 [The Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows executing one off tasks of any type directly in any ecs task/container.
 
+:::info important
+It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
+:::
+
 ## Connection Configuration
 
 | Name                    | Type    | Description                        |
 |------------------------ | ------- | ---------------------------------- |
 | `CLUSTER_NAME`          | env-var | The name or arn of the ECS Cluster |
+| `SERVICE_NAME`          | env-var | The name of the service on ECS     |
 | `AWS_ACCESS_KEY_ID`     | env-var | The access key credential          |
 | `AWS_SECRET_ACCESS_KEY` | env-var | The secret key credential          |
 | `AWS_REGION`            | env-var | The AWS region                     |
 
-### Command
+### Connection Command
 
 ```shell
 ecs-exec.sh --base64 --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 ```
 
-The `--base64` option is a helper that encodes the input and decode it on execution. It's to prevent content leaking from the shell, like single or double quotes. It helps to address a limitation of the `aws ecs execute-command`.
-
 :::info important
-It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html).
+The `--base64` option is a helper that encodes the input and decode it on execution. It's to prevent content leaking from the shell, like single or double quotes. It helps to address a limitation of the `aws ecs execute-command`.
 :::
 
 ## How to Use
@@ -40,7 +43,7 @@ EOF
 hoop exec ecs-exec -i 'puts Rails.env' -- --shell 'rails runner -'
 ```
 
-It's possible to use any command
+It's possible to use any command as shell
 
 ```shell
 hoop exec ecs-exec -i '(println "Clojure REPL")' -- --shell 'clojure'
