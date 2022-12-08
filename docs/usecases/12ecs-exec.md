@@ -5,7 +5,7 @@ slug: /usecases/ecs-exec-oneoff
 
 # AWS ECS | awscli one-off
 
-[The Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows executing one off tasks of any type directly in any ecs task/container.
+The Elastic Container Service allows executing one off tasks of any type directly into ECS tasks/containers.
 
 :::info note
 It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
@@ -36,18 +36,18 @@ The `--base64` option is a helper that encodes the input and decode it on execut
 Now it's possible to execute ruby script straight from Hoop
 
 ```shell
-hoop exec ecs-exec -- --shell "rails runner -" <<EOF
+hoop exec ecs-exec -- --pipe 'rails runner -' <<EOF
 myvar='Hello from Rails'
 puts myvar
 EOF
-hoop exec ecs-exec -i 'puts Rails.env' -- --shell 'rails runner -'
+hoop exec ecs-exec -i 'puts Rails.env' -- --pipe 'rails runner -'
 ```
 
-It's possible to use any command as shell
+It's possible to pipe any command
 
 ```shell
-hoop exec ecs-exec -i '(println "Clojure REPL")' -- --shell 'clojure'
-hoop exec ecs-exec -- --shell 'python3' <<EOF
+hoop exec ecs-exec -i '(println "Clojure REPL")' -- --pipe 'clojure'
+hoop exec ecs-exec -- --pipe 'python3' <<EOF
 import os
 print(os.environ.get("CLUSTER_NAME"))
 EOF
@@ -55,8 +55,10 @@ EOF
 hoop exec ecs-exec -i 'echo "hello world from bash"'
 ```
 
-> The `--shell` commands need to have the capability of accepting input from stdin.
-> e.g.: `echo 'ls -l' | /bin/sh`
+:::info note
+The `--pipe` command works as a [pipeline on Linux](https://en.wikipedia.org/wiki/Pipeline_(Unix)).
+It's important that the command could accept input from stdin, e.g.: `echo 'ls -l' | /bin/sh`
+:::
 
 Calling scripts are easy too
 

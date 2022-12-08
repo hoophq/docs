@@ -5,7 +5,7 @@ slug: /usecases/ecs-exec
 
 # AWS ECS | awscli
 
-[The AWS Elastic Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html) allows connecting to tasks and starting interactive sessions. It's possible to map these commands to Hoop to obtain interactive sessions allocating a pseudo TTY.
+The AWS Elastic Container Service allows connecting to tasks and starting interactive sessions. It's possible to map these commands to Hoop to obtain interactive sessions allocating a pseudo TTY.
 
 :::info note
 It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
@@ -32,9 +32,9 @@ ecs-exec.sh --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 Start an interactive session 
 
 ```shell
-hoop connect ecs-exec -- --interactive --shell /bin/bash
-hoop connect ecs-exec -- --interactive --shell rails console
-hoop connect ecs-exec -- --interactive --shell clojure
+hoop connect ecs-exec -- --interactive --pipe /bin/bash
+hoop connect ecs-exec -- --interactive --pipe 'rails console'
+hoop connect ecs-exec -- --interactive --pipe clojure
 ```
 
 In the same connection, one-off process can be run as well
