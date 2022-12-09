@@ -3,7 +3,7 @@ sidebar_position: 9
 slug: /usecases/aws-resources
 ---
 
-# AWS | Resources
+# AWS | resources
 
 Hoop could be configured to use the aws command line to manage resources in multiple accounts
 

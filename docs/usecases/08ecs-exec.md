@@ -3,7 +3,7 @@ sidebar_position: 8
 slug: /usecases/ecs-exec-oneoff
 ---
 
-# AWS ECS | awscli one-off
+# AWS ECS | exec one-off
 
 The Elastic Container Service allows executing one off tasks of any type directly into ECS tasks/containers.
 
