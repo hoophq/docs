@@ -31,5 +31,5 @@ brew upgrade hoop
 ```
 
 :::tip
-If you manually downloaded the command line, override it downloading the latest version again in the releases page.
+If you downloaded manually the command line, override it downloading the latest version again in the [releases page](https://github.com/hoophq/hoopcli/releases).
 :::
