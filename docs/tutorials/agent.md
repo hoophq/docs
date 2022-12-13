@@ -62,6 +62,6 @@ connected...
 
 To deploy it, use the docker image `hoophq/hoopdev`, or see the [release pages](https://github.com/hoophq/hoopcli/releases) to deploy a specific version.
 
-The only required environment variable is `TOKEN`, which is the value obtained from the previous step. After deploying it, a connection could be created and associated with the provided name [in the webapp](https://app.hoop.dev/connections).
+The only required environment variable is `TOKEN`, which is the value obtained from the previous step. After deploying it, a connection could be created and associated with the provided name [in the webapp](https://app.hoop.dev/connections)
 
 ![agent selection](https://hoopartifacts.s3.amazonaws.com/screenshots/hoop/browser-agent-selection.png)
