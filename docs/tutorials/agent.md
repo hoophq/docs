@@ -9,8 +9,7 @@ Tutorial explaining how to deploy a production ready agent inside any infra-stru
 
 ## Requirements
 
-<!-- - [Hoop Command Line](./getting-started/cli) -->
-- jq command line
+- [Hoop Command Line](../quickstarts/cli.md)
 
 ## Login
 
@@ -30,7 +29,7 @@ If you don't have an organization yet, this process will perform the signup auto
 
 ## Create an Agent
 
-After signin, a file containing an access token will be available at `$HOME/.hoop/config.toml`. We'll be using it to create a new agent in the API
+After logging in, a file containing an access token will be available at `$HOME/.hoop/config.toml`. It will be used to create a new agent in the API
 
 > Only administrators can perform this action.
 
