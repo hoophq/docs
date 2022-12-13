@@ -3,9 +3,9 @@ sidebar_position: 1
 slug: /tutorials/agent-deployment
 ---
 
-# Agent Deployment
+# Agent Deployment | generic
 
-Tutorial explaining how to deploy a production ready agent inside any infra-structure
+Tutorial explaining how to deploy a production ready agent in any infra-structure
 
 ## Requirements
 
