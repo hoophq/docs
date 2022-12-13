@@ -19,7 +19,7 @@ It's important to configure the ECS tasks before trying this feature, please ref
 | `SERVICE_NAME`          | env-var | The name of the service on ECS     |
 | `AWS_ACCESS_KEY_ID`     | env-var | The access key credential          |
 | `AWS_SECRET_ACCESS_KEY` | env-var | The secret key credential          |
-| `AWS_REGION`            | env-var | The AWS region                     |
+| `AWS_DEFAULT_REGION`    | env-var | The AWS region                     |
 
 ### Connection Command
 

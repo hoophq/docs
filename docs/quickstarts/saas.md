@@ -13,12 +13,22 @@ The Agent must have network access to your connections.
 The Agent will connect to Hoop Gateway, a piece of software running on the
 Hoop cloud, that manages things like users, connections, plugins, and other things.
 
-## Pre requisites
-- Have an account at Hoop.
+## Install hoop
+
+```shell
+brew tap hoophq/hoopcli https://github.com/hoophq/hoopcli
+brew install hoop
+```
 
 :::tip
-  If you don't have an account yet, please visit: https://app.hoop.dev
+If you don't have `brew`, check it out the binary for your operating system architecture in the [releases page](https://github.com/hoophq/hoopcli/releases).
 :::
+
+Check the installation:
+```shell
+hoop version
+# {"version":"0.0.70","git_commit":"bcc32e5ed7f836e82e5e9f9faa3284cf555c07e8","build_date":"2022-11-30T13:42:56Z","go_version":"go1.19.3","compiler":"gc","platform":"linux/amd64"}
+```
 
 ## Start an Agent
 
