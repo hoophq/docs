@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: /getting-started/cli
+slug: /quickstarts/cli
 ---
 
 # Command Line
