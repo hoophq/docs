@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-slug: /
----
-
 # Tutorials
 
 Hoop Tutorials
