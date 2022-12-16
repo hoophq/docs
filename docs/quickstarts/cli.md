@@ -20,7 +20,7 @@ brew tap hoophq/hoopcli https://github.com/hoophq/hoopcli
 brew install hoop
 ```
 
-To upgrade
+To upgrade it
 
 ```shell
 brew upgrade hoop
