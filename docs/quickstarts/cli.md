@@ -20,7 +20,15 @@ brew tap hoophq/hoopcli https://github.com/hoophq/hoopcli
 brew install hoop
 ```
 
+To upgrade
+
+```shell
+brew upgrade hoop
+```
+
 ### Linux
+
+Install or Upgrade
 
 ```shell
 sudo su -
@@ -45,7 +53,7 @@ PS C:\Users\san> ubuntu
 san@DESKTOP-BBQAAEG:~$ 
 ```
 
-5. Download and install the hoop command line
+5. Download and install/upgrade the hoop command line
 
 ```shell
 sudo su -
@@ -68,13 +76,3 @@ Check the latest version for your operating system architecture in the [releases
 hoop version
 {"version":"1.0.4","git_commit":"78133f9b056751b4acc0ccffb7a9325ef54b9100","build_date":"2022-12-13T13:08:17Z","go_version":"go1.19.3","compiler":"gc","platform":"darwin/arm64"}
 ```
-
-## Upgrading
-
-```sh
-brew upgrade hoop
-```
-
-:::tip
-If the commad line was installed manually, override it downloading the latest version again in the [releases page](https://github.com/hoophq/hoopcli/releases).
-:::
