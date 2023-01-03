@@ -1,5 +1,13 @@
 # docs
 
+## Prerequesites
+
+NodeJS and NPM: [https://nodejs.org/en/](https://nodejs.org/en/)
+
+## Install dependencies
+
+`npm i`
+
 ## Start locally
 `npm start`
 
