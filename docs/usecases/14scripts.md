@@ -7,6 +7,8 @@ slug: /usecases/scripts
 
 Allows executing one-off scripts using the underlying Operating System tools.
 
+<iframe width="800" height="450" src="https://www.tella.tv/video/clbzo65fc00000fkr48k22w09/embed" allowfullscreen allowtransparency></iframe>
+
 ### Connection Command
 
 ```shell

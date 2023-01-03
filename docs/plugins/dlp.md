@@ -7,6 +7,8 @@ slug: /plugins/dlp
 
 Mas sensitive data and anyone query the connection without leaking issues
 
+<iframe width="800" height="450" src="https://www.tella.tv/video/clbvbnoo504px0gkzhiw74cnl/embed" allowfullscreen allowtransparency></iframe>
+
 ## Disabling / Enabling DLP Plugin
 
 Go to [Hoop Portal](https://app.hoop.dev), click in "Manage Plugins", then in Audit

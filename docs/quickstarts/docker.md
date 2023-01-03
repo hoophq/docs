@@ -7,6 +7,8 @@ slug: /quickstarts/docker
 
 Run hoop on your machine using Docker, and test everything locally
 
+<iframe width="800" height="450" src="https://www.tella.tv/video/clbfa4l9b00vf0fl455avdyxp/embed" allowfullscreen allowtransparency></iframe>
+
 ## Install hoop
 
 ```shell
