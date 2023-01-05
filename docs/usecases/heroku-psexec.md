@@ -59,7 +59,9 @@ hoop exec heroku:psexec -- --app [APP-NAME] --pipe 'rails runner -' <<EOF
 import os
 print(os.environ)
 EOF
+```
 
+```shell
 # run in a specific dyno
 hoop exec heroku:psexec -i 'pp ENV' -- --app [APP-NAME] --dyno web.2 --pipe 'rails runner -'
 hoop exec heroku:psexec -i 'ls -l' -- --app [APP-NAME] --pipe 'bash'

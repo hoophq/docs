@@ -47,13 +47,17 @@ hoop exec heroku:run -- --no-tty --app [APP-NAME] python3 <<EOF
 import os
 print(os.environ)
 EOF
+```
 
-hoop exec heroku:run -i 'pp ENV' -- --no-tty --app [APP-NAME] rails runner -
+```shell
 hoop exec heroku:run -- python3 <<EOF
 import os
 print(os.environ)
 EOF
+```
 
+```shell
+hoop exec heroku:run -i 'pp ENV' -- --no-tty --app [APP-NAME] rails runner -
 hoop exec heroku:run -i 'import os; print(os.environ)' -- python3
 hoop exec heroku:run -i 'uname -a' -- bash
 ```
