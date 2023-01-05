@@ -25,7 +25,7 @@ The logs could be viewed by using the [heroku command line](https://devcenter.he
 
 ### Persisting the Agent Token
 
-This step is required to avoid having to register the agent again.
+This step is recommended to avoid having to register the agent again if the dyno restarts.
 
 1. Save the token in the URL `x-agt-6ce6...`
 2. Add a environment variable to the agent app
@@ -69,5 +69,6 @@ After disconnecting it, check if there's any recorded session available at https
 
 See how to use the heroku cli to interact with the Heroku Platform.
 
+- [Heroku Management Guide](../tutorials/heroku-management.md)
 - [Heroku Exec](../usecases/heroku-exec.md)
 - [Heroku Exec One Offs](../usecases/heroku-oneoff.md)

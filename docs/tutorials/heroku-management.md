@@ -3,14 +3,13 @@ sidebar_position: 2
 slug: /tutorials/heroku-exec
 ---
 
-# Heroku Usage
+# Heroku Management
 
-This guide shows how to interact with workloads and resources in the Heroku platform.
+This guide shows how to interact with workloads and resources in the Heroku Platform.
 
 ## Requirements
 
-- [Hoop Command Line](../quickstarts/cli.md)
-- [Agent Running](../quickstarts/saas-heroku.md)
+- [Heroku Quick Start](../quickstarts/saas-heroku.md)
 - [Heroku API Key](https://devcenter.heroku.com/articles/authentication)
 
 ## Managing Applications
@@ -57,7 +56,7 @@ puts "BUNDLER GEMFILE #{myvar}"
 EOF
 ```
 
-- Execute a regular bash command
+- Execute a regular bash command or scripts
 
 ```shell
 hoop exec run:APP-NAME -i 'ls -l' -- bash
@@ -88,7 +87,7 @@ hoop connect runtty:APP-NAME
 hoop connect pgpsql:APP-NAME
 ```
 
-- One Off queries
+- One-off queries
 
 ```shell
 hoop exec pgpsql:APP-NAME <<EOF
@@ -96,6 +95,8 @@ SELECT NOW()
 EOF
 ```
 
-## Auditing
+## Conclusion
 
-The auditing sessions and tasks could be viewed at https://app.hoop.dev/plugins/audit
+The auditing sessions and tasks could be viewed at **https://app.hoop.dev/plugins/audit**
+
+Hoop can wrap any heroku command giving more control, auditing features, redact sensitive content without losing local developer experience.
