@@ -14,7 +14,7 @@ The `heroku ps:exec` command is a feature that starts a [SSH](https://en.wikiped
 This mode is useful when it's needed to check or change the state of your application in a particular dyno. However it's more intrusive since it allows to interact it directly with the state of the application.
 
 :::caution WARNING
-This modes requires the feature [runtime-heroku-exec](https://devcenter.heroku.com/articles/exec), which requires restarting the dyno for the first time. Use it with care.
+This modes requires the feature [runtime-heroku-exec](https://devcenter.heroku.com/articles/exec), which requires restarting the dyno for the first time.
 :::
 
 ### Caveats
@@ -25,14 +25,14 @@ This modes requires the feature [runtime-heroku-exec](https://devcenter.heroku.c
 
 ## heroku run
 
-This mode is less intrusive and allows executing [one-off dyno's](https://devcenter.heroku.com/articles/one-off-dynos) that runs a standalone dyno with the state of your application code.
+This mode is less intrusive and allows executing [one-off dyno's](https://devcenter.heroku.com/articles/one-off-dynos) that runs a standalone process with the state of your application code.
 
 This mode is useful when it's needed to perform ad-hoc actions using the current state of your application code, like performing database migrations.
 
 ### Caveats
 
-- Uses one-off dynos that generates additional costs
-- Doesn't allow to interact with the current state of the application
+- Use of one-off dyno's generates additional costs
+- Doesn't allow to interact with the state of a running app
 
 ## Connection Configuration
 

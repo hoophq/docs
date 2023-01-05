@@ -42,20 +42,11 @@ If you need to redeploy the agent in another app, click in the deploy button aga
 
 ### Associating with Connections
 
-The registered agent will be available and can be associated with a connection [in the webapp](https://app.hoop.dev/connections). Let's create the first connection.
-
-1. Click in the button `Create connection`
-2. Select the `Command Line` type
-3. Add the name of the connection: `agent-bash`
-4. In the input `Commands` type `/bin/bash`
-5. Select the agent connected in the dropbox below
+The registered agent will be available to be selected in the connection, [click here](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiYWdlbnQtYmFzaCIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJjb21tYW5kIjpbIi9iaW4vYmFzaCJdfQ==) to create it.
 
 :::info
 If the registered agent doesn't appear, try to refresh the webapp.
 :::
-
-**[Connection Example](https://hoopartifacts.s3.amazonaws.com/screenshots/10-heroku-bash-connection.png)**
-
 
 ### Interacting with the Connection
 
