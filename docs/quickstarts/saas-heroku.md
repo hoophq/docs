@@ -30,7 +30,7 @@ This step is recommended to avoid having to register the agent again if the dyno
 1. Save the token in the URL `x-agt-6ce6...`
 2. Add a environment variable to the agent app
 
-- Go to Settings > Config Vars
+- Go to **Settings** > **Config Vars**
 - Add a variable with the key `TOKEN`
 - Add the token (`x-agt...`) to the input value
 
@@ -42,7 +42,7 @@ If you need to redeploy the agent in another app, click in the deploy button aga
 
 ### Associating with Connections
 
-The registered agent will be available to be selected in the connection, **[click here](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiYWdlbnQtYmFzaCIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJjb21tYW5kIjpbIi9iaW4vYmFzaCJdfQ==)** to create it.
+- **[Create a Connection and associate with the agent](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiYWdlbnQtYmFzaCIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJjb21tYW5kIjpbIi9iaW4vYmFzaCJdfQ==)**
 
 :::info
 If the registered agent doesn't appear, try to refresh the webapp.
@@ -63,12 +63,12 @@ hoop connect agent-bash
 ```
 
 That's it! Now you've connected in an interactive session inside a heroku app.
-After disconnecting it, check if there's any recorded session available at https://app.hoop.dev/plugins/audit.
+After disconnecting it, check if there's any recorded session available at **https://app.hoop.dev/plugins/audit**.
 
 ## Next Topics
 
 See how to use the heroku cli to interact with the Heroku Platform.
 
 - [Heroku Management Guide](../tutorials/heroku-management.md)
-- [Heroku Exec](../usecases/heroku-exec.md)
+- [Heroku Exec](../usecases/heroku-psexec.md)
 - [Heroku Exec One Offs](../usecases/heroku-oneoff.md)
