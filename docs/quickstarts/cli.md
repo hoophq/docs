@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 slug: /quickstarts/cli
 ---
 
@@ -46,17 +46,22 @@ tar --extract --file hoop-$VERSION.tar.gz -C /usr/local/bin hoop && \
 1. Install the Windows Terminal https://aka.ms/terminal
 2. Install Ubuntu WSL https://ubuntu.com/wsl
 3. Open the Windows Terminal App
-4. Install and open the Ubuntu, it should prompt to create a user in the first time
+4. Install and open the Ubuntu typing `ubuntu`. It should prompt to create a user in the first time
 
 ```shell
 PS C:\Users\san> ubuntu
 san@DESKTOP-BBQAAEG:~$ 
 ```
 
-5. Download and install/upgrade the hoop command line
+5. Gain root access
 
 ```shell
 sudo su -
+```
+
+6. Download and install/upgrade the hoop command line
+
+```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 curl https://hoopartifacts.s3.amazonaws.com/release/${VERSION}/hoop_${VERSION}_Linux_$(uname -m).tar.gz \
     -o hoop-$VERSION.tar.gz
@@ -74,5 +79,4 @@ Check the latest version for your operating system architecture in the [releases
 
 ```shell
 hoop version
-{"version":"1.0.4","git_commit":"78133f9b056751b4acc0ccffb7a9325ef54b9100","build_date":"2022-12-13T13:08:17Z","go_version":"go1.19.3","compiler":"gc","platform":"darwin/arm64"}
 ```
