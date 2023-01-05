@@ -23,7 +23,7 @@ The logs could be viewed by using the [heroku command line](https://devcenter.he
 
 ![Heroku Agent Register](https://hoopartifacts.s3.amazonaws.com/screenshots/9-heroku-logs-agent-register.png)
 
-## Persisting the Agent Token
+### Persisting the Agent Token
 
 This step is required to avoid having to register the agent again.
 
@@ -37,5 +37,28 @@ This step is required to avoid having to register the agent again.
 [Config Vars Reference](https://devcenter.heroku.com/articles/config-vars)
 
 :::info
-If you need to redeploy the agent in another app, click [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hoophq/heroku-hoop-agent) and pass the agent token in the input field `TOKEN`
+If you need to redeploy the agent in another app, click in the deploy button again and pass the agent token in the input field `TOKEN`
 :::
+
+### Associating with Connections
+
+The registered agent will be available and can be associated with a connection [in the webapp](https://app.hoop.dev/connections). Let's create the first connection.
+
+1. Click in the button `Create connection`
+2. Select the `Command Line` type
+3. Add the name of the connection: `<agent-name>-bash`
+4. In the input `Commands` type `/bin/bash`
+5. Select the agent connected in the dropbox below
+
+:::info
+If the registered doesn't appear, try to refresh the webapp.
+:::
+
+![Heroku Bash Connection](https://hoopartifacts.s3.amazonaws.com/screenshots/10-heroku-bash-connection.png)
+
+## Next Topics
+
+See how to use the heroku cli to interact with the Heroku Platform.
+
+- [Heroku Exec](../usecases/heroku-exec.md)
+- [Heroku Exec One Offs](../usecases/heroku-oneoff.md)
