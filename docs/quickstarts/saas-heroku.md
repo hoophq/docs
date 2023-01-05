@@ -54,19 +54,24 @@ The registered agent will be available and can be associated with a connection [
 If the registered agent doesn't appear, try to refresh the webapp.
 :::
 
-[Connection Example](https://hoopartifacts.s3.amazonaws.com/screenshots/10-heroku-bash-connection.png)
+**[Connection Example](https://hoopartifacts.s3.amazonaws.com/screenshots/10-heroku-bash-connection.png)**
 
 
 ### Interacting with the Connection
 
-Open a terminal and type commands below
+1. Open a terminal and sign-in
 
 ```shell
 hoop login
+```
+
+2. Connect to `agent-bash`
+
+```shell
 hoop connect agent-bash
 ```
 
-That's it, now you've connected in an interactive session inside a heroku app.
+That's it! Now you've connected in an interactive session inside a heroku app.
 After disconnecting it, check if there's any recorded session available at https://app.hoop.dev/plugins/audit.
 
 ## Next Topics

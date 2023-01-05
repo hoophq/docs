@@ -3,7 +3,7 @@ sidebar_position: 16
 slug: /usecases/heroku-exec
 ---
 
-# Heroku | ps:exec | run
+# Heroku | exec
 
 Heroku has commands that allows connecting to dynos and start interactive sessions. There're two modes of interacting with apps running in heroku: using `heroku ps:exec` or `heroku run`
 
