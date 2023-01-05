@@ -42,7 +42,7 @@ If you need to redeploy the agent in another app, click in the deploy button aga
 
 ### Associating with Connections
 
-The registered agent will be available to be selected in the connection, [click here](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiYWdlbnQtYmFzaCIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJjb21tYW5kIjpbIi9iaW4vYmFzaCJdfQ==) to create it.
+The registered agent will be available to be selected in the connection, **[click here](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiYWdlbnQtYmFzaCIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJjb21tYW5kIjpbIi9iaW4vYmFzaCJdfQ==)** to create it.
 
 :::info
 If the registered agent doesn't appear, try to refresh the webapp.
