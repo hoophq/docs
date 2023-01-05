@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /tutorials/heroku-exec
+slug: /tutorials/heroku-management
 ---
 
 # Heroku Management
