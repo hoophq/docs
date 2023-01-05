@@ -69,7 +69,7 @@ EOF
 
 ### Interactive Session
 
-To connect interactively **[create a new connection](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoicnVudHR5OltBUFAtTkFNRV0iLCJ0eXBlIjoiY29tbWFuZC1saW5lIiwic2VjcmV0Ijp7ImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6IiJ9LCJjb21tYW5kIjpbIi9hcHAvYmluL2hlcm9rdSBydW4gLS1leGl0LWNvZGUgLS1hcHAgW0FQUC1OQU1FXSJdfQo=)** without the `--no-tty` option.
+To connect interactively **[create a new connection](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoicnVudHR5OltBUFAtTkFNRV0iLCJ0eXBlIjoiY29tbWFuZC1saW5lIiwic2VjcmV0Ijp7ImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6IiJ9LCJjb21tYW5kIjpbIi9hcHAvYmluL2hlcm9rdSBydW4gLS1leGl0LWNvZGUgLS1hcHAgW0FQUC1OQU1FXSBiYXNoIl19)** without the `--no-tty` option.
 
 - Connect it with hoop
 

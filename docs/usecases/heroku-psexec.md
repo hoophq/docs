@@ -55,7 +55,7 @@ The `heroku ps:exec` command doesn't allow starting interactive sessions with ot
 To run one-off processes. The `--pipe` option [pipes the command](https://en.wikipedia.org/wiki/Pipeline_(Unix)) to the given executable in the app.
 
 ```shell
-hoop exec heroku:psexec -- --app [APP-NAME] --pipe 'rails runner -' <<EOF
+hoop exec heroku:psexec -- --app [APP-NAME] --pipe 'python' <<EOF
 import os
 print(os.environ)
 EOF
@@ -68,7 +68,7 @@ hoop exec heroku:psexec -i 'ls -l' -- --app [APP-NAME] --pipe 'bash'
 echo 'import os; print(os.environ)' | hoop exec heroku:psexec -- --app [APP-NAME] --pipe 'python'
 ```
 
-Check the status of the SSH
+Check the status of the SSH in the app
 
 ```shell
 hoop exec heroku:psexec -- --app [APP-NAME] --status

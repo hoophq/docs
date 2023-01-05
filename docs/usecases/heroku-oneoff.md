@@ -5,7 +5,7 @@ slug: /usecases/heroku-oneoff
 
 # Heroku one-off
 
-This mode is less intrusive and allows executing [one-off dyno's](https://devcenter.heroku.com/articles/one-off-dynos) that runs a standalone process with the state of your application code.
+This mode is less intrusive and allows executing [one-off dynos](https://devcenter.heroku.com/articles/one-off-dynos) that runs a standalone process with the state of your application code.
 
 This mode is useful when it's needed to perform ad-hoc actions using the current state of your application code, like performing database migrations.
 
