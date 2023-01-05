@@ -46,15 +46,28 @@ The registered agent will be available and can be associated with a connection [
 
 1. Click in the button `Create connection`
 2. Select the `Command Line` type
-3. Add the name of the connection: `<agent-name>-bash`
+3. Add the name of the connection: `agent-bash`
 4. In the input `Commands` type `/bin/bash`
 5. Select the agent connected in the dropbox below
 
 :::info
-If the registered doesn't appear, try to refresh the webapp.
+If the registered agent doesn't appear, try to refresh the webapp.
 :::
 
-![Heroku Bash Connection](https://hoopartifacts.s3.amazonaws.com/screenshots/10-heroku-bash-connection.png)
+[Connection Example](https://hoopartifacts.s3.amazonaws.com/screenshots/10-heroku-bash-connection.png)
+
+
+### Interacting with the Connection
+
+Open a terminal and type commands below
+
+```shell
+hoop login
+hoop connect agent-bash
+```
+
+That's it, now you've connected in an interactive session inside a heroku app.
+After disconnecting it, check if there's any recorded session available at https://app.hoop.dev/plugins/audit.
 
 ## Next Topics
 
