@@ -27,6 +27,8 @@ This mode is useful when there's a necessity to check or change the state of an 
 /app/bin/ps-exec.sh
 ```
 
+- **[Connection Template](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiaGVyb2t1OnBzZXhlYyIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJzZWNyZXQiOnsiZW52dmFyOkhFUk9LVV9BUElfS0VZIjoiIn0sImNvbW1hbmQiOlsiL2FwcC9iaW4vcHMtZXhlYy5zaCJdfQ==)**
+
 ## How to Use
 
 :::caution WARNING
@@ -36,14 +38,14 @@ This modes requires the feature [runtime-heroku-exec](https://devcenter.heroku.c
 Check the help usage for this connection
 
 ```shell
-hoop exec psexec -- --help
+hoop exec heroku:psexec -- --help
 ```
 
 Starting an interactive session
 
 ```shell
 # bash interactive session
-hoop connect psexec -- --interactive --app [APP-NAME]
+hoop connect heroku:psexec -- --interactive --app [APP-NAME]
 ```
 
 :::info
@@ -53,19 +55,19 @@ The `heroku ps:exec` command doesn't allow starting interactive sessions with ot
 To run one-off processes. The `--pipe` option [pipes the command](https://en.wikipedia.org/wiki/Pipeline_(Unix)) to the given executable in the app.
 
 ```shell
-hoop exec psexec -- --app [APP-NAME] --pipe 'rails runner -' <<EOF
+hoop exec heroku:psexec -- --app [APP-NAME] --pipe 'rails runner -' <<EOF
 import os
 print(os.environ)
 EOF
 
 # run in a specific dyno
-hoop exec psexec -i 'pp ENV' -- --app [APP-NAME] --dyno web.2 --pipe 'rails runner -'
-hoop exec psexec -i 'ls -l' -- --app [APP-NAME] --pipe 'bash'
-echo 'import os; print(os.environ)' | hoop exec psexec -- --app [APP-NAME] --pipe 'python'
+hoop exec heroku:psexec -i 'pp ENV' -- --app [APP-NAME] --dyno web.2 --pipe 'rails runner -'
+hoop exec heroku:psexec -i 'ls -l' -- --app [APP-NAME] --pipe 'bash'
+echo 'import os; print(os.environ)' | hoop exec heroku:psexec -- --app [APP-NAME] --pipe 'python'
 ```
 
 Check the status of the SSH
 
 ```shell
-hoop exec psexec -- --app [APP-NAME] --status
+hoop exec heroku:psexec -- --app [APP-NAME] --status
 ```

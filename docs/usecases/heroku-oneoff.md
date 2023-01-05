@@ -26,7 +26,7 @@ This mode is useful when it's needed to perform ad-hoc actions using the current
 /app/bin/heroku run --exit-code
 ```
 
-- [Connection Template](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiaGVyb2t1OnJ1biIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJzZWNyZXQiOnsiZW52dmFyOkhFUk9LVV9BUElfS0VZIjoiIn0sImNvbW1hbmQiOlsiL2FwcC9iaW4vaGVyb2t1IHJ1biAtLWV4aXQtY29kZSJdfQ==)
+- **[Connection Template](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiaGVyb2t1OnJ1biIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJzZWNyZXQiOnsiZW52dmFyOkhFUk9LVV9BUElfS0VZIjoiIn0sImNvbW1hbmQiOlsiL2FwcC9iaW4vaGVyb2t1IHJ1biAtLWV4aXQtY29kZSJdfQ==)**
 
 ## How to Use
 
