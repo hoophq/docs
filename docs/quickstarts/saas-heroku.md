@@ -69,6 +69,6 @@ After disconnecting it, check if there's any recorded session available at **htt
 
 See how to use the heroku cli through Hoop.
 
-- [Heroku Management Guide](../tutorials/heroku-management.md)
+- [Heroku Management Guide](../tutorials/heroku-exec.md)
 - [Heroku ps:exec](../usecases/heroku-psexec.md)
 - [Heroku one-off](../usecases/heroku-oneoff.md)
