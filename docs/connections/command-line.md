@@ -7,6 +7,11 @@ slug: /connections/command-line
 
 Interact in real-time with remote processes (bash, kubectl, etc)
 
+:::info Quickstart with this connection
+You can create this connection at hoop by <b><a target="_blank" href="https://app.hoop.dev/connections/command-line/new?data=ewogICJuYW1lIjogIm15LWJhc2giLAogICJ0eXBlIjogImNvbW1hbmQtbGluZSIsCiAgImNvbW1hbmQiOiBbCiAgICAiL2Jpbi9iYXNoIgogIF0KfQ==
+">clicking here</a></b>
+:::
+
 ## New Terminal (bash) connection
 
 #### Click on the "New Connection" button
@@ -41,3 +46,8 @@ root@f4584548f57c:/# ls -la
 root@f4584548f57c:/# env
 ...
 ```
+
+:::info Give it a try
+Start with this at hoop.dev: <b><a target="_blank" href="https://app.hoop.dev/connections/command-line/new?data=ewogICJuYW1lIjogIm15LWJhc2giLAogICJ0eXBlIjogImNvbW1hbmQtbGluZSIsCiAgImNvbW1hbmQiOiBbCiAgICAiL2Jpbi9iYXNoIgogIF0KfQ==
+">Create a bash connection</a></b>
+:::

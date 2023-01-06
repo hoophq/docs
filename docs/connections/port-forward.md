@@ -7,6 +7,10 @@ slug: /connections/port-forward
 
 Exchange TCP packages with private hosts (HTTP, etc)
 
+:::info Quickstart with this connection
+You can create this connection at hoop by <b><a target="_blank" href="https://app.hoop.dev/connections/tcp/new?data=ewogICJuYW1lIjogImh0dHAiLAogICJ0eXBlIjogInRjcCIsCiAgInNlY3JldCI6IHsKICAgICJlbnZ2YXI6SE9TVCI6ICJiWGt1Y0hKcGRtRjBaUzUxY213dWFXOD0iLAogICAgImVudnZhcjpQT1JUIjogIk5EUXoiCiAgfSwKICAiY29tbWFuZCI6IFtdCn0=">clicking here</a></b>
+:::
+
 
 ## New HTTP (tcp) connection
 
@@ -69,3 +73,8 @@ $ curl --request POST \
 < Server: Jetty(9.4.43.v20210629)
 ...
 ```
+
+:::info Quickstart with this connection
+Start with this at hoop.dev: <b><a target="_blank" href="https://app.hoop.dev/connections/tcp/new?data=ewogICJuYW1lIjogImh0dHAiLAogICJ0eXBlIjogInRjcCIsCiAgInNlY3JldCI6IHsKICAgICJlbnZ2YXI6SE9TVCI6ICJiWGt1Y0hKcGRtRjBaUzUxY213dWFXOD0iLAogICAgImVudnZhcjpQT1JUIjogIk5EUXoiCiAgfSwKICAiY29tbWFuZCI6IFtdCn0=">Create a Port-Forward connection</a></b>
+:::
+

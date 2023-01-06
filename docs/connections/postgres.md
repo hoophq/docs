@@ -7,6 +7,10 @@ slug: /connections/postgres
 
 Connect to a private postgres instance from your favorite IDE
 
+:::info Quickstart with this connection
+You can create this connection at hoop by <b><a target="_blank" href="https://app.hoop.dev/connections/postgres/new?data=ewogICJuYW1lIjogInBnIiwKICAidHlwZSI6ICJwb3N0Z3JlcyIsCiAgInNlY3JldCI6IHsKICAgICJlbnZ2YXI6SE9TVCI6ICJiWGt1Y0c5emRHZHlaWE11YUc5emRBPT0iLAogICAgImVudnZhcjpQQVNTIjogIiIsCiAgICAiZW52dmFyOlBPUlQiOiAiIiwKICAgICJlbnZ2YXI6VVNFUiI6ICIiCiAgfSwKICAiY29tbWFuZCI6IFtdCn0=">clicking here</a></b>
+:::
+
 ## New Postgres native connection
 
 #### Click on the "New Connection" button
@@ -56,3 +60,8 @@ Type "help" for help.
 my-db=> 
 
 ```
+
+:::info Quickstart with this connection
+Start with this at hoop.dev: <b><a target="_blank" href="https://app.hoop.dev/connections/postgres/new?data=ewogICJuYW1lIjogInBnIiwKICAidHlwZSI6ICJwb3N0Z3JlcyIsCiAgInNlY3JldCI6IHsKICAgICJlbnZ2YXI6SE9TVCI6ICJiWGt1Y0c5emRHZHlaWE11YUc5emRBPT0iLAogICAgImVudnZhcjpQQVNTIjogIiIsCiAgICAiZW52dmFyOlBPUlQiOiAiIiwKICAgICJlbnZ2YXI6VVNFUiI6ICIiCiAgfSwKICAiY29tbWFuZCI6IFtdCn0=">Create a Postgres connection</a></b>
+:::
+
