@@ -3,7 +3,15 @@ sidebar_position: 5
 slug: /usecases/k8s-oneoff
 ---
 
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
 # Kubernetes | exec one-off
+
+<ConnectOnHoopButton
+  url="https://app.hoop.dev/connections/command-line/new?data=ewogICJuYW1lIjogIm15LWs4cyIsCiAgInR5cGUiOiAiY29tbWFuZC1saW5lIiwKICAic2VjcmV0IjogewogICAgImZpbGVzeXN0ZW06S1VCRUNPTkZJRyI6ICJlVzkxY2lCcmRXSmxJR052Ym1acFp5Qm1hV3hsSUdOdmJuUmxiblFnYUdWeVpRPT0iCiAgfSwKICAiY29tbWFuZCI6IFsKICAgICJrdWJlY3RsIiwKICAgICJleGVjIiwKICAgICItLXN0ZGluIiwKICAgICJkZXBsb3ltZW50L215YXBwIiwKICAgICItLSIKICBdCn0="
+/>
+
+___
 
 Processes could be spawn in an ad-hoc manner with `kubectl exec`. In some cases an interactive shell could be too much permissive.
 

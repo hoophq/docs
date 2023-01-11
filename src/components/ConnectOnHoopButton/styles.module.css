@@ -1,0 +1,11 @@
+.connectOnHoopButton__container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.connectOnHoopButton__logo {
+  width: 16px;
+  height: auto;
+}
+

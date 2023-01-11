@@ -1,0 +1,23 @@
+.buttonBase {
+  transition: .25s;
+  margin: 0;
+  padding: 16px 32px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #000;
+  color: white;
+  font-size: 15x;
+  cursor: pointer;
+}
+
+.buttonBase:hover {
+  box-shadow: 4px 4px #666;
+  transform: scale(1.001);
+  transition: .25s;
+}
+
+.buttonBase:active {
+  transition: 0.1s;
+  box-shadow: 2px 2px #666;
+  transform: scale(0.999);
+}
