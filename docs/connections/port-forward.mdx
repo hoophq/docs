@@ -1,0 +1,39 @@
+---
+sidebar_position: 2
+slug: /connections/port-forward
+---
+
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
+# Port Forward
+
+Connect with your local TCP internal service
+
+<ConnectOnHoopButton
+  url="https://app.hoop.dev/connections/tcp/new?data=ewogICJuYW1lIjogInRjcHNlcnZpY2UiLAogICJ0eXBlIjogInRjcCIsCiAgImNvbW1hbmQiOiBbXQp9"
+/>
+
+## Connect to the TCP service
+
+Open a new terminal and type
+
+```shell
+hoop connect tcpservice
+```
+
+```shell
+connection: tcpservice | session: d5c6d052-66a1-4954-ab05-a8c7d6d20f20
+
+--------------------tcp-connection--------------------
+               host=127.0.0.1 port=8999
+------------------------------------------------------
+ready to accept connections!
+```
+
+## Use It
+
+Assuming the TCP service implements the HTTP protocol
+
+```shell
+curl http://127.0.0.1:8999
+```

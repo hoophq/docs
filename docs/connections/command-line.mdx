@@ -1,0 +1,37 @@
+---
+sidebar_position: 1
+slug: /connections/command-line
+---
+
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
+# Command Line
+
+Start interactive terminal sessions or execute one-off commands
+
+<ConnectOnHoopButton
+  url="https://app.hoop.dev/connections/command-line/new?data=ewogICJuYW1lIjogImJhc2giLAogICJ0eXBlIjogImNvbW1hbmQtbGluZSIsCiAgImNvbW1hbmQiOiBbIi9iaW4vYmFzaCJdCn0="
+/>
+
+## Connect | interactive sessions
+
+Start an interactive bash session
+
+```shell
+$ hoop connect bash
+
+connection: bash | session: e348532d-13f5-4984-8210-1890f1dd4217
+root@f4584548f57c:/# 
+```
+
+## Exec | one off commands
+
+Execute ad-hoc commands to a bash connection
+
+```shell
+$ hoop exec bash -i 'env'
+PWD=/
+SHLVL=1
+PATH=/app:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+_=/usr/bin/env
+```

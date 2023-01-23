@@ -1,0 +1,43 @@
+---
+sidebar_position: 3
+slug: /connections/postgres
+---
+
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
+# Postgres
+
+Connect to a private postgres instance from your favorite IDE
+
+<ConnectOnHoopButton
+  url="https://app.hoop.dev/connections/postgres/new?data=ewogICJuYW1lIjogInBnZGIiLAogICJ0eXBlIjogInBvc3RncmVzIiwKICAiY29tbWFuZCI6IFtdCn0="
+/>
+
+## Connect to postgres
+
+Open a new terminal and type
+
+```shell
+hoop connect pg
+```
+
+```shell
+connection: pg | session: 0ebc7492-94bf-498e-ac9c-430f2d5e89b0
+
+--------------------postgres-credentials--------------------
+      host=127.0.0.1 port=5433 user=noop password=noop
+------------------------------------------------------------
+ready to accept connections!
+```
+
+## Use It
+
+Connect to postgres using any IDE, example:
+
+```shell
+psql -h 127.0.0.1 -p 5433 mydb
+```
+
+:::info
+Using [DBeaver](https://dbeaver.io/) requires configuring the database connection as `simple` on **Driver properties** > **preferQueryMode**
+:::
