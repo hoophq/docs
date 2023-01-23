@@ -3,7 +3,15 @@ sidebar_position: 8
 slug: /usecases/heroku-psexec
 ---
 
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
 # Heroku | exec
+
+<ConnectOnHoopButton
+  url="https://app.hoop.dev/connections/command-line/new?data=ewogICJuYW1lIjogImhlcm9rdTpwc2V4ZWMiLAogICJ0eXBlIjogImNvbW1hbmQtbGluZSIsCiAgInNlY3JldCI6IHsKICAgICJlbnZ2YXI6SEVST0tVX0FQSV9LRVkiOiAiIgogIH0sCiAgImNvbW1hbmQiOiBbCiAgICAiL2FwcC9iaW4vcHMtZXhlYy5zaCIKICBdLAogICJhZ2VudF9pZCI6ICIiCn0="
+/>
+
+---
 
 The `ps-exec.sh` utility is a wrapper for the `heroku ps:exec` command. It starts an [SSH](https://en.wikipedia.org/wiki/Secure_Shell) server daemon alongside the processes that are running in the dyno.
 
@@ -26,8 +34,6 @@ This mode is useful when there's a necessity to check or change the state of an 
 ```shell
 /app/bin/ps-exec.sh
 ```
-
-- **[Connection Template](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiaGVyb2t1OnBzZXhlYyIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJzZWNyZXQiOnsiZW52dmFyOkhFUk9LVV9BUElfS0VZIjoiIn0sImNvbW1hbmQiOlsiL2FwcC9iaW4vcHMtZXhlYy5zaCJdfQ==)**
 
 ## How to Use
 
