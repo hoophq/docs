@@ -3,6 +3,8 @@ sidebar_position: 2
 slug: /tutorials/heroku-exec
 ---
 
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
 # Heroku Management
 
 This guide shows how to interact with workloads and resources in the Heroku Platform.
@@ -33,7 +35,12 @@ heroku open
 heroku authorizations:create --expires-in 3600
 ```
 
-3. Create a **[Connection](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoicnVuOltBUFAtTkFNRV0iLCJ0eXBlIjoiY29tbWFuZC1saW5lIiwic2VjcmV0Ijp7ImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6IiJ9LCJjb21tYW5kIjpbIi9hcHAvYmluL2hlcm9rdSBydW4gLS1uby10dHkgLS1leGl0LWNvZGUgLS1hcHAgW0FQUC1OQU1FXSJdfQ==)**
+3. Create a Connection
+
+<ConnectOnHoopButton text='Create an One Off Connection'
+  url="https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoicnVuOltBUFAtTkFNRV0iLCJ0eXBlIjoiY29tbWFuZC1saW5lIiwic2VjcmV0Ijp7ImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6IiJ9LCJjb21tYW5kIjpbIi9hcHAvYmluL2hlcm9rdSBydW4gLS1uby10dHkgLS1leGl0LWNvZGUgLS1hcHAgW0FQUC1OQU1FXSJdLCAiYWdlbnRfaWQiOiAiIn0="
+/>
+<br /><br />
 
 - Change the `[APP-NAME]` placeholder with the name of your app
 - Add the **API Token** in the input value for the key `HEROKU_API_KEY`
@@ -69,7 +76,10 @@ EOF
 
 ### Interactive Session
 
-To connect interactively **[create a new connection](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoicnVudHR5OltBUFAtTkFNRV0iLCJ0eXBlIjoiY29tbWFuZC1saW5lIiwic2VjcmV0Ijp7ImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6IiJ9LCJjb21tYW5kIjpbIi9hcHAvYmluL2hlcm9rdSBydW4gLS1leGl0LWNvZGUgLS1hcHAgW0FQUC1OQU1FXSBiYXNoIl19)** without the `--no-tty` option.
+<ConnectOnHoopButton text='Create an Interactive Connection'
+  url="https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoicnVudHR5OltBUFAtTkFNRV0iLCJ0eXBlIjoiY29tbWFuZC1saW5lIiwic2VjcmV0Ijp7ImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6IiJ9LCJjb21tYW5kIjpbIi9hcHAvYmluL2hlcm9rdSBydW4gLS1leGl0LWNvZGUgLS1hcHAgW0FQUC1OQU1FXSBiYXNoIl0sICJhZ2VudF9pZCI6ICIifQ=="
+/>
+<br /><br />
 
 - Connect it with hoop
 
@@ -79,9 +89,12 @@ hoop connect runtty:APP-NAME
 
 ## Managing Databases
 
-**[Create a new connection](https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoicGdwc3FsOltBUFAtTkFNRV0iLCJ0eXBlIjoiY29tbWFuZC1saW5lIiwic2VjcmV0Ijp7ImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6IiJ9LCJjb21tYW5kIjpbIi9hcHAvYmluL2hlcm9rdSBwZzpwc3FsIC0tYXBwIFtBUFAtTkFNRV0iXX0K)** 
+<ConnectOnHoopButton text='Create a Postgres Connection'
+  url="https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoicGdwc3FsOltBUFAtTkFNRV0iLCJ0eXBlIjoiY29tbWFuZC1saW5lIiwic2VjcmV0Ijp7ImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6IiJ9LCJjb21tYW5kIjpbIi9hcHAvYmluL2hlcm9rdSBwZzpwc3FsIC0tYXBwIFtBUFAtTkFNRV0iXSwgImFnZW50X2lkIjogIiJ9"
+/>
+<br /><br />
 
-- Interactive Session
+- Connect it with hoop
 
 ```shell
 hoop connect pgpsql:APP-NAME
