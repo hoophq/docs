@@ -1,6 +1,6 @@
 # Plugins
 
-Plugins are used to extend the funcionality of connections. They could be managed in the webapp top header.
+Plugins are used to extend the funcionality of connections. They could be managed in the [webapp main page](https://app.hoop.dev/connections).
 
 ## • Access the plugin store
 ---
