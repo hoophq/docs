@@ -11,11 +11,11 @@ Mas sensitive data and anyone query the connection without leaking issues
 
 ## Disabling / Enabling DLP Plugin
 
-Go to [Hoop Portal](https://app.hoop.dev), click in "Manage Plugins", then in Audit
+Go to [Hoop Portal](https://app.hoop.dev), click in "Manage Plugins", then in DLP
 
 ![alt text](https://hoopartifacts.s3.amazonaws.com/screenshots/hoop/browser-manage-plugins-dlp.png)
 
-Select the connections that you want to enable or disable the audit plugin
+Select the connections that you want to enable or disable the dlp plugin
 
 ![alt text](https://hoopartifacts.s3.amazonaws.com/screenshots/hoop/browser-manage-plugin-modal-dlp.png)
 
