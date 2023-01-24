@@ -9,29 +9,15 @@ Run hoop on your machine using Docker, and test everything locally
 
 <iframe width="800" height="450" src="https://www.tella.tv/video/clbfa4l9b00vf0fl455avdyxp/embed" allowfullscreen allowtransparency></iframe>
 
-## Install hoop
+## Requirements
 
-```shell
-brew tap hoophq/hoopcli https://github.com/hoophq/hoopcli
-brew install hoop
-```
-
-Check the installation:
-```shell
-hoop version
-# {"version":"0.0.70","git_commit":"bcc32e5ed7f836e82e5e9f9faa3284cf555c07e8","build_date":"2022-11-30T13:42:56Z","go_version":"go1.19.3","compiler":"gc","platform":"linux/amd64"}
-```
+- [Hoop Command Line](./cli.md) installed locally.
 
 ## Start local demo
 
 ```shell
-$ hoop start
-
-# -> hoop started!
-#open http://127.0.0.1:8009 to begin
+hoop start
+⣷ starting hoop -> downloading docker image ...
 ```
 
-## Access your browser
-
-Open http://127.0.0.1:8009 in your browser to begin.
-
+Follow the in-screen instructions.

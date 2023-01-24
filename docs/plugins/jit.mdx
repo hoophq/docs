@@ -1,0 +1,36 @@
+---
+sidebar_position: 3
+slug: /plugins/jit
+---
+
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
+# JIT (Just in time)
+
+Promote more security for the organization and freedom for developers at the same time by allowing developers to request a session of time to execute commands within a connection.
+When the plugin is active, users will only be able to connect after the session is granted by an administrator.
+
+```shell
+$ hoop connect bash
+⣷ waiting task to be approved at https://app.hoop.dev/plugins/jits/1f85352a-72...
+```
+
+:::info note
+`hoop exec` is disabled when using this plugin.
+:::
+
+After allowing access to a connection, the user will connect automatically and the session will be valid for the time the user has request it.
+
+:::info note
+The amount of time could be configured using the option `--duration`. See usage instructions by issuing `hoop connect -h`.
+:::
+
+### Information Available
+
+- User ID
+- Connection Name
+- Amount of time to connect
+- Approval Groups
+- Status
+
+<ConnectOnHoopButton text='INSTALL PLUGIN' url="https://app.hoop.dev/plugins/store" />
