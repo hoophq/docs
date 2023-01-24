@@ -1,0 +1,31 @@
+---
+sidebar_position: 4
+slug: /plugins/review
+---
+
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
+# Review
+
+This plugin allow administrators to review commands before they are executed.
+
+```shell
+$ hoop exec update-db
+⣷ waiting task to be approved at https://app.hoop.dev/plugins/reviews/73a28154-58...
+```
+
+:::info note
+`hoop connect` is disabled when using this plugin.
+:::
+
+Multiple **approval groups** may be used to approve a connection. The command is only executed when all groups approves the command. If someone denies the execution, the user needs to ask permission again.
+
+### Information Available
+
+- User ID
+- Connection Name
+- Command / Input
+- Approval Groups
+- Status
+
+<ConnectOnHoopButton text='INSTALL PLUGIN' url="https://app.hoop.dev/plugins/store" />

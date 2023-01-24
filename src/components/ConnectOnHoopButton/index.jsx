@@ -9,7 +9,7 @@ export default function ConnectOnHoopButton({url, text}) {
       onClick={() => window.open(url, "_blank")}
     >
       <div className={styles.connectOnHoopButton__container}>
-        <b>{text ? text : "Quickstart with this"}</b>
+        <b>{text ? text : "QUICKSTART WITH THIS"}</b>
         <img
           className={styles.connectOnHoopButton__logo}
           src={imgSource}
