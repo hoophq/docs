@@ -134,7 +134,20 @@ docker run --name hoopagent \
 In Kubernetes for example, the [container specification](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#containers) below would be enough to run the agent:
 
 ```yaml
-(...)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: defaultagent
+spec:
+  selector:
+    matchLabels:
+      app: defaultagent
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: defaultagent
     spec:
       containers:
       - name: defaultagent
@@ -142,8 +155,6 @@ In Kubernetes for example, the [container specification](https://kubernetes.io/d
         - name: TOKEN
           value: 'x-agt-...'
         image: hoophq/hoopdev
-        tty: true
-(...)
 ```
 
 ## Associating with Connections
