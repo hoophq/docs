@@ -103,7 +103,7 @@ You need to be an administrator and logged in to perform this action.
 
 ```shell
 AGENT_NAME=prod
-ACCESS_TOKEN=$(cat ~/.hoop/config.toml  |grep Token |awk {'print $3'} |sed 's/"//g')
+ACCESS_TOKEN=$(cat ~/.hoop/config.toml  |grep -i Token |awk {'print $3'} |sed 's/"//g')
 curl https://app.hoop.dev/api/agents \
   -H 'Content-Type: application/json' \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
