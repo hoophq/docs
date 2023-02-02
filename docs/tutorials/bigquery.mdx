@@ -49,10 +49,10 @@ hoop start
 
 ## Interacting with Datasets
 
-Create the `bqquery` query Connection
+Create the `bq query` query Connection
 
 <ConnectOnHoopButton text='Create Connection'
-  url="http://127.0.0.1:8009/connections/command-line/new?data=eyJuYW1lIjoiYnFxdWVyeSIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJzZWNyZXQiOnsiZmlsZXN5c3RlbTpLRVlfRklMRSI6IiJ9LCJjb21tYW5kIjpbImJxIiwgInF1ZXJ5IiwgIi0tdXNlX2xlZ2FjeV9zcWw9ZmFsc2UiLCAiLS1qb2JfaWQiLCAiJEhPT1BfU0VTU0lPTl9JRCJdLCAiYWdlbnRfaWQiOiAiIn0="
+  url="http://127.0.0.1:8009/connections/command-line/new?data=eyJuYW1lIjoiYnFxdWVyeSIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJzZWNyZXQiOnsiZmlsZXN5c3RlbTpLRVlfRklMRSI6IiJ9LCJjb21tYW5kIjpbImJxIiwgInF1ZXJ5IiwgIi0tbG9jYXRpb24iLCAiVVMiLCAiLS11c2VfbGVnYWN5X3NxbD1mYWxzZSIsICItLWpvYl9pZCIsICIkSE9PUF9TRVNTSU9OX0lEIl0sICJhZ2VudF9pZCI6ICIifQ=="
 /> <br /> <br />
 
 :::info
@@ -69,7 +69,7 @@ hoop exec -v bqquery -i 'SELECT * FROM babynames.names_2014 LIMIT 1'
 
 ### Interacting with Jobs
 
-Create a connection
+Create a `bq head` connection
 
 <ConnectOnHoopButton text='Create Connection'
   url="http://127.0.0.1:8009/connections/command-line/new?data=eyJuYW1lIjoiYnFoZWFkIiwidHlwZSI6ImNvbW1hbmQtbGluZSIsInNlY3JldCI6eyJmaWxlc3lzdGVtOktFWV9GSUxFIjoiIn0sImNvbW1hbmQiOlsiYnEiLCAiaGVhZCJdLCAiYWdlbnRfaWQiOiAiIn0="
@@ -81,7 +81,7 @@ Create a connection
 The previous command was adding the **session id as the job id** of executed queries on bigquery, thus we could use the previous session id to fetch it.
 
 ```shell
-hoop bqhead -- --job_id <PREVIOUS_SESSION_ID>
+hoop exec bqhead -- -j <PREVIOUS_SESSION_ID>
 ```
 
 ## More Patterns
