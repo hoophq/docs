@@ -49,7 +49,7 @@ hoop start
 
 ## Interacting with Datasets
 
-Create the `bq` query Connection
+Create the `bqquery` query Connection
 
 <ConnectOnHoopButton text='Create Connection'
   url="http://127.0.0.1:8009/connections/command-line/new?data=eyJuYW1lIjoiYnFxdWVyeSIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJzZWNyZXQiOnsiZmlsZXN5c3RlbTpLRVlfRklMRSI6IiJ9LCJjb21tYW5kIjpbImJxIiwgInF1ZXJ5IiwgIi0tdXNlX2xlZ2FjeV9zcWw9ZmFsc2UiLCAiLS1qb2JfaWQiLCAiJEhPT1BfU0VTU0lPTl9JRCJdLCAiYWdlbnRfaWQiOiAiIn0="
@@ -64,7 +64,7 @@ This will allow interacting with the [bq command line](https://cloud.google.com/
 1. Try to execute a query
 
 ```shell
-hoop exec -v bq -i 'SELECT * FROM babynames.names_2014 LIMIT 1'
+hoop exec -v bqquery -i 'SELECT * FROM babynames.names_2014 LIMIT 1'
 ```
 
 ### Interacting with Jobs
