@@ -1,0 +1,123 @@
+---
+sidebar_position: 2
+slug: /tutorials/bigquery
+---
+
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
+# Big Query (bq cli)
+
+This guide shows how to create a layer of control on top of the [bq command line](https://cloud.google.com/bigquery/docs/bq-command-line-tool)
+
+## Requirements
+
+- [Hoop Command Line](../installing/command-line)
+- [GCP Account with BigQuery Permissions](https://console.cloud.google.com/)
+
+## Big Query Setup
+
+1. Setup the Bigquery following the topics bellow
+
+- [Before You Begin](https://cloud.google.com/bigquery/docs/quickstarts/load-data-console#before-you-begin)
+- [Create a Dataset](https://cloud.google.com/bigquery/docs/quickstarts/load-data-console#create_a_dataset)
+- [Download the source Data File](https://cloud.google.com/bigquery/docs/quickstarts/load-data-console#download_the_source_data_file)
+- [Load data into table](https://cloud.google.com/bigquery/docs/quickstarts/load-data-console#load_data_into_a_table)
+
+
+2. Create a service account with the following permissions:
+
+- BigQuery User
+- BigQuery Data Viewer
+
+3. Create a JSON type service account key and store in a safe place
+
+For the sake of this guide, we're following the gcp guide to interact with bigquery.
+
+:::info
+In case you already have a testing dataset, you can skip this part
+:::
+
+Reference: https://cloud.google.com/iam/docs/creating-managing-service-accounts
+
+## Hoop Setup
+
+In your local machine, start hoop
+
+```shell
+hoop start
+```
+
+## Interacting with Datasets
+
+Create the `bq` query Connection
+
+<ConnectOnHoopButton text='Create Connection'
+  url="http://127.0.0.1:8009/connections/command-line/new?data=eyJuYW1lIjoiYnFxdWVyeSIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJzZWNyZXQiOnsiZmlsZXN5c3RlbTpLRVlfRklMRSI6IiJ9LCJjb21tYW5kIjpbImJxIiwgInF1ZXJ5IiwgIi0tdXNlX2xlZ2FjeV9zcWw9ZmFsc2UiLCAiLS1qb2JfaWQiLCAiJEhPT1BfU0VTU0lPTl9JRCJdLCAiYWdlbnRfaWQiOiAiIn0="
+/> <br /> <br />
+
+:::info
+Add the JSON service account into the `KEY_FILE` input
+:::
+
+This will allow interacting with the [bq command line](https://cloud.google.com/bigquery/docs/bq-command-line-tool)
+
+1. Try to execute a query
+
+```shell
+hoop exec -v bq -i 'SELECT * FROM babynames.names_2014 LIMIT 1'
+```
+
+### Interacting with Jobs
+
+Create a connection
+
+<ConnectOnHoopButton text='Create Connection'
+  url="http://127.0.0.1:8009/connections/command-line/new?data=eyJuYW1lIjoiYnFoZWFkIiwidHlwZSI6ImNvbW1hbmQtbGluZSIsInNlY3JldCI6eyJmaWxlc3lzdGVtOktFWV9GSUxFIjoiIn0sImNvbW1hbmQiOlsiYnEiLCAiaGVhZCJdLCAiYWdlbnRfaWQiOiAiIn0="
+/> <br /> <br />
+
+
+2. Try to fetch it with `bq head -j <session-id>`
+
+The previous command was adding the **session id as the job id** of executed queries on bigquery, thus we could use the previous session id to fetch it.
+
+```shell
+hoop bqhead -- --job_id <PREVIOUS_SESSION_ID>
+```
+
+## More Patterns
+
+The bq command line has other actions that could be used as patterns with Hoop.
+
+**Allow jobs to be async**
+
+```shell
+$ bq query --use_legacy_sql=false --nosynchronous_mode
+```
+
+This allow the pattern of consulting the previous job with `bq head --job_id ...`. It's useful for queries that take too long to execute.
+
+**Dry-run commands**
+
+Dry run allows showing how much of bytes will be consumed
+
+```shell
+$ bq query --use_legacy_sql=false 'SELECT * FROM babynames.names_2014 limit 5' --dry_run
+Query successfully validated. Assuming (...), running this query will process 654791 bytes of data.
+```
+
+A plugin could allow queries that has passed by the `--dry-run` mode.
+
+**Command Line Quota**
+
+bq allows specifying the maximum bytes billed, this option could be used as a retriction mechanism
+
+```shell
+$ bq query \
+  --use_legacy_sql=false \
+  --maximum_bytes_billed 1 \
+  'SELECT * FROM babynames.names_2014 limit 100;'
+
+BigQuery error in query operation: Error processing job
+'myproject:bqjob_r107f63c4f31d3d37_000001860d50d5f8_1': Query exceeded
+limit for bytes billed: 1. 10485760 or higher required.
+```
