@@ -5,17 +5,34 @@ slug: /configuring/agent
 
 # Agent
 
-The agent is totally stateless with the exception of the API key to authenticate with the gateway.
+The agent is the component which connects to internal services, it requires an API key and the address of gRPC server to connect to.
 
 ## Configuration
 
-| ENVIRONMENT    | DEFAULT VALUE | DESCRIPTION                            |
-| -------------- | ------------- | -------------------------------------- |
-| TOKEN          | ""            | The API key to authenticate to gateway |
+| ENVIRONMENT    | DEFAULT VALUE | DESCRIPTION                                      |
+| -------------- | ------------- | ------------------------------------------------ |
+| SERVER_ADDRESS | ""            | The gRPC server (`DNS:PORT`) to connect to.      |
+| TOKEN          | ""            | The API key to authenticate to gateway           |
+| AUTO_REGISTER  | ""            | The organization name to auto register the agent |
+
+## Gateway Server Address
+
+This option configures in which gateway to connect to when starting.
+This value is only required when running the agent in **self-hosted mode**.
+
+:::info
+If this value is not set, the agent will try to connect locally into `127.0.0.1:8010`, fallbacking to `app.hoop.dev:8443`.
+:::
 
 ## Auto Registration
 
-When the environment variable `TOKEN` is not available the agent fallbacks to auto-registration. A link will be available to register the agent when starting. Example:
+This mode should only be used when the agent is deployed in the same network of the xtdb instance and gateway. It will auto register and connect to the gateway in localhost.
+
+It's useful to perform administrative tasks in the gateway.
+
+## Web Registration
+
+When the environment variable `TOKEN` is not available the agent fallbacks to web registration. A link will be available to register the agent when starting. Example:
 
 ```shell
 (...)

@@ -56,11 +56,11 @@ The following environment variables could be configured when starting the gatewa
 | SEGMENT_KEY                         | ""                       | Segment API Key (customer metrics)         |
 | MAGIC_BELL_API_KEY                  | ""                       | Magic Bell API Key (notification system)   |
 | MAGIC_BELL_API_SECRET               | ""                       | Magic Bell API Secret                      |
-| API_URL                             | ""                       | API URL address (identity provider)        | 
-| IDP_ISSUER                          | ""                       | Identity Provider Issuer (Oauth2)          |
+| API_URL (required)                  | ""                       | API URL address (identity provider)        | 
+| IDP_ISSUER (required)               | ""                       | Identity Provider Issuer (Oauth2)          |
 | IDP_AUDIENCE                        | ""                       | Identity Provider Audience (Oauth2)        |
-| IDP_CLIENT_ID                       | ""                       | Oauth2 client id                           |
-| IDP_CLIENT_SECRET                   | ""                       | Ouath2 client secret                       |
+| IDP_CLIENT_ID (required)            | ""                       | Oauth2 client id                           |
+| IDP_CLIENT_SECRET (required)        | ""                       | Ouath2 client secret                       |
 
 ## Ports
 
@@ -90,13 +90,13 @@ It's recommended to be exposed to `localhost` only.
 
 ### Configuration
 
-| ENVIRONMENT | DEFAULT VALUE  | DESCRIPTION                           |
-| ----------- | -------------- | ------------------------------------- |
-| PG_HOST     | ""             | The hostname of the postgres instance |
-| PG_PORT     | ""             | The port of the postgres instance     |
-| PG_USER     | ""             | The user of the postgres instance     |
-| PG_DB       | ""             | The database to connect to            |
-| PGPASSWORD  | ""             | The password of the postgres instance |
+| ENVIRONMENT           | DEFAULT VALUE  | DESCRIPTION                           |
+| --------------------- | -------------- | ------------------------------------- |
+| PG_HOST (required)    | ""             | The hostname of the postgres instance |
+| PG_PORT               | "5432"         | The port of the postgres instance     |
+| PG_USER (required)    | ""             | The user of the postgres instance     |
+| PG_DB (required)      | ""             | The database to connect to            |
+| PGPASSWORD (required) | ""             | The password of the postgres instance |
 
 ## Pyroscope Profiling
 
