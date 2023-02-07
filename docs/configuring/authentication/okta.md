@@ -87,7 +87,7 @@ hoop login
 
 Add the default address to the local hoop instance
 
-- `API_URL=http://127.0.0.1`
+- `API_URL=http://127.0.0.1:8009`
 - `GRPC_PORT=8010`
 
 ```shell

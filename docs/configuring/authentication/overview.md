@@ -36,3 +36,7 @@ The `API_URL` is used as the base address as starting point to redirect users to
 - [Oauth2 redirect uris](https://www.oauth.com/oauth2-servers/redirect-uris/)
 - Plugin URI resources
 - Environment base name to monitoring services
+
+:::info
+The `IDP_AUDIENCE` is required when using **okta** or **auth0**
+:::

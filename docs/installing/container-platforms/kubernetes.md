@@ -7,10 +7,11 @@ slug: /container-platforms/kubernetes
 
 This guide explains how to install hoop in a Kubernetes cluster.
 
+**Chart Repository:** https://github.com/hoophq/helm-chart
 
 ## Gateway Deployment
 
-The gateway requires a Postgres database. Please refer to [gateway configuration](../../configuring/gateway.md) for more options.
+The gateway requires a Postgres database. Please refer to [gateway configuration](../../configuring/gateway.md) for more information.
 
 ```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
@@ -36,7 +37,7 @@ helm install hoop -f values.yaml \
 
 ## Agent Deployment
 
-Please refer to [agent configuration](../../configuring/agent.md) for more options.
+Please refer to [agent configuration](../../configuring/agent.md) for more information.
 
 :::info
 The `SERVER_ADDRESS` option must be used when it's a self-hosted installation. It must point to the gRPC server of gateway. E.g.:
