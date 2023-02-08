@@ -1,4 +1,6 @@
-# docs
+# Hoop Docs
+
+- https://hoop.dev/docs
 
 ## Prerequesites
 
@@ -16,3 +18,4 @@ NodeJS and NPM: [https://nodejs.org/en/](https://nodejs.org/en/)
 
 ## Deploy to prod
 Just merge PR to main
+
