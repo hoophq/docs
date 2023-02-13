@@ -34,6 +34,30 @@ This step is recommended to avoid having to register the agent again if the dyno
 
 [Config Vars Reference](https://devcenter.heroku.com/articles/config-vars)
 
-:::info
-If you need to redeploy the agent in another app, click in the deploy button again and pass the agent token in the input field `TOKEN`
-:::
+## Agent Upgrade
+
+To upgrade the agent from an existing app running on Heroku.
+
+1. Clone the agent heroku app
+
+```shell
+git clone https://github.com/hoophq/heroku-hoop-agent.git
+```
+
+2. Configure git remote to heroku
+
+```shell
+heroku git:remote -a [AGENT-APP-NAME]
+```
+
+3. Deploy it manually
+
+```shell
+git push origin main
+```
+
+4. Check the logs to see if it's running
+
+```shell
+heroku logs --tail
+```
