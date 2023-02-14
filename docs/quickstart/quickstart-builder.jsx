@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Formik, Field } from 'formik';
 import styles from './styles.module.css';
 // Platform docs
 import MacOSPlatform from './../installing/command-line/macos.md';
