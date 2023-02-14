@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 // Platform docs
-import MacOSPlatform from './../installing/command-line/macos.md';
-import LinuxPlatform from './../installing/command-line/linux.md';
-import HerokuPlatform from './../installing/container-platforms/heroku.md';
-import KubernetesPlatform from './../installing/container-platforms/kubernetes.md';
-import DockerPlatform from './../installing/docker.md';
+import MacOSPlatform from './../installing-hoop-agent/macos.mdx';
+import LinuxPlatform from './../installing-hoop-agent/linux.md';
+import WindowsPlatform from './../installing-hoop-agent/windows-native.md';
+import HerokuPlatform from './../installing-hoop-agent/heroku.mdx';
 
 // use cases docs
 import MySQLUseCase from './../usecases/forwarding-mysql.md';
@@ -32,9 +31,8 @@ const docOptions = {
   platform: [
     {name: "MacOS", component: () => <MacOSPlatform />},
     {name: 'Linux', component: () => <LinuxPlatform />},
-    {name: 'Kubernetes', component: () => <KubernetesPlatform />},
+    {name: 'Windows', component: () => <WindowsPlatform />},
     {name: 'Heroku', component: () => <HerokuPlatform />},
-    {name: 'Docker', component: () => <DockerPlatform />},
   ],
   connections: [
     {name: "Postgres", component: () => <PostgresConnection />},

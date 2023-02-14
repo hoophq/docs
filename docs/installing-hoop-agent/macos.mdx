@@ -1,0 +1,28 @@
+---
+sidebar_position: 1
+slug: /installing-hoop-agent/macos
+title: MacOS
+---
+
+# MacOS
+
+MacOS users have the option to use the [brew package manager](https://brew.sh/).
+
+```shell
+brew tap hoophq/hoopcli https://github.com/hoophq/hoopcli
+brew install hoop
+```
+
+To upgrade it
+
+```shell
+brew upgrade hoop
+```
+
+Initialize the agent
+
+```shell
+hoop start agent
+```
+
+It will set-up the agent and ask to register the agent on hoop.dev UI
