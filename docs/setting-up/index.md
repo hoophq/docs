@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /setting-up
+slug: /
 ---
 
 # Set-up hoop.dev for you
