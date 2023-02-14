@@ -81,19 +81,19 @@ const config = {
         style: 'light',
         links: [
           {
-            title: 'Quickstarts',
+            title: 'Examples',
             items: [
               {
                 label: 'Kubernetes',
-                to: '/docs/quickstarts/saas',
+                to: '/docs/examples/saas',
               },
                 {
                     label: 'Docker',
-                    to: '/docs/quickstarts/docker',
+                    to: '/docs/examples/docker',
                 },
                 {
                     label: 'Unix',
-                    to: '/docs/quickstarts/docker',
+                    to: '/docs/examples/docker',
                 },
             ],
           },
@@ -102,15 +102,15 @@ const config = {
                 items: [
                     {
                         label: 'SSH',
-                        to: '/docs/quickstarts/saas',
+                        to: '/docs/examples/saas',
                     },
                     {
                         label: 'VPN',
-                        to: '/docs/quickstarts/docker',
+                        to: '/docs/examples/docker',
                     },
                     {
                         label: 'Jump Server',
-                        to: '/docs/quickstarts/docker',
+                        to: '/docs/examples/docker',
                     },
                 ],
             },
