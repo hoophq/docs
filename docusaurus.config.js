@@ -61,7 +61,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'quickstarts/index',
+            docId: 'quickstart/index',
             position: 'right',
             label: 'Docs',
           },

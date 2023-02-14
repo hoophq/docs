@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /quickstarts/saas
+slug: /examples/saas
 ---
 
 # SaaS

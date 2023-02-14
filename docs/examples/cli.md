@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /quickstarts/cli
+slug: /examples/cli
 ---
 
 # Command Line

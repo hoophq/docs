@@ -3,14 +3,13 @@ sidebar_position: 1
 slug: /
 ---
 
-# Quickstarts
-
-Create your first connection in 2 minutes.
+# Quickstart
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
+import QuickstartBuilder from './quickstart-builder';
 
-<DocCardList />
+<QuickstartBuilder />
 ```
 
 

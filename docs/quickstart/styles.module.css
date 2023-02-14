@@ -1,0 +1,54 @@
+.quickstartBuilderContainer {
+}
+
+.quickstartFormContainer {
+}
+
+.quickstartFormItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.quickstartSelectableList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quickstartSelectableItem {
+  transition: all .2s ease;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.quickstartSelectableItem:hover,
+.quickstartSelectableItem[active='true'] {
+  border: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.Select {
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+}
+
+.Select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: #333;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
