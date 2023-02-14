@@ -61,7 +61,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'quickstart/index',
+            docId: 'quickstarts/index',
             position: 'right',
             label: 'Docs',
           },
@@ -81,19 +81,19 @@ const config = {
         style: 'light',
         links: [
           {
-            title: 'Examples',
+            title: 'Quickstarts',
             items: [
               {
                 label: 'Kubernetes',
-                to: '/docs/examples/saas',
+                to: '/docs/quickstarts/saas',
               },
                 {
                     label: 'Docker',
-                    to: '/docs/examples/docker',
+                    to: '/docs/quickstarts/docker',
                 },
                 {
                     label: 'Unix',
-                    to: '/docs/examples/docker',
+                    to: '/docs/quickstarts/docker',
                 },
             ],
           },
@@ -102,15 +102,15 @@ const config = {
                 items: [
                     {
                         label: 'SSH',
-                        to: '/docs/examples/saas',
+                        to: '/docs/quickstarts/saas',
                     },
                     {
                         label: 'VPN',
-                        to: '/docs/examples/docker',
+                        to: '/docs/quickstarts/docker',
                     },
                     {
                         label: 'Jump Server',
-                        to: '/docs/examples/docker',
+                        to: '/docs/quickstarts/docker',
                     },
                 ],
             },

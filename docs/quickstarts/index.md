@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
-slug: /examples
+sidebar_position: 1
+slug: /quickstarts
 ---
 
-# Examples
+# Quickstarts
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

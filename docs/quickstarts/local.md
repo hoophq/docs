@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /examples/docker
+slug: /quickstarts/docker
 ---
 
 # Local

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /examples/plugin-development
+slug: /quickstarts/plugin-development
 ---
 
 # Plugin Development
@@ -9,7 +9,7 @@ This guide shows how to extend hoop developing Plugins with GO.
 
 ## Requirements
 
-- [Hoop Command Line](../examples/cli.md)
+- [Hoop Command Line](../quickstarts/cli.md)
 - [GO](https://go.dev/dl/) installed locally
 
 ### Hoop Setup

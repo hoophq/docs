@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-slug: /
+slug: /setting-up
 ---
 
-# Quickstart
+# Set-up hoop.dev for you
 
 ```mdx-code-block
 import Quickstart from './quickstart';
