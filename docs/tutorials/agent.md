@@ -9,7 +9,7 @@ Tutorial explaining how to deploy and register an agent in multiple environments
 
 ## Requirements
 
-- [Hoop Command Line](../quickstarts/cli.md)
+- [Hoop Command Line](../examples/cli.md)
 
 ## Login / Signup
 
