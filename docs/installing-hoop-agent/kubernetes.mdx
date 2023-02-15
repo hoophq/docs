@@ -1,0 +1,20 @@
+---
+sidebar_position: 5
+slug: /installing-hoop-agent/kubernetes
+title: Kubernetes
+show: false
+---
+
+# Kubernetes
+
+Please refer to [agent configuration](../../configuring/agent.md) for more information.
+
+:::info
+The `SERVER_ADDRESS` option must be used when it's a self-hosted installation. It must point to the gRPC server of gateway. E.g.:
+hoop.yourdomain.tld:8010. It connects to the remote server via TLS.
+:::
+
+```shell
+helm install hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+    --set 'config.SERVER_ADDRESS='
+```

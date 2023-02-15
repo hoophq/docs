@@ -1,0 +1,17 @@
+---
+sidebar_position: 3
+slug: /installing-hoop-agent/docker
+title: Docker
+---
+
+# Docker
+
+The recommended image is `hoophq/hoopdev` which contains all the required tools installed, it's only supported for `amd64` architecture.
+
+- environment variables:
+  - TOKEN: optional, the agent will unregister on restarts if it's not set
+
+```shell
+docker run hoophq/hoop hoop start agent
+```
+
