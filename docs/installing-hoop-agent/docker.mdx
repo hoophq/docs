@@ -6,12 +6,23 @@ title: Docker
 
 # Docker
 
-The recommended image is `hoophq/hoopdev` which contains all the required tools installed, it's only supported for `amd64` architecture.
-
-- environment variables:
-  - TOKEN: optional, the agent will unregister on restarts if it's not set
+You can run our image with the following command to start a Docker Container with our Agent
 
 ```shell
 docker run hoophq/hoop hoop start agent
 ```
+
+This command will show you a log similar to this:
+
+```shell
+(...)
+** UNREGISTERED AGENT **
+Please validate the Agent in the URL: https://app.hoop.dev/agents/new/x-agt-91dda5fa-c370-4383-8ca6-48e5d563e491
+```
+
+Open the provided URL to register this agent on hoop.dev web portal.
+
+:::info
+Note that you must be an administrator of this account to do this operation
+:::
 
