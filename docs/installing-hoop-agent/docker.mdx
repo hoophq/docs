@@ -1,0 +1,28 @@
+---
+sidebar_position: 3
+slug: /installing-hoop-agent/docker
+title: Docker
+---
+
+# Docker
+
+You can run our image with the following command to start a Docker Container with our Agent
+
+```shell
+docker run hoophq/hoop hoop start agent
+```
+
+This command will show you a log similar to this:
+
+```shell
+(...)
+** UNREGISTERED AGENT **
+Please validate the Agent in the URL: https://app.hoop.dev/agents/new/x-agt-91dda5fa-c370-4383-8ca6-48e5d563e491
+```
+
+Open the provided URL to register this agent on hoop.dev web portal.
+
+:::info
+Note that you must be an administrator of this account to do this operation
+:::
+

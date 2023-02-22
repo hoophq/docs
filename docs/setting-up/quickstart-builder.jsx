@@ -3,8 +3,9 @@ import styles from './styles.module.css';
 // Platform docs
 import MacOSPlatform from './../installing-hoop-agent/macos.mdx';
 import LinuxPlatform from './../installing-hoop-agent/linux.md';
-import WindowsPlatform from './../installing-hoop-agent/windows-native.md';
+import DockerPlatform from './../installing-hoop-agent/docker.mdx';
 import HerokuPlatform from './../installing-hoop-agent/heroku.mdx';
+import KubernetesPlatform from './../installing-hoop-agent/kubernetes.mdx';
 
 // use cases docs
 import MySQLUseCase from './../usecases/forwarding-mysql.md';
@@ -31,8 +32,9 @@ const docOptions = {
   platform: [
     {name: "MacOS", component: () => <MacOSPlatform />},
     {name: 'Linux', component: () => <LinuxPlatform />},
-    {name: 'Windows', component: () => <WindowsPlatform />},
+    {name: 'Docker', component: () => <DockerPlatform />},
     {name: 'Heroku', component: () => <HerokuPlatform />},
+    {name: 'Kubernetes', component: () => <KubernetesPlatform />},
   ],
   connections: [
     {name: "Postgres", component: () => <PostgresConnection />},
