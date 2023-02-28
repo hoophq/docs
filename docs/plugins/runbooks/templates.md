@@ -63,7 +63,7 @@ The specifications supports the following fields:
   - url
   - email
 - required - if the this field is required
-- default - 
+- default - specifies a default value for an input if it's empty
 
 The fields indicates how a client could create inputs to a runbook, the fields are defined as function templates in an placeholder using the pipe character `|`. Example:
 
@@ -76,7 +76,7 @@ The fields indicates how a client could create inputs to a runbook, the fields a
 
 ## Template Functions
 
-The template engine has auxiliary functions which helps to build better and secure templates.
+The template engine has auxiliary functions which helps to build better and secure templates:
 
 - `required "<message>"`  - it will return the error if the input is empty
   - `<message>` - the message to return when the condition doesn't match
@@ -114,7 +114,7 @@ myvar = {{ .myinput
             | encodeb64 }}
 ```
 
-- Wrap the `myinput` into single quote and base64 the input
+- Wrap the `myinput` into single quote and encode the input as base64
 
 ```
 myvar = {{ .myinput
@@ -122,7 +122,7 @@ myvar = {{ .myinput
             | encodeb64 }}
 ```
 
-- Gives a description to `myinput`, encode the value as base64 and then wrap it using the char `%`
+- Gives a description to `myinput`, encode the value as base64 and then wrap it using the character `%`
 
 ```
 myvar = {{ .myinput
@@ -159,7 +159,7 @@ kubectl rollout restart deploy/$DEPLOYMENT_NAME -n $NAMESPACE
 
 ### Server Side Template Injection
 
-Templates are subject to [code injection](https://en.wikipedia.org/wiki/Code_injection#Server_Side_Template_Injection) depending on the runtime that you're using this may harm your internal system. To mitigate this issue, follows this tips:
+Templates are subject to [code injection](https://en.wikipedia.org/wiki/Code_injection#Server_Side_Template_Injection) depending on the runtime that you're using. To mitigate this issue, follows these tips:
 
 1. Use the **pattern** function to define the format of the input, specially in sql templates.
 
