@@ -14,7 +14,6 @@ This guide explains how to install hoop in a Kubernetes cluster.
 The gateway requires a Postgres database. Please refer to [gateway configuration](../../configuring/gateway.md) for more information.
 
 ```shell
-VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 cat - > ./values.yaml <<EOF
 # hoop gateway configuration. Please refer to https://hoop.dev/docs/configuring/gateway
 config:
@@ -31,8 +30,10 @@ xtdbConfig:
   PG_PASSWORD: ''
   PG_DB: ''
 EOF
-helm install hoop -f values.yaml \
-    hoop https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoop-chart-$VERSION.tgz
+VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
+helm install hoop \
+  https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoop-chart-$VERSION.tgz \
+  -f values.yaml
 ```
 
 ## Agent Deployment
@@ -45,6 +46,7 @@ hoop.yourdomain.tld:8010. It connects to the remote server via TLS.
 :::
 
 ```shell
+VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 helm install hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set 'config.SERVER_ADDRESS='
 ```

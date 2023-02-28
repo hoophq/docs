@@ -35,7 +35,10 @@ The gateway provides a REST API, a webapp UI and a bi-directional gRPC to exchan
 - GET /api/plugins/:name
 - PUT /api/plugins/:name/config
 - GET /api/plugins/audit/sessions/:session_id
+- GET /api/plugins/audit/sessions/:session_id/status
 - GET /api/plugins/audit/sessions
+- GET /api/plugins/runbooks/connections/:name/templates
+- POST /api/plugins/runbooks/connections/:name/exec
 
 ## Gateway Configuration
 
