@@ -62,6 +62,7 @@ The specifications supports the following fields:
   - date
   - url
   - email
+  - select
 - required - if the this field is required
 - default - specifies a default value for an input if it's empty
 
@@ -88,6 +89,10 @@ The template engine has auxiliary functions which helps to build better and secu
   - `<message>` - the description of the input
 - `type "<type>"` - used as attribute specification to client input validation
   - `<type>` - the type of the input (see supported fields for a list of types)
+- `placeholder "<message>"` - used as attribute specification to client input validation
+  - `<message>` - the description of the placeholder
+- `options "<option>" "..."` - used as attribute specification to client input validation
+  - `"<option>" "..."` - a list of strings describing each option
 - `squote` - wraps the input with single quotes: `'`
 - `dquote` - wraps the input with double quotes: `"`
 - `quotechar "<char>"` -  wraps the input with `<char>`
@@ -128,6 +133,14 @@ myvar = {{ .myinput
 myvar = {{ .myinput
             | description "this is my input"
             | quotechar "%" }}
+```
+
+- Specify the `color` as input type *select* with options *red*, *white* and *black*
+
+```
+myvar = {{ .color
+          | type "select"
+          | options "red" "white" "black"}}
 ```
 
 ### asenv function
