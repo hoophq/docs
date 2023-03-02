@@ -29,9 +29,21 @@ xtdbConfig:
   PG_USER: ''
   PG_PASSWORD: ''
   PG_DB: ''
+
+persistence:
+  enabled: true
+  storageClassName: ''
 EOF
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 helm install hoop \
+  https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoop-chart-$VERSION.tgz \
+  -f values.yaml
+```
+
+To upgrade to a newer version or change a configuration:
+
+```shell
+helm upgrade hoop \
   https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoop-chart-$VERSION.tgz \
   -f values.yaml
 ```
@@ -42,11 +54,18 @@ Please refer to [agent configuration](../../configuring/agent.md) for more infor
 
 :::info
 The `SERVER_ADDRESS` option must be used when it's a self-hosted installation. It must point to the gRPC server of gateway. E.g.:
-hoop.yourdomain.tld:8010. It connects to the remote server via TLS.
+hoop.yourdomain.tld:8443. It connects to the remote server via TLS.
 :::
 
 ```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 helm install hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set 'config.SERVER_ADDRESS='
+```
+
+To upgrade to a newer version or change a configuration:
+
+```shell
+helm upgrade hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+    --set 'config.TOKEN=<STATIC-TOKEN>'
 ```
