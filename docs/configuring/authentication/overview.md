@@ -16,6 +16,13 @@ Organizations are created when a user performs the first signup, the name of the
 
 Every resource created is bound to an organization.
 
+:::tip 
+    If you use your custom ID Provider, then it is possible to provide a custom claim 
+    in the JWT ID Token:
+    `https://app.hoop.dev/org : {name of the org}`.
+    This will take precedence over the above method.
+:::
+
 ## Permissions
 
 - `admin` users has full access to resources
@@ -23,13 +30,14 @@ Every resource created is bound to an organization.
 
 ## Configuration
 
-| ENVIRONMENT       | DEFAULT VALUE         | REQUIRED | DESCRIPTION                                     |
-| ----------------- | --------------------- | -------- | ----------------------------------------------- |
-| API_URL           | http://localhost:8009 | yes      | API URL address                                 | 
-| IDP_ISSUER        | ""                    | yes      | [OIDC](https://openid.net/connect/) issuer name |
-| IDP_CLIENT_ID     | ""                    | yes      | [Oauth2 client id](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/) |
+| ENVIRONMENT       | DEFAULT VALUE         | REQUIRED | DESCRIPTION                                       |
+| ----------------- | --------------------- | -------- | ------------------------------------------------- |
+| API_URL           | http://localhost:8009 | yes      | API URL address                                   | 
+| IDP_ISSUER        | ""                    | yes      | [OIDC](https://openid.net/connect/) issuer name   |
+| IDP_CLIENT_ID     | ""                    | yes      | [Oauth2 client id](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)     |
 | IDP_CLIENT_SECRET | ""                    | yes      | [Oauth2 client secret](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/) |
-| IDP_AUDIENCE      | ""                    | no       | Oauth2 audience                                 |
+| IDP_AUDIENCE      | ""                    | no       | Oauth2 audience                                   |
+| IDP_CUSTOM_SCOPES | ""                    | no       | Custom scope requried by the IDP to work properly |
 
 The `API_URL` is used as the base address as starting point to redirect users to the provided resources like:
 
