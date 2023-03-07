@@ -9,7 +9,7 @@ This guide explain how to configure Auth0 with Hoop running it locally.
 
 ## Requirements
 
-- [Hoop Command Line](../../quickstarts/cli.md)
+- Hoop Command Line
 - An [account in Auth0](https://auth0.com/signup)
 - `API_URL` is the public DNS name of the hoop gateway instance
 

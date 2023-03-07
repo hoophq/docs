@@ -9,7 +9,7 @@ This guide explain how to configure Okta with Hoop running it locally.
 
 ## Requirements
 
-- [Hoop Command Line](../../quickstarts/cli.md)
+- Hoop Command Line
 - An [account in OKTA](https://developer.okta.com/login/)
 - `API_URL` is the public DNS name of the hoop gateway instance
 
