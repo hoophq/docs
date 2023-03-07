@@ -52,7 +52,7 @@ On **Security > API**
 
 ### 4) Add 'https://app.hoop.dev/groups' claim to ID Token (optional)
 
-- Go to Security > API > {authorization server} > CLaims
+- Go to Security > API > {authorization server} > Claims
 - Added `https://app.hoop.dev/org` in the ID Token with the org name (string)
 - Added `https://app.hoop.dev/groups` in the ID Token
 
