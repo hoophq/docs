@@ -47,7 +47,7 @@ The gateway provides a REST API, a webapp UI and a bi-directional gRPC to exchan
 The following environment variables could be configured when starting the gateway as `hoop start gateway` when using the container image `hoophq/hoop`
 
 | ENVIRONMENT                         | DEFAULT VALUE            | DESCRIPTION                                      |
-| ----------------------------------- | ------------------------ | ------------------------------------------------ |
+|-------------------------------------| ------------------------ |--------------------------------------------------|
 | XTDB_ADDRESS                        | `http://127.0.0.1:3000`  | Database server address                          |
 | STATIC_UI_PATH                      | `/app/ui/public`         | The path where the UI assets resides             |
 | PLUGIN_AUDIT_PATH                   | `/opt/hoop/sessions`     | The path where the temporary sessions are stored |
@@ -59,13 +59,17 @@ The following environment variables could be configured when starting the gatewa
 | PYROSCOPE_AUTH_TOKEN                | ""                       | Pyroscope ingest auth token                      |
 | PLUGIN_REGISTRY_URL                 | ""                       | The URL of the plugin registry                   |
 | SEGMENT_KEY                         | ""                       | Segment API Key (customer metrics)               |
-| MAGIC_BELL_API_KEY                  | ""                       | Magic Bell API Key (notification system)         |
-| MAGIC_BELL_API_SECRET               | ""                       | Magic Bell API Secret                            |
 | API_URL (required)                  | ""                       | API URL address (identity provider)              | 
 | IDP_ISSUER (required)               | ""                       | Identity Provider Issuer (Oauth2)                |
 | IDP_AUDIENCE                        | ""                       | Identity Provider Audience (Oauth2)              |
 | IDP_CLIENT_ID (required)            | ""                       | Oauth2 client id                                 |
 | IDP_CLIENT_SECRET (required)        | ""                       | Ouath2 client secret                             |
+| MAGIC_BELL_API_KEY                  | ""                       | Magic Bell API Key (notification system)         |
+| MAGIC_BELL_API_SECRET               | ""                       | Magic Bell API Secret                            |
+| SMTP_HOST                           | ""                       | Smtp Host (notification system)                  |
+| SMTP_PORT                           | ""                       | Smtp Port (notification system)                  |
+| SMTP_USER                           | ""                       | Smtp User (notification system)                  |
+| SMTP_PASS                           | ""                       | Smtp Password (notification system)              |
 
 ## Ports
 
