@@ -50,6 +50,12 @@ On **Security > API**
 
 ![api settings](https://hoopartifacts.s3.amazonaws.com/screenshots/okta-security-api.jpg)
 
+### 4) Add 'https://app.hoop.dev/groups' claim to ID Token (optional)
+
+- Go to Security > API > {authorization server} > CLaims
+- Added `https://app.hoop.dev/org` in the ID Token with the org name (string)
+- Added `https://app.hoop.dev/groups` in the ID Token
+
 ---
 
 ## Testing

@@ -5,7 +5,7 @@ slug: /configuring/auth-azure
 
 # Oauth2 - Azure
 
-This guide explain how to configure Azure with Hoop running it locally.
+This guide explains how to configure Azure with Hoop running it locally.
 
 ## Requirements
 
@@ -27,11 +27,9 @@ For this guide, the `API_URL` needs be set to `http://localhost:8009`, in a prod
 - Pick a name, and select the supported account types as you see fit
 - In Redirect URI, use: `http://localhost:8009/api/callback`. Change this later to the right domain.
 
-![alt text](https://hoopartifacts.s3.amazonaws.com/screenshots/okta-create-new-app.jpg)
-
 - Register the Application
 
-### 2) Add 'https://app.hoop.dev/groups' claim to ID Token
+### 2) Add 'https://app.hoop.dev/groups' claim to ID Token (optional)
 
 - Go to App registration > {AppName} > Token configuration
 - Click in the button `Add groups claim`
@@ -54,15 +52,18 @@ For this guide, the `API_URL` needs be set to `http://localhost:8009`, in a prod
 
 #### IDP_CLIENT_ID & IDP_CLIENT_SECRET
 
-In the Application Home
+- Go to App registration > {AppName}
+  - Take note on the Application (client) ID. This is the IDP_CLIENT_ID
+  - Click on "Client credentials" and create a new secret. This is IDP_CLIENT_SECRET
 
-![alt text](https://hoopartifacts.s3.amazonaws.com/screenshots/okta-app-general-tab.jpg)
+#### IDP_ISSUER & IDP_CUSTOM_SCOPES
 
-#### IDP_AUDIENCE & IDP_ISSUER
-
-On **Security > API**
-
-![api settings](https://hoopartifacts.s3.amazonaws.com/screenshots/okta-security-api.jpg)
+- IDP_CUSTOM_SCOPES
+  - Fixed value: "{IDP_CLIENT_ID}/.default"
+- IDP_ISSUER: 
+  - Go to App registration > {AppName} > Overview > Endpoints
+    - Open the "OpenID Connect metadata document" URL in the browser. It will look like `https://login.microsoftonline.com/{tenant_id}/v2.0/.well-known/openid-configuration` 
+    - In the JSON file in the browser, search for the key "issuer". It will look like `https://login.microsoftonline.com/{tenant_id}/v2.0` 
 
 ---
 
@@ -75,7 +76,7 @@ export API_URL=http://localhost:8009
 export IDP_CLIENT_ID=
 export IDP_CLIENT_SECRET=
 export IDP_ISSUER=
-export IDP_AUDIENCE=
+export IDP_CUSTOM_SCOPES=
 hoop start
 ```
 
