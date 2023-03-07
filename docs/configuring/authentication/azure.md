@@ -9,7 +9,6 @@ This guide explains how to configure Azure with Hoop running it locally.
 
 ## Requirements
 
-- [Hoop Command Line](../../quickstarts/cli.md)
 - An [account in Azure](https://azure.microsoft.com)
 - `API_URL` is the public DNS name of the hoop gateway instance
 
