@@ -112,4 +112,4 @@ GRPC_PORT [8443]: 8010
 Login succeeded
 ```
 
-Now you could invite new users, create connections and test hoop locally integrated with Okta.
+Now you could invite new users, create connections and test hoop locally integrated with Azure.
