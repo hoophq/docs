@@ -9,7 +9,7 @@ This guide shows how to extend hoop developing Plugins with GO.
 
 ## Requirements
 
-- [Hoop Command Line](../quickstarts/cli.md)
+- Hoop Command Line
 - [GO](https://go.dev/dl/) installed locally
 
 ### Hoop Setup

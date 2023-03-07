@@ -85,7 +85,7 @@ const config = {
             items: [
               {
                 label: 'Kubernetes',
-                to: '/docs/quickstarts/saas',
+                to: '/docs/quickstarts',
               },
                 {
                     label: 'Docker',
@@ -102,7 +102,7 @@ const config = {
                 items: [
                     {
                         label: 'SSH',
-                        to: '/docs/quickstarts/saas',
+                        to: '/docs',
                     },
                     {
                         label: 'VPN',
@@ -110,7 +110,7 @@ const config = {
                     },
                     {
                         label: 'Jump Server',
-                        to: '/docs/quickstarts/docker',
+                        to: '/docs',
                     },
                 ],
             },

@@ -9,7 +9,7 @@ Connect to Hoop in the Cloud with our agent.
 
 ## Requirements
 
-- [Hoop Command Line](./cli.md) installed locally.
+- Hoop Command Line installed locally.
 - [Signup at Hoop Dev](https://app.hoop.dev)
 
 ## Start an Agent

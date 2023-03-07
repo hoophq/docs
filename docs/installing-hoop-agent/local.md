@@ -11,7 +11,7 @@ Run hoop on your machine using Docker, and test everything locally
 
 ## Requirements
 
-- [Hoop Command Line](./cli.md) installed locally.
+- Hoop Command Line installed locally.
 
 ## Start local demo
 
