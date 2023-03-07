@@ -7,15 +7,10 @@ slug: /installing/cli-linux
 
 Install or Upgrade
 
-1. Gain root access to the operating system
+1. Download and install the hoop binary
 
 ```shell
 sudo su -
-```
-
-2. Download and install the hoop binary
-
-```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 curl https://hoopartifacts.s3.amazonaws.com/release/${VERSION}/hoop_${VERSION}_Linux_$(uname -m).tar.gz \
     -o hoop-$VERSION.tar.gz
