@@ -47,7 +47,7 @@ For this guide, the `API_URL` needs be set to `http://localhost:8009`, in a prod
 - For IDP_CLIENT_ID:
   - Go to Applications > {AppName} > SSO > Endpoint Configuration > Client ID
 
-#### IDP_ISSUER & IDP_CUSTOM_SCOPES
+#### IDP_ISSUER
 
 - IDP_ISSUER: 
   - Fixed value **https://oauth.id.jumpcloud.com/**. Please refer to their public [.well-known](https://oauth.id.jumpcloud.com/.well-known/openid-configuration) file.
