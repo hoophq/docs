@@ -15,7 +15,7 @@ POST /api/plugins
 }
 ```
 
-After enabling it, sessions will be indexed in the filesystem by default at `/opt/hoop/indexes`. This behavior could be changed configuring the environment variable `PLUGIN_INDEX_PATH` when starting the gateway.
+After enabling it, you could enable which connection to index. Sessions will be indexed in the filesystem by default at `/opt/hoop/indexes`. This behavior could be changed configuring the environment variable `PLUGIN_INDEX_PATH` when starting the gateway.
 
 
 :::caution IMPORTANT
@@ -30,7 +30,7 @@ The search API is available at `POST /api/plugins/indexer/search`, the request b
     "query": "size:>0",
     "limit": 50,
     "offset": 0,
-    "highlight": true,
+    "highlighter": "",
     "fields": ["output", "input", "connection", "verb", "user"]
 }
 ```

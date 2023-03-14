@@ -27,6 +27,18 @@ The `fields` attribute allows asking to return information of a particular index
 
 The fields `limit` and `offset` can be used to paginate the results from a search.
 
+## Highlighters
+
+It allows to highlight results to a specific client
+
+### ANSI
+
+The `ansi` highlighter mark the results to output them properly in a terminal
+
+### HTML
+
+The `html` mark the results to output them properly in an web application.
+
 ## Facets
 
 Facets allow you to include aggregated information about the documents matching your query. In the request example we have two types of facets.
@@ -84,7 +96,7 @@ With numeric range facets we can defined buckets to be bounded by numeric ranges
     "query": "size:>0",
     "limit": 50,
     "offset": 0,
-    "highlight": false,
+    "highlighter": "html|ansi",
     "fields": [],
     "facets": null
 }
