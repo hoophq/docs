@@ -5,19 +5,19 @@ slug: /plugins/indexer/api
 
 # API
 
-Use the REST API to search for specific items on sessions.
+Use the REST API to search for specific content on sessions.
 
 ## About Search
 
-You can use the REST API to search for the specific content inside sessions. As an administrator you may want to know if someone is passing something that they shouldn't be doing, or if some content is being exfiltrate from your environment.
+You can use the REST API to search for specific content inside sessions. As an administrator you may want to know if someone is passing something that they shouldn't be doing, or if some content is being exfiltrate from your environment.
 
-It also gives an overview about how developers are using Hoop. It's possible to use facets to enrich your search query responses aggregating results based on fields.
+It also gives an overview about how developers are using Hoop. It's possible to use facets to enrich your search query responses aggregating results based on the available fields of a session.
 
-Normal users could also the search to lookup for executions in Hoop.
+Normal users could also the search to lookup for their own executions in Hoop.
 
 ## Ranking search results
 
-The results are sorted by best match. Multiple factors are combined to boost the most relevant item to the top of the result list.
+The default behavior is to sort results by relevance, with the highest scoring results first.
 
 ## Fields
 
@@ -29,7 +29,7 @@ The fields `limit` and `offset` can be used to paginate the results from a searc
 
 ## Highlighters
 
-It allows to highlight results to a specific client
+It allows to highlight results for a specific client
 
 ### ANSI
 
@@ -37,7 +37,7 @@ The `ansi` highlighter mark the results to output them properly in a terminal
 
 ### HTML
 
-The `html` mark the results to output them properly in an web application.
+The `html` highlighter mark the results to output them properly in an web application.
 
 ## Facets
 
@@ -54,7 +54,7 @@ With numeric range facets we can defined buckets to be bounded by numeric ranges
 ### Request Example
 
 - Here we have named the facet `connections` and requested the result to include the top 5 types or buckets in the facet.
-- The session index has a `duration` field. With numeric range facets it's possible to define buckets to be bounded by numeric ranges. In this example we define 3 buckets which cover all numeric values, corresponding to sessions that took < 15 seconds, between 15 and 50 seconds and more than 120 seconds.
+- The session index has a `duration` field. With numeric range facets it's possible to define buckets to be bounded by numeric ranges. In this example we define 3 buckets which cover all numeric values, corresponding to sessions that took **< 15 seconds**, between **15 and 50 seconds** and **more than 120 seconds**.
 
 ```json
 {
