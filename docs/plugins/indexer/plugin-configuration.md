@@ -21,16 +21,3 @@ After enabling it, you could enable which connection to index. Sessions will be 
 :::caution IMPORTANT
 The content to be indexed are persisted in the filesystem and indexed after the session is closed. For self hosted installation it's important to configure persistent volumes to avoid losing indexes.
 :::
-
-
-The search API is available at `POST /api/plugins/indexer/search`, the request bellow performs a search in the index:
-
-```json
-{
-    "query": "size:>0",
-    "limit": 50,
-    "offset": 0,
-    "highlighter": "",
-    "fields": ["output", "input", "connection", "verb", "user"]
-}
-```
