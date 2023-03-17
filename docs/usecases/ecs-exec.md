@@ -32,8 +32,8 @@ ecs-exec.sh --interactive --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 Start an interactive session 
 
 ```shell
-hoop connect ecs-exec -- --pipe /bin/bash
-hoop connect ecs-exec -- --pipe 'rails console'
-hoop connect ecs-exec -- --pipe clojure
+hoop connect my-ecs -- --pipe /bin/bash
+hoop connect my-ecs -- --pipe 'rails console'
+hoop connect my-ecs -- --pipe clojure
 ```
 

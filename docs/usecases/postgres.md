@@ -25,7 +25,7 @@ This type of connection accepts only `MD5` or `scram-sha-256`  [authentication m
 ## Postgres Server
 
 ```shell
-hoop connect postgres-example --port 5432
+hoop connect my-postgres --port 5432
 ```
 
 Use a compatible postgres client to connect in the instance

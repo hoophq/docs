@@ -17,7 +17,7 @@ Port Forward local ports from your private network | HTTP example.
 ## How to Use
 
 ```shell
-hoop connect http-port-forward --port 8080
+hoop connect my-http --port 8080
 ```
 
 Open the forwarded service in a web browser or via http request.
