@@ -28,11 +28,15 @@ When enabled, indexes the contents of executions (sessions) made by users in whi
 
 ## Scope Searching
 
-The scope of the search is bound for non-admin users. Only admin users can search for sessions that belongs to other users using the qualifier `user:<user-id>`.
+The scope of the search is bound for non-admin users. Only admin users can search for sessions that belongs to other users using the qualifier `user:<user-email>`.
 
 ## Content Truncation
 
 The fields `input` and `output` are indexed truncated when it reaches 600KB. You are able to filter sessions truncated using `is:truncated in:<input|output>` qualifiers. 
+
+## Session Indexing
+
+Content is indexed if the plugin is enabled, configured for a particular connection and after the session is closed. Additionally, a job is started daily at 23:30 UTC to index all sessions that are enabled for connections. It index the last 45 days by default.
 
 ## Experimental Client
 

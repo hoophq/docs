@@ -84,7 +84,6 @@ With numeric range facets we can defined buckets to be bounded by numeric ranges
 }
 ```
 
-
 ## Search Sessions
 
 - **`POST /api/plugins/indexer/sessions/search`**
