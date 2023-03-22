@@ -20,6 +20,7 @@ The gateway provides a REST API, a webapp UI and a bi-directional gRPC to exchan
 | PUT    | /api/users/:id |
 | POST   | /api/users |
 | POST   | /api/connections |
+| POST   | /api/connections/:name/exec |
 | PUT    | /api/connections/:name |
 | GET    | /api/connections |
 | GET    | /api/connections/:name |
@@ -41,6 +42,7 @@ The gateway provides a REST API, a webapp UI and a bi-directional gRPC to exchan
 | GET    | /api/plugins/audit/sessions |
 | GET    | /api/plugins/runbooks/connections/:name/templates |
 | POST   | /api/plugins/runbooks/connections/:name/exec |
+| POST   | /api/plugins/indexer/sessions/search |
 
 ## Gateway Configuration
 
@@ -51,19 +53,25 @@ The following environment variables could be configured when starting the gatewa
 | XTDB_ADDRESS                        | `http://127.0.0.1:3000`  | Database server address                          |
 | STATIC_UI_PATH                      | `/app/ui/public`         | The path where the UI assets resides             |
 | PLUGIN_AUDIT_PATH                   | `/opt/hoop/sessions`     | The path where the temporary sessions are stored |
+| PLUGIN_INDEX_PATH                   | `/opt/hoop/indexes`      | The path where the temporary indexes are stored  |
+| PLUGIN_REGISTRY_URL                 | ""                       | The URL of the plugin registry                   |
+| GIN_MODE                            | "release"                | Turn on (debug) logging of routes                |
+| LOG_ENCODING                        | "json"                   | The encoding of output logs (console|json)       |
+| LOG_LEVEL                           | "info"                   | The verbosity of logs    (debug,info,warn,error) |
+| PLUGIN_REGISTRY_URL                 | ""                       | The URL of the plugin registry                   |
 | PROFILE                             | ""                       | "dev" runs gateway without authentication        |
 | GOOGLE_APPLICATION_CREDENTIALS_JSON | ""                       | GCP DLP credentials                              |
 | SENTRY_DSN                          | ""                       | Sentry Gateway API Key                           |
 | AGENT_SENTRY_DSN                    | ""                       | Sentry Agent API Key                             |
 | PYROSCOPE_INGEST_URL                | ""                       | Pyroscope URL                                    |
 | PYROSCOPE_AUTH_TOKEN                | ""                       | Pyroscope ingest auth token                      |
-| PLUGIN_REGISTRY_URL                 | ""                       | The URL of the plugin registry                   |
 | SEGMENT_KEY                         | ""                       | Segment API Key (customer metrics)               |
 | API_URL (required)                  | ""                       | API URL address (identity provider)              | 
 | IDP_ISSUER (required)               | ""                       | Identity Provider Issuer (Oauth2)                |
 | IDP_AUDIENCE                        | ""                       | Identity Provider Audience (Oauth2)              |
 | IDP_CLIENT_ID (required)            | ""                       | Oauth2 client id                                 |
 | IDP_CLIENT_SECRET (required)        | ""                       | Ouath2 client secret                             |
+| IDP_CUSTOM_SCOPES                   | ""                       | Ouath2 additional scopes                         |
 | MAGIC_BELL_API_KEY                  | ""                       | Magic Bell API Key (notification system)         |
 | MAGIC_BELL_API_SECRET               | ""                       | Magic Bell API Secret                            |
 | SMTP_HOST                           | ""                       | Smtp Host (notification system)                  |
@@ -128,13 +136,9 @@ hoop start
 When this configuration is enabled, those attributes are passed down to the agent via gRPC and stored in memory when the agent connects in the gateway.
 :::
 
-## Session Blobs (audit plugin)
+## Session Blobs (audit|indexer plugins)
 
-The `PLUGIN_AUDIT_PATH` contains the audit session data that are in-transit. To guarantee the persistence of blobs stored in the filesystem until the session is flushed to the database. We recommend mounting a persistent volume in this path.
-
-:::info
-The blob is only available in the filesystem when the session is open. After it's closed the data is flushed to the database.
-:::
+The `PLUGIN_AUDIT_PATH` and `PLUGIN_INDEX_PATH` contains the audit session data that are in-transit. To guarantee the persistence of blobs stored in the filesystem until the session is flushed to the underline system. We recommend mounting a persistent volume in those paths.
 
 ## Notification (review & jit plugins)
 
@@ -145,7 +149,6 @@ To enable it, create an account in magic bell and [get the required credentials]
 
 - MAGIC_BELL_API_KEY
 - MAGIC_BELL_API_SECRET
-
 
 ## Data Loss Prevention (DLP plugin)
 
