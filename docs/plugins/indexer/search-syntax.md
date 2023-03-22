@@ -23,6 +23,16 @@ dwarf kingdom in:output user:johndoe@corp.tld
 
 To lookup for content in the index, use the qualifiers `in:input` or `in:output`
 
+### Qualifiers
+
+Qualifiers are attributes that are used to refine your query. Any [indexed field](./index.md#indexed-fields) could be used as a qualifier to filter results with except of `input` and `output`.
+
+Some qualifiers has a special usage and are used in conjuction with indexed fields or to configure a specific search term
+
+- `in` indicate that a query will be scoped to the fields `input` or `output`
+- `is` can be used with boolean fields
+- `fuzzy` configures the [fuzziness](https://en.wikipedia.org/wiki/Levenshtein_distance) of a term query
+
 ### Query Operators 
 
 It's possible to use the query operators `AND`, `OR` or `NOT` to build more advanced queries.

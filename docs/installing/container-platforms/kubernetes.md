@@ -21,6 +21,9 @@ config:
   IDP_ISSUER: ''
   IDP_CLIENT_ID: ''
   IDP_CLIENT_SECRET: ''
+  # IDP_AUDIENCE: ''
+  # IDP_CUSTOM_SCOPES: ''
+  LOG_LEVEL: info
 
 # hoop gateway configuration. Please refer to https://hoop.dev/docs/configuring/gateway
 xtdbConfig:
@@ -31,8 +34,24 @@ xtdbConfig:
   PG_DB: ''
 
 persistence:
-  enabled: true
+  enabled: false
   storageClassName: ''
+
+ingressApi:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+
+  host: hoop.yourdomain.tld
+
+ingressGrpc:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+
+  host: hoop.yourdomain.tld
 EOF
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 helm install hoop \

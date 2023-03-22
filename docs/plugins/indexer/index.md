@@ -8,7 +8,7 @@ slug: /plugins/indexer/overview
 When enabled, indexes the contents of executions (sessions) made by users in which you could use a powerful query syntax to search.
 
 
-## Information Available
+## Indexed Fields
 
 | FIELD NAME      | TYPE     | DESCRIPTION                              |
 | --------------- | -------- | ---------------------------------------- |
