@@ -1,6 +1,6 @@
 ---
 sidebar_position: 16
-slug: /usecases/mongodb
+slug: /connections/mongodb
 ---
 
 # MongoDB | mongosh cli

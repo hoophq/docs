@@ -1,6 +1,6 @@
 ---
 sidebar_position: 17
-slug: /usecases/bastion
+slug: /connections/bastion
 ---
 
 # Bastion Server | ssh cli

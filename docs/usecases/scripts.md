@@ -3,7 +3,7 @@ sidebar_position: 16
 slug: /usecases/scripts
 ---
 
-# Scripts | one-off
+# Execute scripts with Hoop connections
 
 Allows executing one-off scripts using the underlying Operating System tools.
 

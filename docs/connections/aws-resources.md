@@ -1,6 +1,6 @@
 ---
 sidebar_position: 11
-slug: /usecases/aws-resources
+slug: /connections/aws-resources
 ---
 
 # AWS | resources

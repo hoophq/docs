@@ -1,11 +1,11 @@
 ---
-sidebar_position: 10
-slug: /usecases/ecs-exec-oneoff
+sidebar_position: 9
+slug: /connections/ecs-exec
 ---
 
-# AWS ECS | exec one-off
+# AWS ECS
 
-The Elastic Container Service allows executing one off tasks of any type directly into ECS tasks/containers.
+Interact with Elastic Container Service executing one off tasks or an interactive session into ECS tasks/containers.
 
 :::info note
 It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
@@ -21,13 +21,39 @@ It's important to configure the ECS tasks before trying this feature, please ref
 | `AWS_SECRET_ACCESS_KEY` | env-var | The secret key credential          |
 | `AWS_DEFAULT_REGION`    | env-var | The AWS region                     |
 
+## AWS ECS - Interactive Sessions
+
+The AWS Elastic Container Service allows connecting to tasks and starting interactive sessions. It's possible to map these commands to Hoop to obtain interactive sessions allocating a pseudo TTY.
+
+:::info note
+It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
+:::
+
+### Connection Command
+
+```shell
+ecs-exec.sh --interactive --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
+```
+
+### How to Use
+
+Start an interactive session 
+
+```shell
+hoop connect my-ecs -- --pipe /bin/bash
+hoop connect my-ecs -- --pipe 'rails console'
+hoop connect my-ecs -- --pipe clojure
+```
+
+## AWS ECS - Execute one task off
+
 ### Connection Command
 
 ```shell
 ecs-exec.sh --cluster=$CLUSTER_NAME --service-name=$SERVICE_NAME
 ```
 
-## How to Use
+### How to Use
 
 Now it's possible to execute ruby script straight from Hoop
 
