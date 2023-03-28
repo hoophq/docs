@@ -71,20 +71,24 @@ helm upgrade hoop \
 
 Please refer to [agent configuration](../../configuring/agent.md) for more information.
 
+Make sure to specify the gRPC address of your gateway instance, if you don't have a valid token, 
+the agent will fallback to [web registration](../../configuring/agent.md#web-registration).
+
 :::info
-The `HOOP_GRPCURL` option must be used when it's a self-hosted installation. It must point to the gRPC server of gateway. E.g.:
-hoop.yourdomain.tld:8443. It connects to the remote server via TLS.
+Our SaaS instance is configured as https://app.hoop.dev:8443. If you have your own gateway, provide a valid public address in `gateway.grpc_url`.
 :::
 
 ```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 helm install hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
-    --set 'config.HOOP_GRPCURL='
+    --set 'config.gateway.grpc_url=https://app.hoop.dev:8443' \
+    --set 'config.gateway.token='
 ```
 
 To upgrade to a newer version or change a configuration:
 
 ```shell
 helm upgrade hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
-    --set 'config.HOOP_TOKEN=<STATIC-TOKEN>'
+  --set 'config.gateway.grpc_url=https://app.hoop.dev:8443' \
+  --set 'config.gateway.token='
 ```
