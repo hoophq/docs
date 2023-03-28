@@ -15,9 +15,13 @@ docker run hoophq/hoop hoop start agent
 This command will show you a log similar to this:
 
 ```shell
-(...)
-** UNREGISTERED AGENT **
-Please validate the Agent in the URL: https://app.hoop.dev/agents/new/x-agt-91dda5fa-c370-4383-8ca6-48e5d563e491
+hoop start agent
+{"level":"info","timestamp":"2023-03-27T14:57:24-03:00","logger":"agent/main.go:35","msg":"webregister - connecting, attempt=1"}
+
+--------------------------------------------------------------------------
+VISIT THE URL BELOW TO REGISTER THE AGENT
+{API_URL}/agents/new/x-agt-...
+--------------------------------------------------------------------------
 ```
 
 Open the provided URL to register this agent on hoop.dev web portal.

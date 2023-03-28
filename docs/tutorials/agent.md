@@ -16,11 +16,10 @@ Tutorial explaining how to deploy and register an agent in multiple environments
 Leave the default values pressing enter and type your e-mail in the end
 
 ```shell
-$ hoop login
+hoop login
 Press enter to leave the defaults
-Host [app.hoop.dev]:
-Port [8443]:
-Email:
+API_URL [https://app.hoop.dev]:
+GRPC_URL [app.hoop.dev:8443]:
 ```
 
 Your default browser will open and authenticate with your identity provider.
@@ -88,7 +87,7 @@ systemctl start hoopagent
 
 ```shell
 $ journalctl -u hoopagent |grep -i 'https://app.hoop.dev/agents/new/x-agt' |tail -n1
-Dec 13 21:59:21 node01 hoop[2545]: Please validate the Agent in the URL: https://app.hoop.dev/agents/new/x-agt-....
+Dec 13 21:59:21 node01 hoop[2545]: {API_URL}/agents/new/x-agt-....
 ```
 
 ### Container Platforms
@@ -121,13 +120,13 @@ The runtime of most container platforms expects a specification of how to deploy
 
 - **image:** `hoophq/hoopdev`
 - **environmet variables:**
-  - `TOKEN` - the token required to connect with the gateway
+  - `HOOP_TOKEN` - the token required to connect with the gateway
 
 The command above executed by the docker container runtime is enough to run the agent:
 
 ```shell
 docker run --name hoopagent \
-  -e TOKEN=x-agt-...
+  -e HOOP_TOKEN=x-agt-...
   hoophq/hoopdev
 ```
 
@@ -152,7 +151,7 @@ spec:
       containers:
       - name: defaultagent
         env:
-        - name: TOKEN
+        - name: HOOP_TOKEN
           value: 'x-agt-...'
         image: hoophq/hoopdev
 ```

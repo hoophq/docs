@@ -42,5 +42,5 @@ The gateway needs to be able to reach an xtdb instance which is provided by the 
 The recommended image is `hoophq/hoopdev` which contains all the required tools installed, it's only supported for `amd64` architecture.
 
 - environment variables:
-  - TOKEN (the agent will unregister on restarts if it's not set)
+  - HOOP_TOKEN (the agent will unregister on restarts if it's not set)
 
