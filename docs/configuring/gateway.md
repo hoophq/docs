@@ -57,7 +57,11 @@ The following environment variables could be configured when starting the gatewa
 | PLUGIN_REGISTRY_URL                 | ""                       | The URL of the plugin registry                   |
 | GIN_MODE                            | "release"                | Turn on (debug) logging of routes                |
 | LOG_ENCODING                        | "json"                   | The encoding of output logs (console|json)       |
-| LOG_LEVEL                           | "info"                   | The verbosity of logs    (debug,info,warn,error) |
+| LOG_LEVEL                           | "info"                   | The verbosity of logs (debug,info,warn,error)    |
+| LOG_GRPC                            | ""                       | "1" enables logging gRPC protocol                |
+| TLS_KEY                             | ""                       | base64 encoded RSA private key (grpc)            |
+| TLS_CERT                            | ""                       | base64 encoded pem certificates (grpc)           |
+| TLS_CA                              | ""                       | base64 encoded pem certificate authority (grpc)  |
 | PLUGIN_REGISTRY_URL                 | ""                       | The URL of the plugin registry                   |
 | PROFILE                             | ""                       | "dev" runs gateway without authentication        |
 | GOOGLE_APPLICATION_CREDENTIALS_JSON | ""                       | GCP DLP credentials                              |
@@ -95,6 +99,8 @@ It serves bi-directional gRPC protocol to exchange packets between the client an
 :::info
 The resources aren't authenticated when the gateway is started with the environment variable `PROFILE=dev`
 :::
+
+TLS can be configured using the environment variables `TLS_KEY` and `TLS_CERT`.
 
 ## Storage
 

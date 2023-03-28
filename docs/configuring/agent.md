@@ -9,42 +9,81 @@ The agent is the component which connects to internal services, it requires an A
 
 ## Configuration
 
-| ENVIRONMENT    | DEFAULT VALUE | DESCRIPTION                                      |
-| -------------- | ------------- | ------------------------------------------------ |
-| SERVER_ADDRESS | ""            | The gRPC server (`DNS:PORT`) to connect to.      |
-| TOKEN          | ""            | The API key to authenticate to gateway           |
-| AUTO_REGISTER  | ""            | The organization name to auto register the agent |
+| ENVIRONMENT     | DEFAULT VALUE | DESCRIPTION                                            |
+| --------------- | ------------- | ------------------------------------------------------ |
+| HOOP_GRPCURL    | ""            | The gRPC server (`DNS:PORT`) to connect to.            |
+| HOOP_TOKEN      | ""            | The API key to authenticate to gateway                 |
+| TLS_SERVER_NAME | ""            | The server name to be resolved when connecting via TLS |
+| AUTO_REGISTER   | ""            | The organization name to auto register the agent       |
+| LOG_ENCODING    | "json"        | The log encoding to output logs: json,console          |
+| LOG_LEVEL       | "INFO"        | The level of logs: DEBUG,INFO,WARN,ERROR               |
 
-## Gateway Server Address
+The agent loads credentials following the order below
 
-This option configures in which gateway to connect to when starting.
-This value is only required when running the agent in **self-hosted mode**.
+### Auto Registration
 
-:::info
-If this value is not set, the agent will try to connect locally into `127.0.0.1:8010`, fallbacking to `app.hoop.dev:8443`.
-:::
+This mode should only be used when the agent is deployed in the same network of the xtdb instance and gateway. It will auto register and connect to the gateway in localhost. It's useful to perform administrative tasks in the gateway.
 
-## Auto Registration
+### Environment Variables
 
-This mode should only be used when the agent is deployed in the same network of the xtdb instance and gateway. It will auto register and connect to the gateway in localhost.
+Using environment variables is the recommended way of setup the agent in a production setup. You can generate a token in the API or after receiving a link in the [web registration mode](agent.md/#web-registration).
 
-It's useful to perform administrative tasks in the gateway.
+To activate this mode, both environment variables must be set:
 
-## Web Registration
+- `HOOP_GRPCURL`
+- `HOOP_TOKEN`
 
-When the environment variable `TOKEN` is not available the agent fallbacks to web registration. A link will be available to register the agent when starting. Example:
+### Configuration File
 
-```shell
-(...)
-** UNREGISTERED AGENT **
-Please validate the Agent in the URL: https://app.hoop.dev/agents/new/x-agt-91dda5fa-c370-4383-8ca6-48e5d563e491
+It tries to load the configuration from the filesystem at `$HOME/.hoop/agent.toml`. This mode is useful when the agent is running in a stateful environment. The configuration file is wiped if the machine or a container is restarted.
+
+### Local Mode
+
+If any of the previous methods aren't available, it will load the configuration if if the address `127.0.0.1:8010` has connectivity.
+This mode is used when the agent identifies that has a local gateway instance running.
+
+### Web Registration
+
+The last resort is web registration, which will provide a link to create the agent in the webapp. The output below will appear when starting the agent:
+
+```log
+{..., "logger":"agent/main.go:35","msg":"webregister - connecting, attempt=1"}
+
+--------------------------------------------------------------------------
+VISIT THE URL BELOW TO REGISTER THE AGENT
+{API_URL}/agents/new/x-agt-...
+--------------------------------------------------------------------------
 ```
 
-The token is then persisted locally at `$HOME/.hoop/agent.toml`.
+After registering the agent in the webapp, the token is persisted in the filesystem at `$HOME/.hoop/agent.toml`. This will allow the agent to be reconnected if the process restarts.
+
+#### Default URL
+
+The `{API_URL}` will always default to the address `https://app.hoop.dev`. When running the gateway self-hosted, it's important to set the environment variables `HOOP_GRPCURL`. This will remove the the default address to the standard output.
 
 :::info
-After the registration the token could be set as an environment variable: `TOKEN=x-agt-91dda5...`
+After registering the agent in the webapp, the token could be used to persist the configuration using the [environment variable mode](./agent.md#environment-variables).
 :::
+
+## TLS connection
+
+The agent always connect with the gateway using TLS, the only exception is when it fallbacks to the [local mode](./agent.md#local-mode). The logs will show the information below after loading the configuration:
+
+```log
+{..., "... platform=linux/arm64, mode=local, grpc_server=127.0.0.1:8010, tls=false - starting agent"}
+```
+
+In this case tls is disabled (`tls=false`) because the configuration is loaded as `local` mode.
+
+## Debugging
+
+To start the agent in debug mode, set the option `--debug` or set the env `LOG_LEVEL=DEBUG`.
+To debug gRPC connection traffic logs, use the option `--debug-grpc`.
+
+```shell
+# start agent in debug mode
+hoop start agent --debug --debug-grpc
+```
 
 ## Creating a token
 
@@ -52,7 +91,7 @@ If you're logged in as an administrator, you could create a token using the API.
 
 ```shell
 API_URL=$(cat $HOME/.hoop/config.toml |grep -i api_url |awk {'print $3'} | sed 's/"//g')
-ACCESS_TOKEN=$(cat $HOME/.hoop/config.toml  |grep -i Token |awk {'print $3'} |sed 's/"//g')
+ACCESS_TOKEN=$(cat $HOME/.hoop/config.toml  |grep -i token |awk {'print $3'} |sed 's/"//g')
 AGENT_NAME=prod
 curl $API_URL/api/agents \
   -H 'Content-Type: application/json' \

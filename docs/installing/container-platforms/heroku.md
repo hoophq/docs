@@ -9,7 +9,7 @@ This guide explain how to deploy the agent on Heroku Platform
 
 ## Agent Deployment
 
-Click in the button below to deploy the agent. Leave the inputs `TOKEN` and `VERSION` empty.
+Click in the button below to deploy the agent. Leave the inputs `HOOP_TOKEN` and `VERSION` empty.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hoophq/heroku-hoop-agent)
 
@@ -29,7 +29,7 @@ This step is recommended to avoid having to register the agent again if the dyno
 2. Add a environment variable to the agent app
 
 - Go to **Settings** > **Config Vars**
-- Add a variable with the key `TOKEN`
+- Add a variable with the key `HOOP_TOKEN`
 - Add the token (`x-agt...`) to the input value
 
 [Config Vars Reference](https://devcenter.heroku.com/articles/config-vars)

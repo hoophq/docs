@@ -43,7 +43,7 @@ systemctl start hoopagent
 
 ```shell
 journalctl -u hoopagent |grep -i 'https://app.hoop.dev/agents/new/x-agt' |tail -n1
-Dec 13... hoop[2545]: Please validate the Agent in the URL: https://app.hoop.dev/agents/new/x-agt-...
+https://app.hoop.dev/agents/new/x-agt-...
 ```
 
 :::info

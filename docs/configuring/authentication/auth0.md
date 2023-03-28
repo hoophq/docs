@@ -74,10 +74,13 @@ hoop start agent
 
 Perform the registration in the webapp clicking in the link below
 
-```shell
-(...)
-** UNREGISTERED AGENT **
-Please validate the Agent in the URL: http://127.0.0.1:8009/agents/new/x-agt-2fef0137-d13e-40ea-9448-cd26fba2aa58
+```log
+{"level":"info","timestamp":"2023-03-27T14:57:24-03:00","logger":"agent/main.go:35","msg":"webregister - connecting, attempt=1"}
+
+--------------------------------------------------------------------------
+VISIT THE URL BELOW TO REGISTER THE AGENT
+{API_URL}/agents/new/x-agt-...
+--------------------------------------------------------------------------
 ```
 
 Login in the webapp
@@ -89,12 +92,12 @@ hoop login
 Add the default address to the local hoop instance
 
 - `API_URL=http://127.0.0.1:8009`
-- `GRPC_PORT=8010`
+- `GRPC_URL=127.0.0.1:8010`
 
 ```shell
 Press enter to leave the defaults
 API_URL [https://app.hoop.dev]: http://127.0.0.1:8009
-GRPC_PORT [8443]: 8010
+GRPC_URL [app.hoop.dev:8443]: 127.0.0.1:8010
 Login succeeded
 ```
 
