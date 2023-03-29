@@ -54,15 +54,7 @@ ingressGrpc:
   host: hoop.yourdomain.tld
 EOF
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
-helm install hoop \
-  https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoop-chart-$VERSION.tgz \
-  -f values.yaml
-```
-
-To upgrade to a newer version or change a configuration:
-
-```shell
-helm upgrade hoop \
+helm upgrade --install hoop \
   https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoop-chart-$VERSION.tgz \
   -f values.yaml
 ```
@@ -75,20 +67,36 @@ Make sure to specify the gRPC address of your gateway instance, if you don't hav
 the agent will fallback to [web registration](../../configuring/agent.md#web-registration).
 
 :::info
-Our SaaS instance is configured as https://app.hoop.dev:8443. If you have your own gateway, provide a valid public address in `gateway.grpc_url`.
+Our SaaS instance is configured as https://app.hoop.dev:8443. If you have your own gateway, provide a valid public address for the option `gateway.grpc_url`.
 :::
 
 ```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
-helm install hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+helm upgrade --install https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set 'config.gateway.grpc_url=https://app.hoop.dev:8443' \
     --set 'config.gateway.token='
 ```
 
-To upgrade to a newer version or change a configuration:
+### Full Configuration
 
-```shell
-helm upgrade hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
-  --set 'config.gateway.grpc_url=https://app.hoop.dev:8443' \
-  --set 'config.gateway.token='
+```yaml
+config:
+  gateway:
+    # the grpc url (http2) to connect in the gateway
+    grpc_url: '<HOST:PORT>'
+    # use a distinct tls server name to connect
+    tls_server_name: ''
+    # the token to be used to authenticate in the gateway
+    token: ''
+  # Autoregister will try to auto register if the agent has
+  # access to the default xtdb address (127.0.0.1:3001).
+  # The name of the org must match the prefix domain name being used to signin
+  # Example: john.doe@unicorn.com, AUTO_REGISTER=unicorn
+  AUTO_REGISTER: myorg
+  # Log level control
+  LOG_LEVEL: 'debug|info|warn|error'
+  # Increase logs of gRPC debugging
+  LOG_GRPC: '0|1|2'
 ```
+
+

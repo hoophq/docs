@@ -89,7 +89,7 @@ The following environment variables could be configured when starting the gatewa
 
 It serves the REST API and the webapp.
 
-- REST API: `$API_URL/api/<resources>/...`
+- REST API: `$API_URL/api/...`
 - Webapp: `$API_URL/...`
 
 ### 8010
