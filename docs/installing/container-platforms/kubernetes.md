@@ -98,5 +98,3 @@ config:
   # Increase logs of gRPC debugging
   LOG_GRPC: '0|1|2'
 ```
-
-
