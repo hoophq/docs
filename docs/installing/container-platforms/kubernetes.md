@@ -72,7 +72,7 @@ Our SaaS instance is configured as https://app.hoop.dev:8443. If you have your o
 
 ```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
-helm upgrade --install https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+helm upgrade --install hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set 'config.gateway.grpc_url=https://app.hoop.dev:8443' \
     --set 'config.gateway.token='
 ```
