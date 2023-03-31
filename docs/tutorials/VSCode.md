@@ -1,3 +1,10 @@
+---
+sidebar_position: 4
+slug: /tutorials/vscode
+---
+
+# VSCode
+
 Send any script from VSCode to hoop.dev
 
 Requirements

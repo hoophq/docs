@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /quickstarts/plugin-development
+slug: /tutorials/plugin-development
 ---
 
 # Plugin Development
