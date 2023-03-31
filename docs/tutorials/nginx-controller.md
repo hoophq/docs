@@ -5,7 +5,7 @@ slug: /tutorials/nginx-controller
 
 # Nginx Ingress Controller
 
-This tutorial explains how to setup the [nginx ingress controller](http://localhost:3000/docs/tutorials/nginx-controller) to expose the hoop gateway web & gRPC services with TLS.
+This tutorial explains how to setup the [nginx ingress controller](https://kubernetes.github.io/ingress-nginx/) to expose the hoop gateway web & gRPC services with TLS.
 
 ## Requirements
 
@@ -95,7 +95,7 @@ LB_HOST=$(kubectl get svc -n ingress-nginx ingress-nginx-controller \
 Deploy a postgres instance in your cluster
 
 ```shell
-kubectl apply -n appdemo -f https://hoop.dev/docs/misc/postgres-deployment.yaml
+kubectl apply -n appdemo -f https://hoop.dev/misc/postgres-deployment.yaml
 ```
 
 [See this guide](../configuring/authentication/auth0.md) about how to create an oauth2 application on auth0. Export the variables below
