@@ -8,21 +8,6 @@ slug: /configuring/auth-overview
 Hoop implements the Oauth2 protocol + OIDC. The signature of tokens are validated with JWKS, provided by the identity provider.
 Users require to be registered and approved by administrators on Hoop. They could be in `active`, `inactive` or in `reviewing` status.
 
-## Organizations
-
-Organizations are created when a user performs the first signup, the name of the organization is derived from its domain, example:
-
-- johndoe@google.com, org=google
-
-Every resource created is bound to an organization.
-
-:::tip 
-    If you use your custom ID Provider, then it is possible to provide a custom claim 
-    in the JWT ID Token:
-    `https://app.hoop.dev/org : {name of the org}`.
-    This will take precedence over the above method.
-:::
-
 ## Permissions
 
 - `admin` users has full access to resources

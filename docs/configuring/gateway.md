@@ -62,7 +62,7 @@ The following environment variables could be configured when starting the gatewa
 | TLS_KEY                             | ""                       | base64 encoded RSA private key (grpc)            |
 | TLS_CERT                            | ""                       | base64 encoded pem certificates (grpc)           |
 | TLS_CA                              | ""                       | base64 encoded pem certificate authority (grpc)  |
-| PLUGIN_REGISTRY_URL                 | ""                       | The URL of the plugin registry                   |
+| ORG_MULTI_TENANT                    | "false"                  | Enable organization multi-tenancy                |
 | PROFILE                             | ""                       | "dev" runs gateway without authentication        |
 | GOOGLE_APPLICATION_CREDENTIALS_JSON | ""                       | GCP DLP credentials                              |
 | SENTRY_DSN                          | ""                       | Sentry Gateway API Key                           |
@@ -101,6 +101,10 @@ The resources aren't authenticated when the gateway is started with the environm
 :::
 
 TLS can be configured using the environment variables `TLS_KEY` and `TLS_CERT`.
+
+## Organization Multi Tenancy
+
+This mode is only used in our SaaS environment to permit tenancy of multiple organization, for self-hosted installation this should not be enabled. The default mode will create a default organization by default and all signup will be associated with this organization.
 
 ## Storage
 

@@ -67,7 +67,7 @@ After registering the agent in the webapp, the token could be used to persist th
 
 ## TLS connection
 
-The agent always connect with the gateway using TLS, the only exception is when it fallbacks to the [local mode](./agent.md#local-mode). The logs will show the information below after loading the configuration:
+The agent only connects without TLS when it's connecting in the gateway via localhost when it fallback to [local mode](./agent.md#local-mode) or [auto registeration](./agent.md#auto-registration). If `TLS_SERVER_NAME` env is set, it will always force to connect with TLS. The logs will show the information below after loading the configuration:
 
 ```log
 {..., "... platform=linux/arm64, mode=local, grpc_server=127.0.0.1:8010, tls=false - starting agent"}
@@ -78,7 +78,7 @@ In this case tls is disabled (`tls=false`) because the configuration is loaded a
 ## Debugging
 
 To start the agent in debug mode, set the option `--debug` or set the env `LOG_LEVEL=DEBUG`.
-To debug gRPC connection traffic logs, use the option `--debug-grpc`.
+To debug gRPC connection traffic logs, use the option `--debug-grpc` or set the env `LOG_GRPC=1`.
 
 ```shell
 # start agent in debug mode

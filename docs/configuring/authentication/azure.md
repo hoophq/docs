@@ -38,16 +38,7 @@ For this guide, the `API_URL` needs be set to `http://localhost:8009`, in a prod
   - Overview > ManagedApplication {AppName} > Single sign-on > Attributes & Claims > Edit
   - In Additional claims, click at the `groups` record and add the namespace: "https://app.hoop.dev"
 
-### 3) Add 'https://app.hoop.dev/org' claim to ID Token (optional)
-- Go to App registration > {AppName} > Overview > ManagedApplication {AppName} > Single sign-on > Attributes & Claims > Edit
-- Click `Add new claim` button
-  - Name: "org"
-  - Namespace: "https://app.hoop.dev"
-  - Source: Attribute
-  - Source attribute: user.companyname
-  - Save
-
-### 4) Collect the required information
+### 3) Collect the required information
 
 #### IDP_CLIENT_ID & IDP_CLIENT_SECRET
 
