@@ -67,7 +67,7 @@ After registering the agent in the webapp, the token could be used to persist th
 
 ## TLS connection
 
-The agent only connects without TLS when it's connecting in the gateway via localhost when it fallback to [local mode](./agent.md#local-mode) or [auto registeration](./agent.md#auto-registration). If `TLS_SERVER_NAME` env is set, it will always force to connect with TLS. The logs will show the information below after loading the configuration:
+The agent only connects without TLS when it's connecting in the gateway via localhost, this usually happens when it's running on [local](./agent.md#local-mode) or [auto registeration](./agent.md#auto-registration) mode. When `TLS_SERVER_NAME` env is set, it will always connect with TLS. The logs will indicate if it's connecting with tls or not:
 
 ```log
 {..., "... platform=linux/arm64, mode=local, grpc_server=127.0.0.1:8010, tls=false - starting agent"}
