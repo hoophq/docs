@@ -9,8 +9,6 @@ Hoop implements the Oauth2 protocol + OIDC. The signature of tokens are validate
 
 ## Users
 
-They could be in `active`, `inactive` or in `reviewing` status.
-
 Users are `active` and assigned to the `default` organization when they signup. A user could be set to an `inactive` state preventing it from accessing the platform, however it's recommended to manage the state of users in the identity provider.
 
 :::info
