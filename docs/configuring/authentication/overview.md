@@ -6,17 +6,18 @@ slug: /configuring/auth-overview
 # Overview
 
 Hoop implements the Oauth2 protocol + OIDC. The signature of tokens are validated with JWKS, provided by the identity provider.
-Users require to be registered and approved by administrators on Hoop. They could be in `active`, `inactive` or in `reviewing` status.
 
 ## Users
 
-Users are assigned to the `default` organization when they signin and are active after that. Managing them are done in the configured identity provider.
+They could be in `active`, `inactive` or in `reviewing` status.
+
+Users are `active` and assigned to the `default` organization when they signup. A user could be set to an `inactive` state preventing it from accessing the platform, however it's recommended to manage the state of users in the identity provider.
 
 :::info
-When organization multi tenant is enabled, the name of the organization is derived from its domain, example:
-- johndoe@google.com, org=google
+When organization multi tenant is enabled, the name of the organization is derived from the domain, example:
+- user=johndoe@google.com, org=google
 
-Users need to be approved by an administrator to start interacting with hoop
+Administrators need to invite and approve users to start interacting with hoop.
 :::
 
 ## Permissions

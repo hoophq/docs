@@ -104,7 +104,7 @@ TLS can be configured using the environment variables `TLS_KEY` and `TLS_CERT`.
 
 ## Organization Multi Tenancy
 
-This mode is only used in our SaaS environment to permit tenancy of multiple organization, for self-hosted installation this should not be enabled. The default mode will create a default organization by default and all signup will be associated with this organization.
+This mode is only used in our SaaS environment to permit tenancy of multiple organization, for self-hosted installation this should not be enabled. The default mode creates an single organization and all signups will be associated with it.
 
 ## Storage
 
