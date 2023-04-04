@@ -11,6 +11,9 @@ Install or Upgrade
 
 ```shell
 sudo su -
+```
+
+```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 curl https://hoopartifacts.s3.amazonaws.com/release/${VERSION}/hoop_${VERSION}_Linux_$(uname -m).tar.gz \
     -o hoop-$VERSION.tar.gz
