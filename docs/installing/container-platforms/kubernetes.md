@@ -15,6 +15,15 @@ The gateway requires a Postgres database. Please refer to [gateway configuration
 
 ```shell
 cat - > ./values.yaml <<EOF
+# use latest docker image or pin the version
+image:
+  gw:
+    tag: latest
+  xtdb:
+    tag: latest
+  agent:
+    tag: latest
+
 # hoop gateway configuration. Please refer to https://hoop.dev/docs/configuring/gateway
 config:
   API_URL: ''
@@ -39,20 +48,27 @@ persistence:
 
 ingressApi:
   enabled: false
+  ingressClassName: nginx
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
 
   host: hoop.yourdomain.tld
+  # -- TLS secret name for nginx ingress
+  # tlsSecret: ''
 
 ingressGrpc:
   enabled: false
+  ingressClassName: nginx
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
 
   host: hoop.yourdomain.tld
+  # -- TLS secret name for nginx ingress
+  # tlsSecret: ''
 EOF
+```
+
+```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 helm upgrade --install hoop \
   https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoop-chart-$VERSION.tgz \
@@ -90,9 +106,9 @@ config:
     token: ''
   # Autoregister will try to auto register if the agent has
   # access to the default xtdb address (127.0.0.1:3001).
-  # The name of the org must match the prefix domain name being used to signin
-  # Example: john.doe@unicorn.com, AUTO_REGISTER=unicorn
-  AUTO_REGISTER: myorg
+  # Only useful for self-hosted installations.Non-empty values trigger 
+  # A non empty value will enable this configuration.
+  AUTO_REGISTER: ''
   # Log level control
   LOG_LEVEL: 'debug|info|warn|error'
   # Increase logs of gRPC debugging
