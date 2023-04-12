@@ -1,50 +1,35 @@
 ---
-sidebar_position: 12
+sidebar_position: 13
 slug: /usecases/mysql
 ---
 
-# MySQL | mysql cli
+# MySQL
 
-An optional way to connect into MySQL is using the `mysql` client. It's possible to create a interactive session or execute one-off commands.
+MySQL connection is a native type where queries can be audited and the output redacted.
+It forwards a passwordless TCP connection locally.
 
 ## Connection Configuration
 
-| Name         | Type    | Description                                    |
-|------------- | ------- | ---------------------------------------------- |
-| `HOST`       | env-var | The IP or Host of the MySQL server             |
-| `PORT`       | env-var | The port of the MySQL server                   |
-| `USER`       | env-var | The user to connect in the MySQL server        |
-| `MYSQL_PWD`  | env-var | The password to connect in the MySQL server    |
-| `DB`         | env-var | The name of the database to connect into       |
+| Name   | Type    | Description                                 |
+|------- | ------- | ------------------------------------------- |
+| `HOST` | env-var | The IP or Host of the MySQL server          |
+| `PORT` | env-var | The port of the MySQL server                |
+| `USER` | env-var | The user to connect in the MySQL server     |
+| `PASS` | env-var | The password to connect in the MySQL server |
 
-### Connection Command
 
-```shell
-mysql -h$HOST -u$USER --port=$PORT -D$DB
-```
-
-:::info NOTE
-The `MYSQL_PWD` is mapped as an environment variable, thus there's no need to use it in the command.
+:::info INFO
+The MySQL native connection only accepts `mysql_native_password` and `caching_sha2_password` [authentication plugins](https://dev.mysql.com/doc/refman/8.0/en/authentication-plugins.html)
 :::
 
-## How to Use
-
-Start an interactive session with mysql client
+## MySQL Proxy Server
 
 ```shell
-hoop connect mysql
+hoop connect mysqldb --port 3307
 ```
 
-In the same connection, one-off process can be run as well
+Use a compatible mysql client to connect in the instance
 
 ```shell
-hoop exec mysql <<EOF
-SELECT SLEEP(2);
-SELECT NOW();
-EOF
-```
-
-```shell
-hoop exec mysql -f /tmp/myquery.sql
-hoop exec psql -i 'SELECT NOW()'
+mysql -h 127.0.0.1 --port 3307
 ```
