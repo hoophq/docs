@@ -1,0 +1,39 @@
+---
+sidebar_position: 4
+slug: /connections/mysql
+---
+
+import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+
+# MySQL
+
+Connect to a private postgres instance from your favorite IDE
+
+<ConnectOnHoopButton
+  url="https://app.hoop.dev/connections/mysql/new?data=ewogICJuYW1lIjogIm15c3FsZGIiLAogICJ0eXBlIjogIm15c3FsIiwKICAiY29tbWFuZCI6IFtdLAogICJhZ2VudF9pZCI6ICIiCn0="
+/>
+
+## Connect to postgres
+
+Open a new terminal and type
+
+```shell
+hoop connect mysqldb
+```
+
+```shell
+connection: mysqldb | session: 0ebc7492-94bf-498e-ac9c-430f2d5e89b0
+
+---------------------mysql-credentials----------------------
+      host=127.0.0.1 port=5433 user=noop password=noop
+------------------------------------------------------------
+ready to accept connections!
+```
+
+## Use It
+
+Connect to mysql using any IDE, example:
+
+```shell
+mysql -h 0 -p 3307
+```
