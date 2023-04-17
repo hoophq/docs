@@ -82,15 +82,25 @@ Please refer to [agent configuration](../../configuring/agent.md) for more infor
 Make sure to specify the gRPC address of your gateway instance, if you don't have a valid token, 
 the agent will fallback to [web registration](../../configuring/agent.md#web-registration).
 
+### Create an Agent Token
+
+```shell
+hoop login
+AGENT_NAME=main
+HOOP_TOKEN=$(hoop admin create agent $AGENT_NAME)
+```
+
+### Deploy it
+
 :::info
-Our SaaS instance is configured as https://app.hoop.dev:8443. If you have your own gateway, provide a valid public address for the option `gateway.grpc_url`.
+Our SaaS instance is configured as https://app.hoop.dev:8443. If you have your own gateway, provide a valid public address for the option `config.gateway.grpc_url`.
 :::
 
 ```shell
 VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
 helm upgrade --install hoopagent https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set 'config.gateway.grpc_url=https://app.hoop.dev:8443' \
-    --set 'config.gateway.token='
+    --set 'config.gateway.token=$HOOP_TOKEN'
 ```
 
 ### Full Configuration
@@ -106,7 +116,7 @@ config:
     token: ''
   # Autoregister will try to auto register if the agent has
   # access to the default xtdb address (127.0.0.1:3001).
-  # Only useful for self-hosted installations.Non-empty values trigger 
+  # Only useful for self-hosted installations.
   # A non empty value will enable this configuration.
   AUTO_REGISTER: ''
   # Log level control

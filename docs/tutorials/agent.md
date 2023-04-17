@@ -101,32 +101,33 @@ You need to be an administrator and logged in to perform this action.
 :::
 
 ```shell
-AGENT_NAME=prod
-ACCESS_TOKEN=$(cat ~/.hoop/config.toml  |grep -i Token |awk {'print $3'} |sed 's/"//g')
-curl https://app.hoop.dev/api/agents \
-  -H 'Content-Type: application/json' \
-  -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -d@- <<EOF
-{"name": "$AGENT_NAME"}
-EOF
-{"id":"8edb234d-128f-492e-aa9e-51cef294ec61","token":"x-agt-39b6b28b-7f96-4558-bbd3-de0926e53b35","name":"prod","hostname":"","machine-id":"","kernel_version":"","status":""}
+hoop login
 ```
 
-Copy the `token` attribute with the value `x-agt-...`
+```shell
+AGENT_NAME=prod
+HOOP_TOKEN=$(hoop admin create agent $AGENT_NAME)
+```
 
-2. Deploy the image in the container platform
+1. Deploy the image in the container platform
 
 The runtime of most container platforms expects a specification of how to deploy the image:
 
 - **image:** `hoophq/hoopdev`
 - **environmet variables:**
   - `HOOP_TOKEN` - the token required to connect with the gateway
+  - `HOOP_GRPCURL` - the grpc address gateway
+
+:::info
+Use `app.hoop.dev:8443` for the `HOOP_GRPCURL` in case it's a SaaS setup.
+:::
 
 The command above executed by the docker container runtime is enough to run the agent:
 
 ```shell
 docker run --name hoopagent \
-  -e HOOP_TOKEN=x-agt-...
+  -e HOOP_TOKEN=$HOOP_TOKEN \
+  -e HOOP_GRPCURL=<host>:<port> \
   hoophq/hoopdev
 ```
 
@@ -151,6 +152,8 @@ spec:
       containers:
       - name: defaultagent
         env:
+        - name: HOOP_GRPCURL
+          value: '<host>:<port>'
         - name: HOOP_TOKEN
           value: 'x-agt-...'
         image: hoophq/hoopdev
