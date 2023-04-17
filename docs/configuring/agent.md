@@ -90,13 +90,5 @@ hoop start agent --debug --debug-grpc
 If you're logged in as an administrator, you could create a token using the API.
 
 ```shell
-API_URL=$(cat $HOME/.hoop/config.toml |grep -i api_url |awk {'print $3'} | sed 's/"//g')
-ACCESS_TOKEN=$(cat $HOME/.hoop/config.toml  |grep -i token |awk {'print $3'} |sed 's/"//g')
-AGENT_NAME=prod
-curl $API_URL/api/agents \
-  -H 'Content-Type: application/json' \
-  -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -d@- <<EOF
-{"name": "$AGENT_NAME"}
-EOF
+hoop admin create agent $AGENT_NAME
 ```
