@@ -143,3 +143,11 @@ Delete an agent
 ```shell
 hoop admin delete agent demo
 ```
+
+## Gateway Info
+
+To see the status of the gateway
+
+```shell
+hoop admin gateway-info
+```
