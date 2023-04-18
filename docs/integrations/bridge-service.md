@@ -5,7 +5,7 @@ slug: /integrations/introduction
 
 # Introduction
 
-Our bridge can send notifications to third party apps, like Slack. You need to set-up on your selh-hosted hoop.dev. Below you will find the necessary information to do so.
+Our bridge can send notifications to third party apps, like Slack. You need to set-up on your self-hosted hoop.dev. Below you will find the necessary information to do so.
 
 # Necessary environment variables
 
