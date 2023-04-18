@@ -18,7 +18,7 @@ In this step, you'll start hoop gateway and an agent locally.
 
 ```shell
 hoop start
-hoop start agent
+LOG_LEVEL=debug hoop start agent
 ```
 
 ### Plugin App Setup
@@ -34,7 +34,8 @@ git clone https://github.com/hoophq/plugin-demo && cd plugin-demo
 2. Build the plugin at /tmp/demo
 
 ```shell
-go build -o /tmp/demo .
+PLUGIN_NAME=demo
+go build -o /tmp/$PLUGIN_NAME .
 ```
 
 ### Plugin Configuration
@@ -43,34 +44,13 @@ In this step, you'll create a `command-line` type connection to interact with `b
 1. Create the connection and copy the connection id.
 
 ```shell
-curl http://127.0.0.1:8009/api/connections -H 'Content-Type: application/json' -d@- <<EOF
-{
-  "name": "bash",
-  "agent_id": "test-agent",
-  "type": "command-line",
-  "command": ["/bin/bash"]
-}
-EOF
-# add the id of the connection in the line below
-export CONNECTION_ID=
+hoop admin create connection bash --overwrite --agent test-agent -- /bin/bash
 ```
 
 2. Create the plugin and associate with the connection using the `id` returned from the previous request
 
 ```shell
-curl http://127.0.0.1:8009/api/plugins -H 'Content-Type: application/json' -d@- <<EOF
-{
-  "name": "demo",
-  "source": "path:/tmp",
-  "connections": [
-    {
-      "id": "$CONNECTION_ID",
-      "name": "bash",
-      "config": []
-    }
-  ]
-}
-EOF
+hoop admin create plugin $PLUGIN_NAME --source path:/tmp/ --connection 'bash'
 ```
 
 :::info
@@ -88,17 +68,13 @@ hoop connect bash
 The terminal will show information about the loaded plugin, the entries with `host.demo` are returning from the plugin:
 
 ```log
-2023/01/20 19:11:27 session=cf553905-8d1d-4762-9478-3d4045bac037 - received connect request
+{"level":"info","timestamp":"2023-04-18T18:46:16-03:00","logger":"agent/agent.go:297","msg":"session=e1381df0-67d6-430c-9964-ebb74829c19e - received connect request"}
 (...)
-2023/01/20 19:11:27 loading plugin. name=demo,source=path:/tmp,registry=
-2023/01/20 19:11:27 plugin loaded into filesystem. cached=false,path=/tmp
+{"@level":"info","@message":"[INFO]  starting demo plugin","@module":"host.demo","@timestamp":"2023-04-18T18:46:16.155577-03:00"}
+{"@level":"info","@message":"[INFO]  opening session: session=e1381df0-67d6-430c-9964-ebb74829c19e plugin-envvars=map[] connection-name=bash connection-config=map[jsonb64:] connection-type=command-line connection-envs=\"map[envvar:HOOP_CONNECTION_NAME:YmFzaA== envvar:HOOP_CONNECTION_TYPE:Y29tbWFuZC1saW5l envvar:HOOP_SESSION_ID:ZTEzODFkZjAtNjdkNi00MzBjLTk5NjQtZWJiNzQ4MjljMTll envvar:HOOP_USER_ID:dGVzdC11c2Vy]\" connection-cmd=[\"/bin/
 (...)
-2023-01-20T19:11:27.701-0300 [DEBUG] host.demo: 2023-01-20T19:11:27.701-0300 [INFO]  starting demo plugin
-(...)
-2023-01-20T19:11:27.703-0300 [DEBUG] host.demo: 2023-01-20T19:11:27.703-0300 [INFO]  opening session: session=cf553905-8d1d-4762-9478-3d4045bac037 plugin-envvars=map[] connection-name=bash connection-config=map[jsonb64:] connection-type=command-line connection-envs=map[] connection-cmd=["/bin/bash"] client-args=[] verb=connect user-id=test-user
-(...)
-2023-01-20T19:11:27.710-0300 [DEBUG] host.demo: 2023-01-20T19:11:27.710-0300 [INFO]  on-send: session=cf553905-8d1d-4762-9478-3d4045bac037 packet-type=ClientWriteStdout
-2023-01-20T19:11:27.710-0300 [DEBUG] host.demo: 2023-01-20T19:11:27.710-0300 [INFO]  on-send: session=cf553905-8d1d-4762-9478-3d4045bac037 packet-type=ClientWriteStdout
+{"@level":"info","@message":"[INFO]  on-send: session=e1381df0-67d6-430c-9964-ebb74829c19e packet-type=ClientWriteStdout","@module":"host.demo","@timestamp":"2023-04-18T18:46:16.308356-03:00"}
+{"@level":"info","@message":"[INFO]  on-send: session=e1381df0-67d6-430c-9964-ebb74829c19e packet-type=ClientWriteStdout","@module":"host.demo","@timestamp":"2023-04-18T18:46:16.308533-03:00"}
 ```
 
 ### Adding Configuration Secrets
@@ -107,12 +83,11 @@ In this step, we'll be adding secrets to the plugin resource.
 1. Add a new configuration to the plugin
 
 ```shell
-# the value must be configured as base64
-curl http://127.0.0.1:8009/api/plugins/demo/config -XPUT -d@- <<EOF
-{
-  "MYSECRET": "U0VDUkVULVZBTA=="
-}
-EOF
+hoop admin create plugin $PLUGIN_NAME \
+  --source path:/tmp/ \
+  --connection 'bash' \
+  --config MYSECRET=abigsecret \
+  --overwrite
 ```
 
 2. Interact with the connection running the command `ls`
@@ -124,15 +99,22 @@ hoop exec bash -i 'ls'
 3. The logs will show the new configuration propagated as a base64 value, see `plugin-envvars`
 
 ```log
-2023-01-20T19:19:47.906-0300 [DEBUG] host.demo: 2023-01-20T19:19:47.905-0300 [INFO]  opening session: session=bc97d4af-45b0-4d94-bb5f-38d5cc2653fe plugin-envvars=map[MYSECRET:U0VDUkVULVZBTA==] connection-name=bash connection-config=map[jsonb64:] connection-type=command-line connection-envs=map[] connection-cmd=["/bin/bash"] client-args=[] verb=exec user-id=test-user
+{"@level":"info","@message":"[INFO]  opening session: session=6f4ed25d-07a2-4740-bcfa-b241e398f628 plugin-envvars=map[MYSECRET:YWJpZ3NlY3JldA==] connection-name=bash connection-config=map[jsonb64:] connection-type=command-line connection-envs=\"map[envvar:HOOP_CONNECTION_NAME:YmFzaA== envvar:HOOP_CONNECTION_TYPE:Y29tbWFuZC1saW5l envvar:HOOP_SESSION_ID:NmY0ZWQyNWQtMDdhMi00NzQwLWJjZmEtYjI0MWUzOThmNjI4 envvar:HOOP_USER_ID:dGVzdC11c2Vy]\" connection-cmd=[\"/bin/bash\"] client-args=[] verb=exec user-id=test-user","@module":"host.demo","@timestamp":"2023-04-18T18:49:24.562706-03:00"}
 ```
 
 ### Mutating Connection Parameters
 
 In this step, we'll be adding a code to mutate the parameters of a connection injecting a environment variable when the session starts.
-1. Add the code below after the logger line inside the `OnSessionOpen` function
+1. Add the code below after the logger line inside the `OnSessionOpen` function and import the `encoding/base64` package.
 
 ```go
+import (
+        (...)
+        "encoding/base64"
+
+        (...)
+)
+
   (...)
     if p.ConnectionEnvVars != nil {
       encEnvValue := base64.StdEncoding.EncodeToString([]byte(`envvalue`))
@@ -145,13 +127,13 @@ In this step, we'll be adding a code to mutate the parameters of a connection in
 2. Build it
 
 ```shell
-go build -o /tmp/demo .
+go build -o /tmp/$PLUGIN_NAME .
 ```
 
 3. Test it. The command below should show the environment variable `ENVSECRET=envvalue`
 
 ```shell
-hoop exec -i 'env'
+hoop exec bash -i 'env'
 ```
 
 :::info
