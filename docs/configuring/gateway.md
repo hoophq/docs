@@ -62,7 +62,8 @@ The following environment variables could be configured when starting the gatewa
 | TLS_KEY                             | ""                       | base64 encoded RSA private key (grpc)            |
 | TLS_CERT                            | ""                       | base64 encoded pem certificates (grpc)           |
 | TLS_CA                              | ""                       | base64 encoded pem certificate authority (grpc)  |
-| ORG_MULTI_TENANT                    | "false"                  | Enable organization multi-tenancy                |
+| ORG_MULTI_TENANT                    | "false"                       | Enable organization multi-tenancy                |
+| NOTIFICATIONS_BRIDGE_CONFIG         | ""                       | Set notification bridge on; [see more](/docs/integrations/introduction)|
 | PROFILE                             | ""                       | "dev" runs gateway without authentication        |
 | GOOGLE_APPLICATION_CREDENTIALS_JSON | ""                       | GCP DLP credentials                              |
 | SENTRY_DSN                          | ""                       | Sentry Gateway API Key                           |
