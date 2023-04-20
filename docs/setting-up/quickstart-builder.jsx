@@ -5,7 +5,7 @@ import MacOSPlatform from './../installing-hoop-agent/macos.mdx';
 import LinuxPlatform from './../installing-hoop-agent/linux.md';
 import DockerPlatform from './../installing-hoop-agent/docker.mdx';
 import HerokuPlatform from './../installing-hoop-agent/heroku.mdx';
-import KubernetesPlatform from './../installing-hoop-agent/kubernetes.mdx';
+import KubernetesPlatform from './../installing-hoop-agent/kubernetes.md';
 
 // use cases docs
 import MySQLUseCase from './../usecases/forwarding-mysql.md';
