@@ -7,9 +7,7 @@ import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
 
 # Heroku | exec
 
-<ConnectOnHoopButton
-  url="https://app.hoop.dev/connections/command-line/new?data=ewogICJuYW1lIjogImhlcm9rdTpwc2V4ZWMiLAogICJ0eXBlIjogImNvbW1hbmQtbGluZSIsCiAgInNlY3JldCI6IHsKICAgICJlbnZ2YXI6SEVST0tVX0FQSV9LRVkiOiAiIgogIH0sCiAgImNvbW1hbmQiOiBbCiAgICAiL2FwcC9iaW4vcHMtZXhlYy5zaCIKICBdLAogICJhZ2VudF9pZCI6ICIiCn0="
-/>
+<ConnectOnHoopButton url='https://app.hoop.dev/connections/command-line/new?data=ewogICAgIm5hbWUiOiJteS1oZXJva3UtZXhlYyIsCiAgICAidHlwZSI6ImNvbW1hbmQtbGluZSIsCiAgICAiaWNvbl9uYW1lIjogImhlcm9rdSIsCiAgICAic2VjcmV0IjogewogICAgICAgICJlbnZ2YXI6SEVST0tVX0FQSV9LRVkiOiIiCiAgICB9LAogICAgImNvbW1hbmQiOiBbIi9hcHAvYmluL3BzLWV4ZWMuc2giXQp9' />
 
 ---
 
@@ -19,15 +17,15 @@ This mode is useful when there's a necessity to check or change the state of an 
 
 ### Caveats
 
-- Sometime the command fails silently to get executed 
+- Sometime the command fails silently to get executed
 - Requires restarting dynos if this feature is not eanabled for the app
 - Sometimes requires restarting the dyno informing that the dyno is not available
 
 ## Connection Configuration
 
-| Name                    | Type    | Description                                      |
-|------------------------ | ------- | ------------------------------------------------ |
-| `HEROKU_API_KEY`        | env-var | The API KEY to interact with heroku platform API |
+| Name             | Type    | Description                                      |
+| ---------------- | ------- | ------------------------------------------------ |
+| `HEROKU_API_KEY` | env-var | The API KEY to interact with heroku platform API |
 
 ### Connection Command
 
@@ -58,7 +56,7 @@ hoop connect heroku:psexec -- --interactive --app [APP-NAME]
 The `heroku ps:exec` command doesn't allow starting interactive sessions with other processes, only with `bash`.
 :::
 
-To run one-off processes. The `--pipe` option [pipes the command](https://en.wikipedia.org/wiki/Pipeline_(Unix)) to the given executable in the app.
+To run one-off processes. The `--pipe` option [pipes the command](<https://en.wikipedia.org/wiki/Pipeline_(Unix)>) to the given executable in the app.
 
 ```shell
 hoop exec heroku:psexec -- --app [APP-NAME] --pipe 'python' <<EOF

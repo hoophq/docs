@@ -7,19 +7,17 @@ import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
 
 # Kubernetes | exec one-off
 
-<ConnectOnHoopButton
-  url="https://app.hoop.dev/connections/command-line/new?data=ewogICJuYW1lIjogIm15LWs4cyIsCiAgInR5cGUiOiAiY29tbWFuZC1saW5lIiwKICAic2VjcmV0IjogewogICAgImZpbGVzeXN0ZW06S1VCRUNPTkZJRyI6ICJlVzkxY2lCcmRXSmxJR052Ym1acFp5Qm1hV3hsSUdOdmJuUmxiblFnYUdWeVpRPT0iCiAgfSwKICAiY29tbWFuZCI6IFsKICAgICJrdWJlY3RsIiwKICAgICJleGVjIiwKICAgICItLXN0ZGluIiwKICAgICJkZXBsb3ltZW50L215YXBwIiwKICAgICItLSIKICBdLAogICJhZ2VudF9pZCI6ICIiCn0="
-/>
+<ConnectOnHoopButton url='https://app.hoop.dev/connections/command-line/new?data=ewogICAgIm5hbWUiOiJteS1rdWJlcm5ldGVzLWV4ZWMtb25lLW9mZiIsCiAgICAidHlwZSI6ImNvbW1hbmQtbGluZSIsCiAgICAiaWNvbl9uYW1lIjogImt1YmVybmV0ZXMiLAogICAgInNlY3JldCI6IHsKICAgICAgICAiZmlsZXN5c3RlbTpLVUJFQ09ORklHIjoiIiwKICAgICAgICAiZW52dmFyOkRFUExPWV9OQU1FIjogIiIsCiAgICAgICAgImVudnZhcjpOQU1FU1BBQ0UiOiAiIgogICAgfSwKICAgICJjb21tYW5kIjogWyJrdWJlY3RsIiwgImV4ZWMiLCAiLS10dHkiLCAiLS1zdGRpbiIsICIkREVQTE9ZX05BTUUiLCAiLS1uYW1lc3BhY2UiLCAiJE5BTUVTUEFDRSIsICItLSJdCn0=' />
 
-___
+---
 
 Processes could be spawn in an ad-hoc manner with `kubectl exec`. In some cases an interactive shell could be too much permissive.
 
 ## Connection Configuration
 
-| Name         | Type       | Description                                                            |
-|------------- | ---------- | ---------------------------------------------------------------------- |
-| `KUBECONFIG` | filesystem | A [kubeconfig file](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) with permission to exec into pods in a namespace   |
+| Name         | Type       | Description                                                                                                                                                 |
+| ------------ | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `KUBECONFIG` | filesystem | A [kubeconfig file](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) with permission to exec into pods in a namespace |
 
 ### Connection Command
 

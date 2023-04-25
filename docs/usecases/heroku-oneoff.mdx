@@ -7,11 +7,9 @@ import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
 
 # Heroku one-off
 
-<ConnectOnHoopButton
-  url="https://app.hoop.dev/connections/command-line/new?data=ewogICJuYW1lIjogImhlcm9rdSIsCiAgInR5cGUiOiAiY29tbWFuZC1saW5lIiwKICAic2VjcmV0IjogewogICAgImVudnZhcjpIRVJPS1VfQVBJX0tFWSI6ICIiCiAgfSwKICAiY29tbWFuZCI6IFsKICAgICIvYXBwL2Jpbi9oZXJva3UiLAogICAgInJ1biIsCiAgICAiLS1leGl0LWNvZGUiCiAgXSwKICAiYWdlbnRfaWQiOiAiIgp9"
-/>
+<ConnectOnHoopButton url='https://app.hoop.dev/connections/command-line/new?data=ewogICAgIm5hbWUiOiJteS1oZXJva3Utb25lLW9mZiIsCiAgICAidHlwZSI6ImNvbW1hbmQtbGluZSIsCiAgICAiaWNvbl9uYW1lIjogImhlcm9rdSIsCiAgICAic2VjcmV0IjogewogICAgICAgICJlbnZ2YXI6SEVST0tVX0FQSV9LRVkiOiIiCiAgICB9LAogICAgImNvbW1hbmQiOiBbIi9hcHAvYmluL2hlcm9rdSIsICJydW4iLCAiLS1leGl0LWNvZGUiXQp9' />
 
-___
+---
 
 This mode is less intrusive and allows executing [one-off dynos](https://devcenter.heroku.com/articles/one-off-dynos) that runs a standalone process with the state of your application code. It's useful to perform ad-hoc actions using the current state of your application code, like database migrations.
 
@@ -22,9 +20,9 @@ This mode is less intrusive and allows executing [one-off dynos](https://devcent
 
 ## Connection Configuration
 
-| Name                    | Type    | Description                                      |
-|------------------------ | ------- | ------------------------------------------------ |
-| `HEROKU_API_KEY`        | env-var | The API KEY to interact with heroku platform API |
+| Name             | Type    | Description                                      |
+| ---------------- | ------- | ------------------------------------------------ |
+| `HEROKU_API_KEY` | env-var | The API KEY to interact with heroku platform API |
 
 ### Connection Command
 
