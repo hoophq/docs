@@ -11,17 +11,13 @@ This plugin enables integrating with known secrets manager making connection env
 
 ## AWS Secrets Manager Provider
 
-Allows expands environment variable from an AWS secret key formated as JSON into a connection.
+Allows expands environment variable from an AWS key value secret or a literal one.
 
-### Required Configuration
+### Credentials Configuration
 
-**AWS credentials**
+It accepts authenticatating from, Environment Variables, Shared Configuration, Shared Credentials files or with an instance profile role.
 
-- AWS_ACCESS_KEY_ID
-- AWS_SECRET_ACCESS_KEY
-- AWS_REGION
-
-**IAM Role**
+**Required IAM Roles**
 
 - secretsmanager:GetSecretValue
 - secretsmanager:GetResourcePolicy
@@ -95,8 +91,12 @@ hoop exec bash -i 'env'
 ```
 
 :::info
-The plugin configuration (aws credentials) is not shared in any circustances with the user interacting with the connection. **These credentials are kept in memory only**.
-The context of the session will have only the secret values expanded in the connection environment variables.
+The plugin configuration (AWS Credentials) is not shared in any circustances with the user interacting with the connection. **These credentials are kept in memory only**. The context of the session will have only the secret values expanded in the connection environment variables.
+:::
+
+:::caution
+However, when using instance roles, users could have access to those credentials depending how they interact with a connection. 
+Example: passing a bash or a python script to a connection.
 :::
 
 ## Env Json Provider
