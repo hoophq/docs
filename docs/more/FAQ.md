@@ -48,7 +48,7 @@ EOF
 docker build -t myorg/hoopagent .
 ```
 
-The helm-chart allows to override the image name of each component by specifying the `image` configuration:
+The [helm-chart](https://github.com/hoophq/helm-chart) allows to override the image name of each component by specifying the `image` configuration:
 
 - `.Values.image.repository`
 - `.Values.image.tag`
