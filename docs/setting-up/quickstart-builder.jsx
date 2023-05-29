@@ -7,8 +7,7 @@ import DockerPlatform from './../installing-hoop-agent/docker.mdx';
 import HerokuPlatform from './../installing-hoop-agent/heroku.mdx';
 import KubernetesPlatform from './../installing-hoop-agent/kubernetes.md';
 
-// use cases docs
-import MySQLUseCase from './../connections/mysql.md';
+// use cases docs --> moved to connections
 import MySQLCLIUseCase from './../connections/mysql-cli.md';
 import NativePostgresUseCase from './../connections/postgres-psql.md';
 import PostgresPSQLUseCase from './../connections/postgres-psql.md';

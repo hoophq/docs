@@ -1,6 +1,6 @@
 ---
 sidebar_position: 16
-slug: /usecases/scripts
+slug: /connections/scripts
 ---
 
 # Execute scripts with Hoop connections
