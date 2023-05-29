@@ -5,7 +5,7 @@ slug: /connections/ecs-exec
 
 # AWS ECS
 
-Interact with Elastic Container Service executing one off tasks or an interactive session into ECS tasks/containers.
+Interact with Elastic Container Service executing one off sessions into ECS tasks/containers.
 
 :::info note
 It's important to configure the ECS tasks before trying this feature, please refer to the [AWS documentation first](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
@@ -45,7 +45,7 @@ hoop connect my-ecs -- --pipe 'rails console'
 hoop connect my-ecs -- --pipe clojure
 ```
 
-## AWS ECS - Execute one task off
+## AWS ECS - Execute one session off
 
 ### Connection Command
 

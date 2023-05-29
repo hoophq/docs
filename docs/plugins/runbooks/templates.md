@@ -146,7 +146,7 @@ myvar = {{ .color
 ### asenv function
 
 The `asenv` function allows defining inputs and mapping then as environment variables in the connection runtime.
-Instead of injecting the value as an input directly to the template, it will gather the value and inject as an environment variable when executing the task.
+Instead of injecting the value as an input directly to the template, it will gather the value and inject as an environment variable when executing the session.
 
 The inputs could be just defined in a comment in the template, examples:
 
