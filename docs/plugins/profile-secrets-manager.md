@@ -49,7 +49,7 @@ policy "pg-prod" {
 
 ### Plugin Config Entry
 
-This configuration contains the DSN configuration of how to connect in the database instance. It's required that this user has super privileges to be able to grant the [supported permissions](dcm.md#supported-privileges) to any database or schema in this instance.
+This configuration contains the DSN configuration of how to connect in the database instance. It's required that this user has super privileges to be able to grant the [supported permissions](profile-secrets-manager.md#supported-privileges) to any database or schema in this instance.
 
 Configuration Example:
 
@@ -87,7 +87,7 @@ To create this plugin issue the command below:
 
 ```shell
 PG_HOMOLOG_DSN='postgres://<superuser>:<passwd>d@<hostip>:<port>/postgres?<driver-options>'
-hoop admin create plugin dcm \
+hoop admin create plugin profile-secrets-manager \
 	--config pg-homolog-credentials=$PG_HOMOLOG_DSN \
 	--config 'policy-config=path:./config.hcl' \
 	--overwrite
@@ -108,7 +108,7 @@ The command below creates a new connection refering the plugin and the policy na
 hoop admin create conn bash \
 	--overwrite \
 	--agent default \
-	--plugin 'dcm:pg-homolog' \
+	--plugin 'profile-secrets-manager:pg-homolog' \
 	-- bash
 ```
 
@@ -144,7 +144,7 @@ hoop admin create conn pg-homolog \
     --skip-validation \
     --agent default \
     --type postgres \
-    --plugin dcm:pg-homolog
+    --plugin profile-secrets-manager:pg-homolog
 ```
 
 ## FAQ
@@ -154,7 +154,7 @@ hoop admin create conn pg-homolog \
 Session database users are only managed when a user interacts with a connection, thus stale & old session users may exist when changing the policy specification.
 In case of a more constraint security towards managing users, the recommendation is decreasing the `expiration` time, this will enforce that a user is only valid for a certain period of time.
 
-It's important to note that connections share database users internally. The way session users are created, it's possible to know how many of them are going to be generated in advance just by looking at the policy specification, see [instances & privileges section](./dcm.md#instances--privileges)
+It's important to note that connections share database users internally. The way session users are created, it's possible to know how many of them are going to be generated in advance just by looking at the policy specification, see [instances & privileges section](./profile-secrets-manager.md#instances--privileges)
 
 ### Which commands are used to manage users
 
