@@ -49,7 +49,7 @@ policy "pg-prod" {
 
 ### Plugin Config Entry
 
-This configuration contains the DSN configuration of how to connect in the database instance. It's required that this user has super privileges to be able to grant the [supported permissions](db-credentials-manager#supported-privileges) to any database or schema in this instance.
+This configuration contains the DSN configuration of how to connect in the database instance. It's required that this user has super privileges to be able to grant the [supported permissions](db-credentials-manager.md#supported-privileges) to any database or schema in this instance.
 
 Configuration Example:
 
@@ -154,7 +154,7 @@ hoop admin create conn pg-homolog \
 Session database users are only managed when a user interacts with a connection, thus stale & old session users may exist when changing the policy specification.
 In case of a more constraint security towards managing users, the recommendation is decreasing the `expiration` time, this will enforce that a user is only valid for a certain period of time.
 
-It's important to note that connections share database users internally. The way session users are created, it's possible to know how many of them are going to be generated in advance just by looking at the policy specification, see [instances & privileges section](./db-credentials-manager#instances--privileges)
+It's important to note that connections share database users internally. The way session users are created, it's possible to know how many of them are going to be generated in advance just by looking at the policy specification, see [instances & privileges section](./db-credentials-manager.md#instances--privileges)
 
 ### Which commands are used to manage users
 
