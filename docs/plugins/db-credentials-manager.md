@@ -14,7 +14,7 @@ This plugin generates role based users with a time of expiration when interactin
 ## Requirements
 
 - A postgres super user that allows creating users and granting access to privileges
-- Available at version 1.12.10+
+- Available at version 1.12.11+
 
 ## Supported Privileges
 
