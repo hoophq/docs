@@ -1,9 +1,9 @@
 ---
-sidebar_position: 14
-slug: /usecases/psql
+sidebar_position: 4
+slug: /connections/psql
 ---
 
-# Postgres | psql cli
+# Postgres | psql cli 
 
 An optional way to connect into postgres is using the `psql` client. It's possible to create a interactive session or execute one-off commands.
 

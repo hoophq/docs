@@ -1,6 +1,6 @@
 ---
-sidebar_position: 14
-slug: /usecases/mysqlcli
+sidebar_position: 3
+slug: /connections/mysqlcli
 ---
 
 # MySQL | mysql cli

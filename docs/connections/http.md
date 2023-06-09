@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3
-slug: /usecases/forwarding-http
+sidebar_position: 2
+slug: /connections/http
 ---
 
-# Port Forward | http
+# Http
 
 Port Forward local ports from your private network | HTTP example.
 

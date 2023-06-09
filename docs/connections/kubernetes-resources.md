@@ -1,6 +1,6 @@
 ---
-sidebar_position: 6
-slug: /usecases/k8s-resources
+sidebar_position: 7
+slug: /usecases/k8s/resources
 ---
 
 # Kubernetes | resources
@@ -23,11 +23,11 @@ kubectl
 
 ```shell
 # view pods in the default namespace
-hoop exec k8s -- get pods
+hoop exec my-conn-k8s -- get pods
 # restart an app
 hoop exec k8s -- rollout restart deployment/myapp
 # scale up an app
-hoop exec k8s -- scale --replicas=3 deployment/myapp
+hoop exec my-conn-k8s -- scale --replicas=3 deployment/myapp
 ```
 
 It's possible to narrow down the commands in distinct connections, this gives a better user experience
@@ -41,6 +41,6 @@ kubectl --namespace prod rollout
 Then it's possible
 
 ```shell
-hoop exec k8s -- restart deployment/myapp
-hoop exec k8s -- undo deployment/myapp
+hoop exec my-conn-k8s -- restart deployment/myapp
+hoop exec my-conn-k8s -- undo deployment/myapp
 ```

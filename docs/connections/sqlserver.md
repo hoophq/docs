@@ -1,6 +1,6 @@
 ---
-sidebar_position: 15
-slug: /usecases/sqlserver
+sidebar_position: 6
+slug: /connections/sqlserver
 ---
 
 # SQL Server | sqlcmd cli

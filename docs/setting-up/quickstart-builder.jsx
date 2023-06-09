@@ -7,25 +7,24 @@ import DockerPlatform from './../installing-hoop-agent/docker.mdx';
 import HerokuPlatform from './../installing-hoop-agent/heroku.mdx';
 import KubernetesPlatform from './../installing-hoop-agent/kubernetes.md';
 
-// use cases docs
-import MySQLUseCase from './../usecases/forwarding-mysql.md';
-import MySQLCLIUseCase from './../usecases/mysql.md';
-import NativePostgresUseCase from './../usecases/postgres.md';
-import PostgresPSQLUseCase from './../usecases/psql.md';
-import MongoDBmongoshUseCase from './../usecases/mongodb.md';
-import KubernetesExecUseCase from './../usecases/kubernetes-exec.mdx';
-import KubernetesResourcesUseCase from './../usecases/kubernetes-resources.md';
-import HerokuExecUseCase from './../usecases/heroku-oneoff.mdx';
-import HerokuInteractiveUseCase from './../usecases/heroku-psexec.mdx';
-import AWSExecUseCase from './../usecases/ecs-exec.md';
-import AWSResourcesUseCase from './../usecases/aws-resources.md';
-import SQLServerCLIUseCase from './../usecases/sqlserver.md';
-import BastionServerUseCase from './../usecases/ssh-bastion.md';
-import PortForwardHTTPUseCase from './../usecases/forwarding-http.md';
+// use cases docs --> moved to connections
+import MySQLCLIUseCase from './../connections/mysql-cli.md';
+import NativePostgresUseCase from './../connections/postgres-psql.md';
+import PostgresPSQLUseCase from './../connections/postgres-psql.md';
+import MongoDBmongoshUseCase from './../connections/mongodb.md';
+import KubernetesExecUseCase from './../connections/kubernetes-exec.mdx';
+import KubernetesResourcesUseCase from './../connections/kubernetes-resources.md';
+import HerokuExecUseCase from './../connections/heroku-oneoff.mdx';
+import HerokuInteractiveUseCase from './../connections/heroku-psexec.mdx';
+import AWSExecUseCase from './../connections/ecs-exec.md';
+import AWSResourcesUseCase from './../connections/aws-resources.md';
+import SQLServerCLIUseCase from './../connections/sqlserver.md';
+import BastionServerUseCase from './../connections/ssh-bastion.md';
+import PortForwardHTTPUseCase from './../connections/http.md';
 
 // connections
-import CommandLineConnection from './../connections/command-line.mdx';
-import PortForwardConnection from './../connections/port-forward.mdx';
+import CommandLineConnection from './../connections/native/command-line.mdx';
+import PortForwardConnection from './../connections/native/port-forward.mdx';
 import PostgresConnection from './../connections/postgres.mdx';
 
 const docOptions = {

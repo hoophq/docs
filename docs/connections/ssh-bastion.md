@@ -1,11 +1,11 @@
 ---
 sidebar_position: 17
-slug: /usecases/bastion
+slug: /connections/bastion
 ---
 
 # Bastion Server | ssh cli
 
-Hoop could act as a bastion server and connect into ssh hosts to allow execution of one-off tasks or opening interactive sessions.
+Hoop could act as a bastion server and connect into ssh hosts to allow execution of one-off sessions.
 
 ## Connection Configuration
 
