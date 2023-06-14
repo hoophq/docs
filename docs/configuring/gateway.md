@@ -27,9 +27,6 @@ The gateway provides a REST API, a webapp UI and a bi-directional gRPC to exchan
 | GET    | /api/reviews |
 | GET    | /api/reviews/:id |
 | PUT    | /api/reviews/:id |
-| GET    | /api/jits |
-| GET    | /api/jits/:id |
-| PUT    | /api/jits/:id |
 | POST   | /api/agents |
 | GET    | /api/agents |
 | POST   | /api/plugins |
@@ -153,7 +150,7 @@ The `PLUGIN_AUDIT_PATH` and `PLUGIN_INDEX_PATH` contains the audit session data 
 
 ## Notification (review & jit plugins)
 
-Magic Bell enables sending notification messages to slack & e-mail, it's used in conjuction with the [review](../plugins/review.mdx) and [JIT](../plugins/jit.mdx) plugins.
+Magic Bell enables sending notification messages to slack & e-mail, it's used in conjuction with the [review](../plugins/review.mdx) plugin.
 Every time a new access or review is available it will send a notification to slack or e-mail.
 
 To enable it, create an account in magic bell and [get the required credentials](https://www.magicbell.com/docs/api-authentication#authentication).
