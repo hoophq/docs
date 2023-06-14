@@ -22,7 +22,7 @@ Slack integration let you act on connections that has review or jit plugin enabl
 2. Select the workspace and click next and paste the manifest below
 
 ```json
-{"display_information":{"name":"hoop","description":"An app to interact with a hoop gateway instance","background_color":"#d982b5"},"features":{"bot_user":{"display_name":"Hoop","always_online":true}},"oauth_config":{"scopes":{"bot":["channels:read","chat:write","app_mentions:read"]}},"settings":{"event_subscriptions":{"bot_events":["app_mention"]},"interactivity":{"is_enabled":true},"org_deploy_enabled":false,"socket_mode_enabled":true,"token_rotation_enabled":false}}
+{"display_information":{"name":"hoop","description":"An app to interact with a hoop gateway instance","background_color":"#7a7879"},"features":{"bot_user":{"display_name":"Hoop Bot","always_online":true},"slash_commands":[{"command":"/hoop","description":"Subscribe to notifications sent by Hoop","usage_hint":"subscribe","should_escape":false}]},"oauth_config":{"scopes":{"bot":["app_mentions:read","channels:read","chat:write","commands","im:write","channels:manage","groups:write","mpim:write"]}},"settings":{"event_subscriptions":{"bot_events":["app_mention"]},"interactivity":{"is_enabled":true},"org_deploy_enabled":false,"socket_mode_enabled":true,"token_rotation_enabled":false}}
 ```
 
 3. Follow the guide and click on **Install to Workspace**
@@ -47,7 +47,6 @@ In this step the slack bot and app level tokens are required to configure the pl
 ```shell
 hoop admin create plugin slack \
 	--overwrite \
-	--priority -1 \
 	--config SLACK_BOT_TOKEN=xoxb-... \
 	--config SLACK_APP_TOKEN=xapp-... \
 	--config SLACK_CHANNEL=<your-slack-channel>
@@ -55,7 +54,11 @@ hoop admin create plugin slack \
 
 Now it's possible to associate connections to the slack plugin in the webapp 
 
-## Adding Approvers
+## Subscribe to Notifications
+
+To subscribe and signup to receive notifications from the Hoop Bot, type `/hoop subscribe` and access the generated link. After sign in the user will start to receive notification when there's a review approved and ready to be executed.
+
+### Subscribing Manually
 
 To add approvers that are allowed to review sessions, fetch the slack id of the user and update it using the command line.
 
@@ -79,40 +82,30 @@ You can copy the id of other members too on slack.
 
 ## Usage
 
-To be able to use it, the jit or review plugins must be enabled for a connection. When trying to interacting with it, it will send a message to the configured slack channel.
+To be able to use it, the review plugins must be enabled for a connection. When trying to interacting with it, it will send a message to the configured slack channel.
 
-1. Create a jit and review command-line type connection 
+1. Enable the review plugin
 
 ```shell
-hoop admin create conn bash-jit --agent default --overwrite -- bash
-hoop admin create conn bash --agent default --overwrite -- bash
+hoop admin create plugin review --overwrite
 ```
 
-2. Enable the plugin for both connections
+2. Associate the connection with the `review` and `slack` plugin
 
 ```shell
-hoop admin create plugin jit --overwrite --connection 'bash-jit:admin;sre'
-hoop admin create plugin review --overwrite --connection 'bash:admin;sre'
-```
-
-3. Enable the slack plugin to these connections also
-
-```shell
-# it will overwrite the previous configuration
-hoop admin create plugin slack \
+hoop admin create conn bash \
 	--overwrite \
-	--priority -1 \
-	--config SLACK_BOT_TOKEN=xoxb-... \
-	--config SLACK_APP_TOKEN=xapp-... \
-	--config SLACK_CHANNEL=<your-slack-channel> \
-  --connection 'bash,bash-jit'
+	--agent default \
+	--plugin 'review:admin;sre' \
+	--plugin slack \
+	-- bash
 ```
 
-Then, interacting with both connections should send a message on your slack channel
+Then, interacting with the connection will send a message on your slack channel. After it's approved it will send a message to the creator.
 
 ```shell
 # jit notification
-hoop connect bash-jit
+hoop connect bash
 ```
 
 ```shell
