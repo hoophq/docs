@@ -147,9 +147,9 @@ EOF
 ```
 
 ```shell
-VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
+VERSION=$(curl -s https://releases.hoop.dev/release/latest.txt)
 helm upgrade --install hoop -n appdemo \
-    https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoop-chart-$VERSION.tgz \
+    https://releases.hoop.dev/release/$VERSION/hoop-chart-$VERSION.tgz \
     -f values.yaml
 ```
 
@@ -177,7 +177,7 @@ Deploying the agent will fallback to web registration, follow the post deploy in
 
 ```shell
 helm upgrade --install hoopagent -n appdemo \
-    https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+    https://releases.hoop.dev/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set "config.gateway.grpc_url=$GRPC_HOST:443"
 ```
 
@@ -200,7 +200,7 @@ In case the agent begins to restart too often, increase the verbosity of gRPC to
 
 ```shell
 helm upgrade --install hoopagent -n appdemo \
-    https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+    https://releases.hoop.dev/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set "config.gateway.grpc_url=$GRPC_HOST:443" \
     --set "config.LOG_GRPC=2"
 ```
@@ -211,7 +211,7 @@ To prevent the agent to unregistering on restarts, persist the token that was pr
 
 ```shell
 helm upgrade --install hoopagent -n appdemo \
-    https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+    https://releases.hoop.dev/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set "config.gateway.grpc_url=$GRPC_HOST:443" \
     --set "config.gateway.token=x-agt..."
 ```

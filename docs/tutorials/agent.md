@@ -55,8 +55,8 @@ sudo su -
 2. Install and run the Agent
 
 ```shell
-VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
-curl https://hoopartifacts.s3.amazonaws.com/release/${VERSION}/hoop_${VERSION}_Linux_$(uname -m).tar.gz \
+VERSION=$(curl -s https://releases.hoop.dev/release/latest.txt)
+curl https://releases.hoop.dev/release/${VERSION}/hoop_${VERSION}_Linux_$(uname -m).tar.gz \
     -o hoop-$VERSION.tar.gz
 tar --extract --file hoop-$VERSION.tar.gz -C /usr/local/bin hoop && \
     rm -f hoop-$VERSION.tar.gz && \

@@ -77,9 +77,9 @@ In this example we have a `mysql` connection and our gateway instance is hoop Sa
 $ hoop admin target-to-connection db-write --grpc-url app.hoop.dev:8443
 
 AGENT_TOKEN=$(hoop admin create agent eks)
-VERSION=$(curl -s https://hoopartifacts.s3.amazonaws.com/release/latest.txt)
+VERSION=$(curl -s https://releases.hoop.dev/release/latest.txt)
 helm upgrade --install hoopagent \
-    https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+    https://releases.hoop.dev/release/$VERSION/hoopagent-chart-$VERSION.tgz \
 	--set "config.gateway.grpc_url=app.hoop.dev:8443" \
 	--set "config.gateway.token=$AGENT_TOKEN"
 
@@ -126,7 +126,7 @@ hoop admin create connection db-write --agent eks \
 Use `helm template ...` to configure the deployment/secret templates:
 
 ```shell
-helm template https://hoopartifacts.s3.amazonaws.com/release/$VERSION/hoopagent-chart-$VERSION.tgz \
+helm template https://releases.hoop.dev/release/$VERSION/hoopagent-chart-$VERSION.tgz \
     --set "config.gateway.grpc_url=<gateway-instance>:8443"
 ```
 
