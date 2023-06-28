@@ -7,7 +7,7 @@ slug: /tutorials/metabase
 
 You could connect Metabase and redact sensitive content.
 
-> This is only supported for postgres type connections
+> This is only supported for postgres type connections and it's available in version 1.14.3+ 
 
 ## Requirements
 
