@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import MacOSPlatform from './../installing-hoop-agent/macos.mdx';
 import LinuxPlatform from './../installing-hoop-agent/linux.md';
 import DockerPlatform from './../installing-hoop-agent/docker.mdx';
-import HerokuPlatform from './../installing-hoop-agent/heroku.mdx';
+import HerokuPlatform from './../installing-hoop-agent/heroku.md';
 import KubernetesPlatform from './../installing-hoop-agent/kubernetes.md';
 
 // use cases docs --> moved to connections
