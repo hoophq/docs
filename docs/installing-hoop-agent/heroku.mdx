@@ -7,74 +7,81 @@ import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
 
 # Heroku
 
-To start interacting with your workloads in Heroku, install the hoop command line and signup.
+The requirements to run this quick start are:
 
-1. Hoop Command Line
-2. [Signup at Hoop Dev](https://app.hoop.dev)
-3. Deploy the agent that will interact with the Heroku Platform
+1. Have a heroku account to run basic workloads
+2. Install the [heroku command line](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
+3. [Install Hoop Command Line](../user-guides/index.md)
 
-Leave the inputs `TOKEN` and `VERSION` empty.
+## Quick Start
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hoophq/heroku-hoop-agent)
-
-1. Check the logs of the agent, it should appear a URL. Copy and paste it in the browser and register the agent.
-
-:::tip
-The logs could be viewed by using the [heroku command line](https://devcenter.heroku.com/articles/logging#view-logs) or from the [heroku dashboard](https://devcenter.heroku.com/articles/logging#view-logs-with-the-heroku-dashboard)
-:::
-
-![Heroku Agent Register](https://hoopartifacts.s3.amazonaws.com/screenshots/9-heroku-logs-agent-register.png)
-
-### Persisting the Agent Token
-
-This step is recommended to avoid having to register the agent again if the dyno restarts.
-
-1. Save the token in the URL `x-agt-6ce6...`
-2. Add a environment variable to the agent app
-
-- Go to **Settings** > **Config Vars**
-- Add a variable with the key `TOKEN`
-- Add the token (`x-agt...`) to the input value
-
-[Config Vars Reference](https://devcenter.heroku.com/articles/config-vars)
-
-:::info
-If you need to redeploy the agent in another app, click in the deploy button again and pass the agent token in the input field `TOKEN`
-:::
-
-### Associating with Connections
-
-<ConnectOnHoopButton text='CREATE CONNECTION'
-  url="https://app.hoop.dev/connections/command-line/new?data=eyJuYW1lIjoiYWdlbnQtYmFzaCIsInR5cGUiOiJjb21tYW5kLWxpbmUiLCJjb21tYW5kIjpbIi9iaW4vYmFzaCJdLCAiYWdlbnRfaWQiOiAiIn0="
-/>
-<br /><br />
-
-:::info
-
-If the registered agent doesn't appear, try to refresh the webapp.
-:::
-
-### Interacting with the Connection
-
-1. Open a terminal and sign-in
+1. Login / Signup to Hoop
 
 ```shell
 hoop login
+# create a client key
+DSN_NAME=dev
+HOOP_DSN=$(hoop create clientkeys $DSN_NAME)
 ```
 
-2. Connect to `agent-bash`
+2. Clone the heroku ruby getting started repository
 
 ```shell
-hoop connect agent-bash
+APP_NAME=demo-ruby-$(hexdump -e '/1 "%02x"' -n3 < /dev/urandom)
+git clone https://github.com/heroku/ruby-getting-started.git && cd ruby-getting-started
 ```
 
-That's it! Now you've connected in an interactive session inside a heroku app.
-After disconnecting it, check if there's any recorded session available at **https://app.hoop.dev/plugins/audit**.
 
-## Next Topics
+3. Create an application using the `heroku/ruby` buildpack
 
-See how to use the heroku cli through Hoop.
+```shell
+# create a new heroku app using the heroku buildpack
+heroku apps:create --buildpack heroku/ruby $APP_NAME
+```
 
-- [Heroku Management Guide](../tutorials/heroku-exec.mdx)
-- [Heroku ps:exec](../connections/heroku-psexec.mdx)
-- [Heroku one-off](../connections/heroku-oneoff.mdx)
+4. Add the hoop buildpack
+
+```shell
+heroku buildpacks:add --app $APP_NAME --index 1 https://github.com/hoophq/heroku-hoop-buildpack
+```
+
+5. Configure the requirement environment variables
+
+It will enable to connect in the gateway and publish connection for the hoop dashboard
+
+```shell
+# configure the client key and the connection name that will be displayed
+heroku config:set HOOP_DSN=$HOOP_DSN
+heroku config:set HOOP_CONNECTION=$APP_NAME
+```
+
+6. Edit the main Procfile to start hoop in the background
+
+```shell
+echo 'web: hoopwrapper -- bundle exec puma -C config/puma.rb' > Procfile
+
+# deploy it
+git commit -am 'add hoopwrapper'
+git push heroku main
+```
+
+### Connect It
+
+Now it's possible to open an interactive console with the deployed application.
+
+```shell
+hoop connect $DSN_NAME:$APP_NAME
+```
+
+To run ad-hoc commands
+
+```shell
+hoop exec $DSN_NAME:$APP_NAME <<EOF
+rails runner "puts Hello World"
+EOF
+```
+
+Explore more features like:
+
+- [Enabling more plugins](https://app.hoop.dev/plugins/store)
+- Edit the connection entrypoint command to interact with other tools
