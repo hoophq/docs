@@ -1,19 +1,19 @@
 ---
-sidebar_position: 4
-slug: /installing-hoop-agent/heroku
+sidebar_position: 2
+slug: /tutorials/heroku-quick-start
 ---
 
-import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
+# Heroku Quick Start
 
-# Heroku
+This guide shows how to interact with workloads and resources in the Heroku Platform.
 
-The requirements to run this quick start are:
+## Requirements
 
 1. Have a heroku account to run basic workloads
 2. Install the [heroku command line](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
 3. [Install Hoop Command Line](../user-guides/index.md)
 
-## Quick Start
+---
 
 1. Login / Signup to Hoop
 
@@ -45,9 +45,9 @@ heroku apps:create --buildpack heroku/ruby $APP_NAME
 heroku buildpacks:add --app $APP_NAME --index 1 https://github.com/hoophq/heroku-hoop-buildpack
 ```
 
-5. Configure the requirement environment variables
+5. Configure the required environment variables
 
-It will enable to connect in the gateway and publish connection for the hoop dashboard
+The client key allows stablishing the connection to the gateway and making it available in the [hoop dashboard](https://app.hoop.dev).
 
 ```shell
 # configure the client key and the connection name that will be displayed
@@ -81,7 +81,7 @@ rails runner "puts Hello World"
 EOF
 ```
 
-Explore more features like:
+**Explore more features like:**
 
 - [Enabling more plugins](https://app.hoop.dev/plugins/store)
 - Edit the connection entrypoint command to interact with other tools
