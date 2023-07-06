@@ -7,11 +7,11 @@ slug: /installing-hoop-agent/heroku
 
 Hoop is configured on Heroku using our [custom buildpack](https://github.com/hoophq/heroku-hoop-buildpack). The agent could be started alongside any process that stays running (e.g.: web process). The following environment variables could be configured:
 
-| NAME                    | REQUIRED | DESCRIPTION                                                        |
-|------------------------ | -------- | ------------------------------------------------------------------ |
-| `HOOP_VERSION`          | no       | The version of the agent to install, default to the latest one     |
-| `HOOP_DSN`              | yes      | The credential key used to authenticate in the gateway             |
-| `HOOP_CONNECTION`       | yes      | The name of the connection to publish in the hoop dashboard        |
+| NAME                    | REQUIRED | DESCRIPTION                                                                             |
+|------------------------ | -------- | --------------------------------------------------------------------------------------- |
+| `HOOP_VERSION`          | no       | The version of the agent to install, default to the latest one                          |
+| `HOOP_DSN`              | yes      | The credential key used to authenticate in the gateway                                  |
+| `HOOP_CONNECTION`       | yes      | The name of the connections (separated by comma) to publish in the hoop dashboard.      |
 
 ## Client Keys
 
@@ -27,6 +27,24 @@ Assuming that we have an application configured as `myapp` (`HOOP_CONNECTION=mya
 
 :::caution IMPORTANT
 Client keys must be configured in their proper workload environment, otherwise users could issue commands in wrong workloads. E.g.: like issuing a command in a **homolog** connection that is configured in a **production** workload.
+:::
+
+## Connection Resources
+
+The `HOOP_CONNECTION` environment variable contains a list of resources which are going to be published in the webapp dashboard. These resources will be available for users to interact with them, thus choose names that describe the name of the application.
+
+### Specifying Multiple Connections
+
+Sometimes it's prefered to publish more than one connection to specify different profile access. Like activating the redact to a connection and having another connection with review. To publish multiple connections, separate the names with a comma.
+
+- `HOOP_CONNECTION=myapp-redact,myapp-review`
+
+> There's a limitation of 255 characteres, make sure to not exceed it.
+
+This will publish multiple connections for the same application but with multiple profiles of access.
+
+:::info tip
+It's possible to derive the connection from an environment variable by using the prefix `env.`. Example: `HOOP_CONNECTION=env.APP_NAME`
 :::
 
 ## Installing the Buildpack
