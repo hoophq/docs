@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: /quickstarts
 ---
 
-# Quickstarts
+# Installing Hoop Agent
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

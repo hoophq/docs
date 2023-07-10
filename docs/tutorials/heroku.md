@@ -58,10 +58,10 @@ heroku config:set HOOP_CONNECTION=$APP_NAME
 6. Edit the main Procfile to start hoop in the background
 
 ```shell
-echo 'web: hoopwrapper -- bundle exec puma -C config/puma.rb' > Procfile
+echo 'web: hoopstart -- bundle exec puma -C config/puma.rb' > Procfile
 
 # deploy it
-git commit -am 'add hoopwrapper'
+git commit -am 'add hoopstart'
 git push heroku main
 ```
 
