@@ -31,7 +31,7 @@ Client keys must be configured in their proper workload environment, otherwise u
 
 ## Connection Resources
 
-The `HOOP_CONNECTION` environment variable contains a list of resources which are going to be published in the webapp dashboard. These resources will be available for users to interact with them, thus choose names that describe the name of the application.
+The `HOOP_CONNECTION` environment variable contains a list of resources that are published in the webapp dashboard.
 
 ### Specifying Multiple Connections
 
@@ -41,7 +41,7 @@ Sometimes it's prefered to publish more than one connection to specify different
 
 > There's a limitation of 255 characteres, make sure to not exceed it.
 
-This will publish multiple connections for the same application but with multiple profiles of access.
+This will publish multiple connections to the dashboard.
 
 :::info tip
 It's possible to derive the connection from an environment variable by using the prefix `env.`. Example: `HOOP_CONNECTION=env.APP_NAME`
