@@ -63,12 +63,12 @@ Make sure that the **primary language** of your app is the **last** buildpack in
 
 ## Configuring the Procfile
 
-The Procfile is the entrypoint of how the application is going to start, use the `hoopwrapper` which will start the agent in the background and then start your main process (after `--`).
+The Procfile contains the definition of the application runtime. Use the `hoopstart` which will start the agent in the background and then start your main process (after `--`).
 
 ```shell
 # Procfile
 # ruby example
-web: hoopwrapper -- bundle exec puma -C config/puma.rb
+web: hoopstart -- bundle exec puma -C config/puma.rb
 ```
 
 Make sure that the main process stays alive, the hoop agent will run in background as long the main process stays running (for this example: `bundle exec puma -C config/puma.rb`)
