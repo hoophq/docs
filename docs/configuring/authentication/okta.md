@@ -14,7 +14,7 @@ This guide explain how to configure Okta with Hoop.
 - `API_URL` is the public DNS name of the hoop gateway instance
 
 :::caution NOTE
-For this guide, the `API_URL` needs be set to `http://localhost:8009`, in a production environment a load balancer providing a TLS certificate with a public IP is recommended.
+Contact the administrator of the hoop gateway instance to retrieve the `API_URL` address.
 :::
 
 ## Identity Provider Configuration

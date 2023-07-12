@@ -53,3 +53,13 @@ Contact the administrator of the hoop gateway instance to retrieve the `API_URL`
 - IDP_ISSUER is **https://oauth.id.jumpcloud.com/**.
 
 Please refer to their public [.well-known](https://oauth.id.jumpcloud.com/.well-known/openid-configuration) file.
+
+
+## Associating User Groups
+
+To propagate groups to Hoop, create a new group
+
+1. Go to User Groups > Create Group and provide a name and description
+2. Go to *Users tab* and mark the users that you wish to add in this new group
+3. Go to *Applications tab* and mark your custom oidc app
+4. Click in Save
