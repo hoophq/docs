@@ -13,7 +13,7 @@ This guide explain how to configure Okta with Hoop.
 - An [account in OKTA](https://developer.okta.com/login/)
 - `API_URL` is the public DNS name of the hoop gateway instance
 
-:::caution NOTE
+:::info
 Contact the administrator of the hoop gateway instance to retrieve the `API_URL` address.
 :::
 

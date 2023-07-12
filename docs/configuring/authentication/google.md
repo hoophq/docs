@@ -13,7 +13,7 @@ This guide explain how to configure Google with Hoop.
 - An [account in GCP](https://console.cloud.google.com/apis/credentials)
 - `API_URL` is the public DNS name of the hoop gateway instance
 
-:::caution NOTE
+:::info
 Contact the administrator of the hoop gateway instance to retrieve the `API_URL` address.
 :::
 

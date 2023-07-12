@@ -13,7 +13,7 @@ This guide explain how to configure Auth0 with Hoop.
 - An [account in Auth0](https://auth0.com/signup)
 - `API_URL` is the public DNS name of the hoop gateway instance
 
-:::caution NOTE
+:::info
 Contact the administrator of the hoop gateway instance to retrieve the `API_URL` address.
 :::
 

@@ -12,7 +12,7 @@ This guide explains how to configure Azure with Hoop.
 - An [account in Azure](https://azure.microsoft.com)
 - `API_URL` is the public DNS name of the hoop gateway instance
 
-:::caution NOTE
+:::info
 Contact the administrator of the hoop gateway instance to retrieve the `API_URL` address.
 :::
 
