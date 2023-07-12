@@ -7,6 +7,10 @@ slug: /configuring/auth-jumpcloud
 
 This guide explains how to configure Jumpcloud with Hoop.
 
+:::caution NOTE
+Jumpcloud doesn't emit JWT as access token, thus the gateway validates if a client is authenticated performing an http request to the userinfo endpoint (oidc spec).
+:::
+
 ## Requirements
 
 - An [admin account in Jumpcloud](https://console.jumpcloud.com/login/admin)
