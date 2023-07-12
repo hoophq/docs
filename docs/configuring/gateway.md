@@ -150,7 +150,7 @@ The `PLUGIN_AUDIT_PATH` and `PLUGIN_INDEX_PATH` contains the audit session data 
 
 ## Notification (review & jit plugins)
 
-Magic Bell enables sending notification messages to slack & e-mail, it's used in conjuction with the [review](../plugins/review.mdx) plugin.
+Magic Bell enables sending notification messages to slack & e-mail, it's used in conjuction with the [review](../plugins/review.md) plugin.
 Every time a new access or review is available it will send a notification to slack or e-mail.
 
 To enable it, create an account in magic bell and [get the required credentials](https://www.magicbell.com/docs/api-authentication#authentication).

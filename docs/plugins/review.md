@@ -3,13 +3,11 @@ sidebar_position: 4
 slug: /plugins/review
 ---
 
-import ConnectOnHoopButton from './../../src/components/ConnectOnHoopButton';
-
 # Review
 
-This plugin allow administrators to review commands before they are executed or allowing time based sessions.
+This plugin allow teams to review commands before they are executed or allowing time based sessions.
 
-Multiple **approval groups** may be used to approve a connection. The command is only executed when all groups are approved.
+Users are allowed to approve or revoke commands if they belong to an **approval group**. A command is only executed when all groups are approved.
 
 ## Time Based Sessions (JIT)
 
@@ -59,5 +57,3 @@ hoop admin create connection bash --overwrite -a default --plugin 'review:sre;de
 - Command / Input
 - Approval Groups
 - Status
-
-<ConnectOnHoopButton text='INSTALL PLUGIN' url="https://app.hoop.dev/plugins/store" />
