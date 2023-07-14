@@ -12,6 +12,7 @@ The gateway provides a REST API, a webapp UI and a bi-directional gRPC to exchan
 | METHOD | URI                      |
 | ------ | ------------------------ |
 | GET    | /api/login |
+| GET    | /api/healthz |
 | GET    | /api/callback |
 | GET    | /api/users |
 | GET    | /api/users/:id |
@@ -20,15 +21,25 @@ The gateway provides a REST API, a webapp UI and a bi-directional gRPC to exchan
 | PUT    | /api/users/:id |
 | POST   | /api/users |
 | POST   | /api/connections |
-| POST   | /api/connections/:name/exec |
 | PUT    | /api/connections/:name |
+| POST   | /api/connections/:name/exec |
 | GET    | /api/connections |
 | GET    | /api/connections/:name |
+| DELETE | /api/connections/:name |
+| POST   | /api/connectionapps |
+| POST   | /api/proxymanager/connect |
+| POST   | /api/proxymanager/disconnect |
+| GET    | /api/proxymanager/status |
 | GET    | /api/reviews |
 | GET    | /api/reviews/:id |
 | PUT    | /api/reviews/:id |
 | POST   | /api/agents |
 | GET    | /api/agents |
+| DELETE | /api/agents/:nameOrID |
+| POST   | /api/clientkeys |
+| GET    | /api/clientkeys |
+| GET    | /api/clientkeys/:name |
+| PUT    | /api/clientkeys/:name |
 | POST   | /api/plugins |
 | PUT    | /api/plugins/:name |
 | GET    | /api/plugins |
@@ -37,9 +48,15 @@ The gateway provides a REST API, a webapp UI and a bi-directional gRPC to exchan
 | GET    | /api/plugins/audit/sessions/:session_id |
 | GET    | /api/plugins/audit/sessions/:session_id/status |
 | GET    | /api/plugins/audit/sessions |
-| GET    | /api/plugins/runbooks/connections/:name/templates |
-| POST   | /api/plugins/runbooks/connections/:name/exec |
+| GET    | /api/sessions/:session_id |
+| GET    | /api/sessions/:session_id/status |
+| GET    | /api/sessions |
+| POST   | /api/sessions |
+| POST   | /api/sessions/:session_id/exec |
 | POST   | /api/plugins/indexer/sessions/search |
+| GET    | /api/plugins/runbooks/connections/:name/templates |
+| GET    | /api/plugins/runbooks/templates |
+| POST   | /api/plugins/runbooks/connections/:name/exec |
 
 ## Gateway Configuration
 
@@ -59,7 +76,7 @@ The following environment variables could be configured when starting the gatewa
 | TLS_KEY                             | ""                       | base64 encoded RSA private key (grpc)            |
 | TLS_CERT                            | ""                       | base64 encoded pem certificates (grpc)           |
 | TLS_CA                              | ""                       | base64 encoded pem certificate authority (grpc)  |
-| ORG_MULTI_TENANT                    | "false"                       | Enable organization multi-tenancy                |
+| ORG_MULTI_TENANT                    | "false"                  | Enable organization multi-tenancy                |
 | NOTIFICATIONS_BRIDGE_CONFIG         | ""                       | Set notification bridge on; [see more](/docs/integrations/introduction)|
 | PROFILE                             | ""                       | "dev" runs gateway without authentication        |
 | GOOGLE_APPLICATION_CREDENTIALS_JSON | ""                       | GCP DLP credentials                              |
@@ -74,6 +91,7 @@ The following environment variables could be configured when starting the gatewa
 | IDP_CLIENT_ID (required)            | ""                       | Oauth2 client id                                 |
 | IDP_CLIENT_SECRET (required)        | ""                       | Ouath2 client secret                             |
 | IDP_CUSTOM_SCOPES                   | ""                       | Ouath2 additional scopes                         |
+| ADMIN_USERNAME                      | "admin"                  | Changes the name of the group to act as admin    |
 | MAGIC_BELL_API_KEY                  | ""                       | Magic Bell API Key (notification system)         |
 | MAGIC_BELL_API_SECRET               | ""                       | Magic Bell API Secret                            |
 | SMTP_HOST                           | ""                       | Smtp Host (notification system)                  |
