@@ -26,11 +26,5 @@ sudo su -
 6. Download and install/upgrade the hoop command line
 
 ```shell
-VERSION=$(curl -s https://releases.hoop.dev/release/latest.txt)
-curl https://releases.hoop.dev/release/${VERSION}/hoop_${VERSION}_Linux_$(uname -m).tar.gz \
-    -o hoop-$VERSION.tar.gz
-tar --extract --file hoop-$VERSION.tar.gz -C /usr/local/bin hoop && \
-    rm -f hoop-$VERSION.tar.gz && \
-    chown root: /usr/local/bin/hoop && \
-    exit
+curl -s -L https://releases.hoop.dev/release/install-cli.sh | sh
 ```
