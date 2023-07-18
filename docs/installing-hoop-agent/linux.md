@@ -17,12 +17,11 @@ curl -s -L https://releases.hoop.dev/release/install-cli.sh | sh
 
 :::info
 Make sure to create a token in your local machine before starting the agent. E.g.:
-`hoop admin create token`
+`hoop admin create token <name>`
 :::
 
 ```shell
-# create in your local machine issuing: hoop admin create agent <name>
-export HOOP_TOKEN=<TOKEN>
+export HOOP_TOKEN=<AGENT_TOKEN>
 cat - >/etc/systemd/system/hoopagent.service <<EOF
 [Unit]
 Description=Hoop Agent
