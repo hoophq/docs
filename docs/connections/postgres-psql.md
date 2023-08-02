@@ -64,14 +64,14 @@ PGPORT=5432
 PGHOST=127.0.0.1
 
 hoop admin create conn psql -a default --overwrite \
-	-env "b64-filesystem:PGSSLROOTCERT=$PGSSLROOTCERT" \
-	-env "b64-filesystem:PGSSLKEY=$PGSSLKEY" \
-	-env "b64-filesystem:PGSSLCERT=$PGSSLCERT" \
-	-env "envvar:PGSSLMODE=$PGSSLMODE" \
-	-env "envvar:PGUSER=$PGUSER" \
-	-env "envvar:PGPASSWORD=$PGPASSWORD" \
-	-env "envvar:PGPORT=$PGPORT" \
-	-env "envvar:PGHOST=$PGHOST" -- psql
+	--env "b64-filesystem:PGSSLROOTCERT=$PGSSLROOTCERT" \
+	--env "b64-filesystem:PGSSLKEY=$PGSSLKEY" \
+	--env "b64-filesystem:PGSSLCERT=$PGSSLCERT" \
+	--env "envvar:PGSSLMODE=$PGSSLMODE" \
+	--env "envvar:PGUSER=$PGUSER" \
+	--env "envvar:PGPASSWORD=$PGPASSWORD" \
+	--env "envvar:PGPORT=$PGPORT" \
+	--env "envvar:PGHOST=$PGHOST" -- psql
 ```
 
 :::info
