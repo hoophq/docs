@@ -18,9 +18,9 @@ Start interactive terminal sessions or execute one-off commands
 Start an interactive bash session
 
 ```shell
-$ hoop connect bash
+$ hoop connect my-bash
 
-connection: bash | session: e348532d-13f5-4984-8210-1890f1dd4217
+connection: my-bash | session: e348532d-13f5-4984-8210-1890f1dd4217
 root@f4584548f57c:/# 
 ```
 
@@ -29,7 +29,7 @@ root@f4584548f57c:/#
 Execute ad-hoc commands to a bash connection
 
 ```shell
-$ hoop exec bash -i 'env'
+$ hoop exec my-bash -i 'env'
 PWD=/
 SHLVL=1
 PATH=/app:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -39,7 +39,7 @@ _=/usr/bin/env
 Input source can come from **stdin**
 
 ```shell
-hoop exec bash <<EOF
+hoop exec my-bash <<EOF
 ls -l
 EOF
 ```
@@ -47,7 +47,7 @@ EOF
 Input source can be **piped**
 
 ```shell
-echo 'ls -l' | hoop exec bash
+echo 'ls -l' | hoop exec my-bash
 ```
 
 Command arguments can be passed down to connections

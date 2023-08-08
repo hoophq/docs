@@ -116,6 +116,13 @@ export default function () {
                   </div>
                 ))}
               </div>
+
+              <div>  
+                <a href="/docs/connections">
+                <button class="button button--primary button--lg" >More ...</button>  
+                </a>
+              </div>
+
             </div>
             <ConnectionComponent />
           </section>

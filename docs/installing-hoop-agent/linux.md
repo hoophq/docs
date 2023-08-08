@@ -17,7 +17,7 @@ curl -s -L https://releases.hoop.dev/release/install-cli.sh | sh
 
 :::info
 Make sure to create a token in your local machine before starting the agent. E.g.:
-`hoop admin create token <name>`
+`hoop admin create agent <name>`
 :::
 
 ```shell
