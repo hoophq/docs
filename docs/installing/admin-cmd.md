@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-slug: /tutorials/hoop-admin
+slug: /installing/hoop-admin
 ---
 
 # Admin Command Line
