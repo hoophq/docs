@@ -33,7 +33,7 @@ In a production setup use the [Elastic Container Registry (ECR) service](https:/
 
 ## Embeeded Agent
 
-This demo requires that the hoop agent command is installed locally within your application, refer to [docker installation](../installing/embedded#docker) to see how to install it.
+This demo requires that the hoop agent command is installed locally within your application, refer to [docker installation](../installing-hoop-agent/embedded.md#docker) to see how to install it.
 
 **1. Create the Task Definition**
 
