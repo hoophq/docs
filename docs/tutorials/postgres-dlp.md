@@ -3,24 +3,28 @@ sidebar_position: 9
 slug: /tutorials/postgres-dlp
 ---
 
-# Data Loss Prevention (DLP) using Postgesql
+# Data Loss Prevention (DLP) using Postgresql
 
 In this tutorial we will show how to connected with any database service from any private networking. You only need to install the hoop agent to get access and apply DLP by default.
 
+## Prerequisites
+
+- [Hoop agent installation](https://hoop.dev/docs/installing/command-line)
+- [Docker installation](https://docs.docker.com/engine/install/)
 
 ## Step 1: Installing the database in the remote host
 
-In this tutorial we use docker to create the postgres instance. 
+In this tutorial we use docker to create the Postgresql instance. 
 
 > You can use any [Postgresql installation](https://www.postgresql.org/download/).
 
-This command will create a postgres instance in the remote host "remote-s1" exposed with the port 5432
+This command will create a Postgresql instance in the remote host "remote-s1" exposed with the port 5432
 
 ```
 docker run --rm --name demo-pg -p 5432:5432 -e POSTGRES_PASSWORD=rootpw -d postgres:alpine3.17
 ```
 
-Accessing to the dabase instance
+Accessing the database instance
 
 ```
 docker exec -it demo-pg psql -U postgres -w
@@ -51,7 +55,7 @@ Using the **Hoop Url:** _http://app.hoop.dev/agents/new/x-agt-xxxx_ in the hoop 
 
 ![hoop-remote-s1](./img/hoop-remote-s1.png)
 
-After sucessfully register and authenticate the hoop agent in the machine with the Postgres service, you can create the connection with the services running in the machine, in this case it will be a Postgresql.
+After sucessfully register and authenticate the hoop agent in the machine with the Postgresql service, you can create the connection with the services running in the machine, in this case it will be a Postgresql.
 
 ## Step 3: Register the Connection Postgresql in Hoop
 
@@ -81,7 +85,7 @@ ready to accept connections!
 
 ![hoop-dbeaver-pg](./img/hoop-dbeaver-pg.png)
 
-> Check hoop documentation [here](https://hoop.dev/docs/connections/postgres)
+> To use dbveaver, users need to configure the option preferQueryMode to simple. This option is available in the advanced tab of the connection. Check hoop documentation [here](https://hoop.dev/docs/connections/postgres)
 
 ## Step 5: Data Lost Prevention (DLP) Plugin
 
@@ -92,15 +96,14 @@ Create sensitive data to use the DLP Plugin
 CREATE TABLE accounts (
 	user_id serial PRIMARY KEY,
 	username VARCHAR ( 50 ) UNIQUE NOT NULL,
-	password VARCHAR ( 50 ) NOT NULL,
 	email VARCHAR ( 255 ) UNIQUE NOT NULL,
 	created_on TIMESTAMP NOT NULL,
         last_login TIMESTAMP
 );
 
-INSERT INTO "accounts" (user_id, username, password, email, created_on, last_login) VALUES( 12345671, 'user01', 'mypassw01', 'my-email01@mycompany.com', current_timestamp, current_timestamp);
+INSERT INTO "accounts" (user_id, username, email, created_on, last_login) VALUES( 12345671, 'user01', 'my-email01@mycompany.com', current_timestamp, current_timestamp);
 
-INSERT INTO "accounts" (user_id, username, password, email, created_on, last_login) VALUES( 12345672, 'user02', 'mypassw02', 'my-email02@gmail.com', current_timestamp, current_timestamp);
+INSERT INTO "accounts" (user_id, username, email, created_on, last_login) VALUES( 12345672, 'user02', 'my-email02@gmail.com', current_timestamp, current_timestamp);
 ```
 
 Hoop by default will apply DLP when you get access to the sensitive data.
@@ -109,7 +112,7 @@ Hoop by default will apply DLP when you get access to the sensitive data.
 
 > More about Hoop DLP [here](https://hoop.dev/docs/plugins/dlp/)
 
-## Step 6: Audit your users 
+## Step 6: Audit SQL Queries
 
 ![hoop-audit-pg](./img/hoop-audit-pg.png)
 
